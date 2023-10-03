@@ -1,0 +1,12 @@
+:root {
+
+  /* colors */
+  --main-text: #575150;
+  --primery-text:#7B6BDA;
+  --secondary-text:#F2F1F3;
+
+  /* backgrounds color */
+  --bg-main: #F2F1F3;
+  --bg-brown: #887B79;
+  --bg-primery: #7B6BDA;
+}
