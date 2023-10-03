@@ -5,7 +5,7 @@ export default function AboutMeSection() {
     <>
       <section id="about-me" style={{ height: 300 }}>
         <Container>
-          <h2>Про мене..</h2>
+          <h2>Про мене</h2>
         </Container>
       </section>
     </>
