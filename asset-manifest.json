@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/oksana-openko/static/css/main.7acaea2f.css",
-    "main.js": "/oksana-openko/static/js/main.ed42a215.js",
+    "main.js": "/oksana-openko/static/js/main.0480bd32.js",
     "index.html": "/oksana-openko/index.html",
     "main.7acaea2f.css.map": "/oksana-openko/static/css/main.7acaea2f.css.map",
-    "main.ed42a215.js.map": "/oksana-openko/static/js/main.ed42a215.js.map"
+    "main.0480bd32.js.map": "/oksana-openko/static/js/main.0480bd32.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.ed42a215.js"
+    "static/js/main.0480bd32.js"
   ]
 }
