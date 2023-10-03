@@ -5,7 +5,7 @@ export default function ConsultationPage() {
     <>
       <section>
         <Container>
-          <h1> Консультація</h1>
+          <h1>Консультація</h1>
         </Container>
       </section>
     </>

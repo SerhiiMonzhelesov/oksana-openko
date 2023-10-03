@@ -5,7 +5,7 @@ export default function SelfSatisfactionWorkPage() {
     <>
       <section>
         <Container>
-          <h1> Практикум по самозадоволенню</h1>
+          <h1>Практикум по самозадоволенню</h1>
         </Container>
       </section>
     </>

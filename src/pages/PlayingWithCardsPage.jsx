@@ -5,7 +5,7 @@ export default function PlayingWithCardsPage() {
     <>
       <section>
         <Container>
-          <h1> Гра з картками</h1>
+          <h1>Гра з картками</h1>
         </Container>
       </section>
     </>
