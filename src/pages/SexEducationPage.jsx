@@ -5,7 +5,7 @@ export default function SexEducationPage() {
     <>
       <section>
         <Container>
-          <h1> Статеве виховання</h1>
+          <h1>Статеве виховання</h1>
         </Container>
       </section>
     </>
