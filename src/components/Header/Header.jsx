@@ -12,7 +12,7 @@ export default function Header() {
         <StyledInner>
           <StyledLogo smooth to="/">
             <svg style={{ width: '48px', height: '48px' }}>
-              <use xlinkHref={`${logo} #logo`} />
+              <use xlinkHref={`${logo}#logo`} />
             </svg>
             Оксана Опенько
           </StyledLogo>
@@ -59,6 +59,7 @@ export const StyledLogo = styled(Link)`
   gap: 12px;
   font-family: 'IBMPlexSans-300', sans-serif;
   font-size: 20px;
+  font-weight: 300;
   line-height: 1.2;
   color: var(--secondary-text);
 `;
@@ -67,23 +68,33 @@ export const StyledList = styled.nav`
   display: flex;
   align-items: center;
   gap: 32px;
-  position: relative;
 `;
 
 export const StyledNavLink = styled(NavLink)`
   font-family: 'ProximaNova-500', sans-serif;
   font-size: 20px;
+  font-weight: 500;
   line-height: 24px;
   color: var(--secondary-text);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:after {
-    position: absolute;
-    display: block;
+    display: none;
     content: '';
     width: 100%;
-    height: 1px;
+    height: 2px;
     margin-top: 12px;
     background-color: var(--primery-text);
-    transform: rotate(180deg);
+    position: absolute;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    &.active {
+      &:after {
+        display: block;
+      }
+    }
   }
 `;
