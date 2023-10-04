@@ -51,6 +51,7 @@ export const StyledContent = styled.div`
 export const StyledImage = styled.img`
   display: block;
   max-width: 100%;
+
   height: auto;
   object-fit: cover;
 `;
