@@ -7,6 +7,11 @@ import Container from '../Container/Container';
 import Header from 'components/Header/Header';
 
 export default function Layout() {
+  const handleScrollToTop = event => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <Header />
