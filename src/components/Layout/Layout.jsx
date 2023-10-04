@@ -55,7 +55,7 @@ export default function Layout() {
       </main>
       <StyledFooter>
         <Container>
-          <Footer />
+          <Footer handleScrollToTop={handleScrollToTop} />
         </Container>
       </StyledFooter>
     </>

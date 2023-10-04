@@ -55,6 +55,20 @@ export const StyledWrapperSoc = styled.ul`
 
 //SVG
 
+export const StyledIconLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  &:hover,
+  &:focus {
+    background-color: #9589e1;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+`;
+
 export const StyledIcon = styled.svg`
   width: 28px;
   height: 28px;
