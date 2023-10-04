@@ -1,15 +1,22 @@
+import styled from 'styled-components';
+
 export default function Container({ children }) {
-  return (
-    <div
-      style={{
-        width: '100%',
-        maxWidth: 1440,
-        height: '100%',
-        paddingLeft: 160,
-        paddingRight: 160,
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <StyledContainer>{children}</StyledContainer>;
 }
+
+export const StyledContainer = styled.div`
+  width: 100%;
+  margin: 0px auto;
+  max-width: 375px;
+  padding: 0 16px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    padding: 0 160px;
+  }
+`;

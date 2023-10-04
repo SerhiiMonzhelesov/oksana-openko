@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from '../Container/Container';
-import logo from '../../images/logo.svg';
+import logo from '../../assets/images/icons.svg';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -11,27 +11,26 @@ export default function Header() {
       <Container>
         <StyledInner>
           <StyledLogo smooth to="/">
-            <img
-              src={logo}
-              alt="Logo"
-              style={{ width: '48px', height: '48px' }}
-            />
+            <svg style={{ width: '48px', height: '48px' }}>
+              <use xlinkHref={`${logo}#logo`} />
+            </svg>
             Оксана Опенько
           </StyledLogo>
-          <StyledNav>
-            <NavLink to="/#about-me" smooth>
+
+          <StyledList>
+            <StyledNavLink to="/#about-me" smooth>
               Про мене
-            </NavLink>
-            <NavLink smooth to={'/#services'}>
+            </StyledNavLink>
+            <StyledNavLink smooth to={'/#services'}>
               Послуги
-            </NavLink>
-            <NavLink smooth to={'/#rules'}>
+            </StyledNavLink>
+            <StyledNavLink smooth to={'/#rules'}>
               Правила роботи
-            </NavLink>
-            <NavLink smooth to={'/#contacts'}>
+            </StyledNavLink>
+            <StyledNavLink smooth to={'/#contacts'}>
               Контакти
-            </NavLink>
-          </StyledNav>
+            </StyledNavLink>
+          </StyledList>
         </StyledInner>
       </Container>
     </StyledHeader>
@@ -41,19 +40,7 @@ export default function Header() {
 export const StyledHeader = styled.header`
   width: 100%;
   padding: 16px;
-  background: var(
-    --Header-bg,
-    linear-gradient(
-      0deg,
-      rgba(104, 92, 88, 0.56) 0%,
-      rgba(104, 92, 88, 0.56) 100%
-    ),
-    radial-gradient(
-      231% 135.8% at 0.9% 2.98%,
-      rgba(165, 178, 222, 0.4) 0%,
-      rgba(255, 255, 255, 0) 100%
-    )
-  );
+  background: #685c588f;
   backdrop-filter: blur(21px);
   position: absolute;
   top: 0;
@@ -70,10 +57,33 @@ export const StyledLogo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 12px;
+  font-family: 'IBMPlexSans-300', sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--secondary-text);
 `;
 
-export const StyledNav = styled.nav`
+export const StyledList = styled.nav`
   display: flex;
   align-items: center;
   gap: 32px;
+  position: relative;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  font-family: 'ProximaNova-500', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--secondary-text);
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    margin-top: 12px;
+    background-color: var(--primery-text);
+    transform: rotate(180deg);
+  }
 `;
