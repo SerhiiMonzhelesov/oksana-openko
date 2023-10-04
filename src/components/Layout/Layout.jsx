@@ -6,6 +6,11 @@ import { HashLink as NavLink } from 'react-router-hash-link';
 import Container from '../Container/Container';
 
 export default function Layout() {
+  const handleScrollToTop = event => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <header style={{ borderBottom: '1px solid grey' }}>
