@@ -12,7 +12,7 @@ export default function Header() {
         <StyledInner>
           <StyledLogo smooth to="/">
             <svg style={{ width: '48px', height: '48px' }}>
-              <use xlinkHref={`${logo}#logo`} />
+              <use xlinkHref={`${logo} #logo`} />
             </svg>
             Оксана Опенько
           </StyledLogo>
