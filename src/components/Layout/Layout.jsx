@@ -8,6 +8,11 @@ import Footer from 'components/Footer/Footer';
 import { StyledFooter } from 'components/Footer/Footer.styled';
 
 export default function Layout() {
+  const handleScrollToTop = event => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <header style={{ borderBottom: '1px solid grey' }}>
