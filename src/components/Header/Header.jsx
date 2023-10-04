@@ -81,6 +81,7 @@ export const StyledNavLink = styled(NavLink)`
   &:after {
     display: none;
     content: '';
+
     width: 100%;
     height: 2px;
     margin-top: 12px;
