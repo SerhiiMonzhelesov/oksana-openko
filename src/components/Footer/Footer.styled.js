@@ -5,24 +5,20 @@ export const StyledFooter = styled.footer`
   background-color: #887b79;
 `;
 export const StyledFooterWrapper = styled.div`
-  display: grid;
-  justify-content: center;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  grid-gap: 32px;
+  justify-content: center;
+  gap: 32px;
   padding-top: 24px;
   padding-bottom: 24px;
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    grid-gap: 77px;
+    flex-direction: row;
+    gap: 77px;
   }
   @media screen and (min-width: 1280px) {
-    grid-gap: 100px;
+    gap: 100px;
   }
 `;
 export const StyledFooterTitle = styled(Link)`
@@ -48,6 +44,12 @@ export const StyledText = styled.p`
   text-align: center;
   color: var(--secondary-text);
 `;
+export const StyledTextBr = styled.br`
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+`;
+
 export const StyledWrapperSoc = styled.ul`
   display: flex;
   gap: 32px;
