@@ -17,7 +17,7 @@ export const StyledFooterWrapper = styled.div`
     flex-direction: row;
     gap: 77px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     gap: 100px;
   }
 `;
