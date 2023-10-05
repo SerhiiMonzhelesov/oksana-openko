@@ -15,6 +15,7 @@ export const StyledFooterWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    justify-content: space-between;
     gap: 77px;
   }
   @media screen and (min-width: 1440px) {
