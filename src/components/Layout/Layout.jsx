@@ -2,7 +2,7 @@ import {
   // NavLink,
   Outlet,
 } from 'react-router-dom';
-import { HashLink as NavLink } from 'react-router-hash-link';
+// import { HashLink as NavLink } from 'react-router-hash-link';
 import Container from '../Container/Container';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
@@ -22,7 +22,7 @@ export default function Layout() {
       </main>
       <StyledFooter>
         <Container>
-          <Footer />
+          <Footer handleScrollToTop={handleScrollToTop} />
         </Container>
       </StyledFooter>
     </>
