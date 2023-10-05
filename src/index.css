@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import '~@csstools/normalize.css';
 
 @import './stylesheet/fonts.css';
 @import './stylesheet/vars.css';
@@ -48,5 +48,3 @@ button {
 img {
   display: block;
 }
-
-
