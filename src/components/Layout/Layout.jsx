@@ -5,6 +5,8 @@ import {
 import { HashLink as NavLink } from 'react-router-hash-link';
 import Container from '../Container/Container';
 import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
+import { StyledFooter } from 'components/Footer/Footer.styled';
 
 export default function Layout() {
   const handleScrollToTop = event => {
@@ -18,22 +20,11 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer style={{ height: 56, borderTop: '1px solid grey' }}>
+      <StyledFooter>
         <Container>
-          <NavLink to="/" style={{ paddingBottom: 12, paddingTop: 12 }}>
-            Оксана Опенько
-          </NavLink>
-          <NavLink style={{ paddingBottom: 12, paddingTop: 12 }}>
-            Instagram
-          </NavLink>
-          <NavLink style={{ paddingBottom: 12, paddingTop: 12 }}>
-            Telegram
-          </NavLink>
-          <NavLink style={{ paddingBottom: 12, paddingTop: 12 }}>
-            Facebook
-          </NavLink>
+          <Footer />
         </Container>
-      </footer>
+      </StyledFooter>
     </>
   );
 }
