@@ -29,6 +29,8 @@ export const StyledFooterTitle = styled(Link)`
   line-height: 1.2;
   color: var(--secondary-text);
   text-align: center;
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const StyledContactWrapper = styled.div`
   display: flex;
@@ -64,11 +66,12 @@ export const StyledIconLink = styled(Link)`
   justify-content: center;
   width: 28px;
   height: 28px;
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     background-color: #9589e1;
     border-radius: 4px;
-    cursor: pointer;
   }
 `;
 
