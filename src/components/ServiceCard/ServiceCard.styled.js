@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledServiceCard = styled.li`
@@ -56,5 +57,16 @@ export const StyledServiceCard = styled.li`
       font-weight: 600;
       line-height: 1;
     }
+  }
+`;
+
+export const StyledLinkCard = styled(Link)`
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 12px 2px rgb(80 61 61 / 75%);
   }
 `;
