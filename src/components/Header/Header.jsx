@@ -1,100 +1,134 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import Container from '../Container/Container';
 import logo from '../../assets/images/icons.svg';
-import { Link } from 'react-router-dom';
+import {
+  StyledBurger,
+  StyledButtonClose,
+  StyledHeader,
+  StyledInner,
+  StyledLogo,
+  StyledMobileLogo,
+  StyledMobileMenu,
+  StyledMobileMenuHeader,
+  StyledMobileNavLink,
+  StyledMobileNavList,
+  StyledNavLink,
+  StyledNavList,
+  StyledWrapperBurgerLogo,
+} from './Header.styled';
+import SvgSprite from '../../assets/images/icons.svg';
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    console.log('message');
+  };
+
+  const handleScrollToElement = event => {
+    event.preventDefault();
+
+    const scrollId = document.querySelector('#' + event.target.dataset.scroll);
+    const scrollTop = scrollId.offsetTop;
+    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+
+    if (window.innerWidth <= 1439) {
+      closeMenu();
+    }
+  };
+
   return (
     <StyledHeader>
       <Container>
         <StyledInner>
-          <StyledLogo smooth to="/">
-            <svg style={{ width: '48px', height: '48px' }}>
-              <use xlinkHref={`${logo}#logo`} />
-            </svg>
-            Оксана Опенько
-          </StyledLogo>
+          <StyledWrapperBurgerLogo>
+            <StyledBurger onClick={toggleMenu}>
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <use href={SvgSprite + '#burger'} />
+              </svg>
+            </StyledBurger>
+            <StyledLogo to="/">
+              <svg style={{ width: '48px', height: '48px' }}>
+                <use xlinkHref={`${logo}#logo`} />
+              </svg>
+              Оксана Опенько
+            </StyledLogo>
+          </StyledWrapperBurgerLogo>
 
-          <StyledList>
-            <StyledNavLink to="/#about-me" smooth>
+          <StyledNavList>
+            <StyledNavLink
+              data-scroll="about-me"
+              onClick={handleScrollToElement}
+            >
               Про мене
             </StyledNavLink>
-            <StyledNavLink smooth to={'/#services'}>
+            <StyledNavLink
+              data-scroll="services"
+              onClick={handleScrollToElement}
+            >
               Послуги
             </StyledNavLink>
-            <StyledNavLink smooth to={'/#rules'}>
+            <StyledNavLink data-scroll="rules" onClick={handleScrollToElement}>
               Правила роботи
             </StyledNavLink>
-            <StyledNavLink smooth to={'/#contacts'}>
+            <StyledNavLink
+              data-scroll="contacts"
+              onClick={handleScrollToElement}
+            >
               Контакти
             </StyledNavLink>
-          </StyledList>
+          </StyledNavList>
+
+          <StyledMobileMenu isOpen={isOpen}>
+            <StyledButtonClose onClick={toggleMenu}>
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <use href={SvgSprite + '#btn-close'} />
+              </svg>
+            </StyledButtonClose>
+
+            <StyledMobileMenuHeader>
+              <StyledMobileLogo smooth to="/">
+                <svg style={{ width: '48px', height: '48px' }}>
+                  <use xlinkHref={`${logo}#logo`} />
+                </svg>
+                Оксана Опенько
+              </StyledMobileLogo>
+            </StyledMobileMenuHeader>
+
+            <StyledMobileNavList>
+              <StyledMobileNavLink
+                data-scroll="about-me"
+                onClick={handleScrollToElement}
+              >
+                Про мене
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="services"
+                onClick={handleScrollToElement}
+              >
+                Послуги
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="rules"
+                onClick={handleScrollToElement}
+              >
+                Правила роботи
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="contacts"
+                onClick={handleScrollToElement}
+              >
+                Контакти
+              </StyledMobileNavLink>
+            </StyledMobileNavList>
+          </StyledMobileMenu>
         </StyledInner>
       </Container>
     </StyledHeader>
   );
 }
-
-export const StyledHeader = styled.header`
-  width: 100%;
-  padding: 16px;
-  background: #685c588f;
-  backdrop-filter: blur(21px);
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-export const StyledInner = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const StyledLogo = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'IBMPlexSans-300', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--secondary-text);
-`;
-
-export const StyledList = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 32px;
-`;
-
-export const StyledNavLink = styled(NavLink)`
-  font-family: 'ProximaNova-500', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 24px;
-  color: var(--secondary-text);
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:after {
-    display: none;
-    content: '';
-    width: 100%;
-    height: 2px;
-    margin-top: 12px;
-    background-color: var(--primery-text);
-    position: absolute;
-  }
-
-  &:hover,
-  &:focus {
-    transform: scale(1.05);
-    &.active {
-      &:after {
-        display: block;
-      }
-    }
-  }
-`;
