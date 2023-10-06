@@ -42,21 +42,21 @@
 
 @font-face {
   font-family: 'IBMPlexSans-200';
-  src: url('../assets/fonts/IBMPlexSans-ExtraLight.ttf') format('ttf');
+  src: url('../assets/fonts/IBMPlexSans-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexSans-300';
-  src: url('../assets/fonts/IBMPlexSans-Light.ttf') format('ttf');
+  src: url('../assets/fonts//IBMPlexSans-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexSans-500';
-  src: url('../assets/fonts/IBMPlexSans-Medium.ttf') format('ttf');
+  src: url('../assets/fonts/IBMPlexSans-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
 }
