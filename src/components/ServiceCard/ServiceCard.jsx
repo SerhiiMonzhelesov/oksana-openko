@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StyledServiceCard } from './StyledServiceCard';
+import { StyledServiceCard } from './ServiceCard.styled.js';
 
 export default function ServiceCard({ service }) {
   const { name, img, alt_img, path_to_page } = service;
