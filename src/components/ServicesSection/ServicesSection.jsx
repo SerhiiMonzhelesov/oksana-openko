@@ -1,13 +1,16 @@
 import Container from 'components/Container/Container';
+import ServicesList from 'components/ServicesList/ServicesList';
+import { StyledServicesSection } from './StyledServicesSection';
 
 export default function ServicesSection() {
   return (
     <>
-      <section id="services" style={{ height: 300 }}>
+      <StyledServicesSection id="services">
         <Container>
-          <h2> Послуги</h2>
+          <h2>Послуги</h2>
+          <ServicesList />
         </Container>
-      </section>
+      </StyledServicesSection>
     </>
   );
 }

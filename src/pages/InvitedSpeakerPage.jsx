@@ -5,7 +5,7 @@ export default function InvitedSpeakerPage() {
     <>
       <section>
         <Container>
-          <h1>Запрошений спікер </h1>
+          <h2>Запрошений спікер</h2>
         </Container>
       </section>
     </>
