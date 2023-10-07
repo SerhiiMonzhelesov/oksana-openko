@@ -47,6 +47,15 @@ export const StyledText = styled.p`
   text-align: center;
   color: var(--secondary-text);
 `;
+
+export const StyledPhoneLink = styled(Link)`
+  font-family: 'ProximaNova-400';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--secondary-text);
+`;
 export const StyledTextBr = styled.br`
   @media screen and (min-width: 1440px) {
     display: none;

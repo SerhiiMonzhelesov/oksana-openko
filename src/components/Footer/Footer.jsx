@@ -9,6 +9,7 @@ import {
   StyledIcon,
   StyledIconLink,
   StyledTextBr,
+  StyledPhoneLink,
 } from './Footer.styled';
 
 const Footer = ({ handleScrollToTop }) => {
@@ -18,7 +19,9 @@ const Footer = ({ handleScrollToTop }) => {
         Оксана Опенько
       </StyledFooterTitle>
       <StyledContactWrapper>
-        <StyledText>+38 096 492 34 11</StyledText>
+        <StyledPhoneLink to="tel:+37127266966">
+          +38 096 492 34 11
+        </StyledPhoneLink>
         <StyledText>
           Консультації проводяться в <StyledTextBr /> м. Київ / м. Бровари
         </StyledText>
