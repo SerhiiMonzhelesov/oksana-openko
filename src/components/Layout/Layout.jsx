@@ -1,7 +1,6 @@
 import {
   // NavLink,
   Outlet,
-  useNavigate,
 } from 'react-router-dom';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import Container from '../Container/Container';
@@ -15,11 +14,9 @@ export default function Layout() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navigate = useNavigate(); // Получите функцию навигаци
-
   return (
     <>
-      <Header navigate={navigate} />
+      <Header />
       <main>
         <Outlet />
       </main>
