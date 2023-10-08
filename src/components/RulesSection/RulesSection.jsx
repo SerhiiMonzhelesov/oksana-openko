@@ -1,8 +1,7 @@
 import Container from 'components/Container/Container';
-import { leftRules, rejections, rightRules } from './RulesList/data';
+import { leftRules, rejections, rightRules } from '../../data/rules';
 import {
   StyledRulesList,
-  StyledRulesListRules,
   StyledRulesSubtitle,
   StyledRulesTitle,
 } from './Rules.styled';
@@ -17,16 +16,16 @@ export default function RulesSection() {
         <Container>
           <StyledRulesTitle>Правила роботи</StyledRulesTitle>
           <StyledListWrapper>
-            <StyledRulesListRules>
+            <ul>
               {leftRules.map((rule, index) => (
                 <Item key={`left-${index}`} text={rule} />
               ))}
-            </StyledRulesListRules>
-            <StyledRulesListRules>
+            </ul>
+            <ul>
               {rightRules.map((rule, index) => (
                 <Item key={`right-${index}`} text={rule} />
               ))}
-            </StyledRulesListRules>
+            </ul>
           </StyledListWrapper>
 
           <StyledRulesSubtitle>На консультаціях я:</StyledRulesSubtitle>
