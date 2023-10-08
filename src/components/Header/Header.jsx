@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import logo from '../../assets/images/icons.svg';
 import {
@@ -17,11 +17,15 @@ import {
   StyledWrapperBurgerLogo,
 } from './Header.styled';
 import SvgSprite from '../../assets/images/icons.svg';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const scrollToBlock = queryParams.get('scroll');
+  const isHomePage = location.pathname === '/';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -31,21 +35,46 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (scrollToBlock) {
+      const scrollId = document.querySelector(`#${scrollToBlock}`);
+
+      if (scrollId) {
+        const scrollTop = scrollId.offsetTop;
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+      }
+      if (window.innerWidth <= 1439) {
+        closeMenu();
+      }
+    }
+  }, [scrollToBlock]);
+
   const handleScrollToElement = event => {
     event.preventDefault();
+    const targetScroll = event.target.dataset.scroll;
 
-    console.log(event.target.dataset.scroll);
+    if (isHomePage) {
+      const scrollId = document.querySelector(`#${targetScroll}`);
 
-    const scrollId = document.querySelector('#' + event.target.dataset.scroll);
-    const scrollTop = scrollId.offsetTop;
-    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-
-    if (window.innerWidth <= 1439) {
-      closeMenu();
+      if (scrollId) {
+        const scrollTop = scrollId.offsetTop;
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+        if (window.innerWidth <= 1439) {
+          closeMenu();
+        }
+      }
+    } else {
+      navigate(`/?scroll=${targetScroll}`);
     }
   };
-
-  const isHomePage = location.pathname === '/';
 
   return (
     <StyledHeader>
@@ -66,43 +95,27 @@ export default function Header() {
           </StyledWrapperBurgerLogo>
 
           <StyledNavList>
-            {isHomePage ? (
-              // Используем handleScrollToElement для скролла на главной странице
-              <>
-                <StyledNavLink
-                  data-scroll="about-me"
-                  onClick={handleScrollToElement}
-                >
-                  Про мене
-                </StyledNavLink>
-                <StyledNavLink
-                  data-scroll="services"
-                  onClick={handleScrollToElement}
-                >
-                  Послуги
-                </StyledNavLink>
-                <StyledNavLink
-                  data-scroll="rules"
-                  onClick={handleScrollToElement}
-                >
-                  Правила роботи
-                </StyledNavLink>
-                <StyledNavLink
-                  data-scroll="contacts"
-                  onClick={handleScrollToElement}
-                >
-                  Контакти
-                </StyledNavLink>
-              </>
-            ) : (
-              // Используем Link для перенаправления на главную страницу на других страницах
-              <>
-                <StyledNavLink to="/#about-me">Про мене</StyledNavLink>
-                <StyledNavLink to="/#services">Послуги</StyledNavLink>
-                <StyledNavLink to="/#rules"> Правила роботи</StyledNavLink>
-                <StyledNavLink to="/#contacts">Контакти</StyledNavLink>
-              </>
-            )}
+            <StyledNavLink
+              data-scroll="about-me"
+              onClick={handleScrollToElement}
+            >
+              Про мене
+            </StyledNavLink>
+            <StyledNavLink
+              data-scroll="services"
+              onClick={handleScrollToElement}
+            >
+              Послуги
+            </StyledNavLink>
+            <StyledNavLink data-scroll="rules" onClick={handleScrollToElement}>
+              Правила роботи
+            </StyledNavLink>
+            <StyledNavLink
+              data-scroll="contacts"
+              onClick={handleScrollToElement}
+            >
+              Контакти
+            </StyledNavLink>
           </StyledNavList>
 
           <StyledMobileMenu open={isOpen}>
@@ -122,50 +135,30 @@ export default function Header() {
             </StyledMobileMenuHeader>
 
             <StyledMobileNavList>
-              {isHomePage ? (
-                // Используем handleScrollToElement для скролла на главной странице
-                <>
-                  <StyledMobileNavLink
-                    data-scroll="about-me"
-                    onClick={handleScrollToElement}
-                  >
-                    Про мене
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink
-                    data-scroll="services"
-                    onClick={handleScrollToElement}
-                  >
-                    Послуги
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink
-                    data-scroll="rules"
-                    onClick={handleScrollToElement}
-                  >
-                    Правила роботи
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink
-                    data-scroll="contacts"
-                    onClick={handleScrollToElement}
-                  >
-                    Контакти
-                  </StyledMobileNavLink>
-                </>
-              ) : (
-                <>
-                  <StyledMobileNavLink to="/#about-me">
-                    Про мене
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink to="/#services">
-                    Послуги
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink to="/#rules">
-                    Правила роботи
-                  </StyledMobileNavLink>
-                  <StyledMobileNavLink to="/#contacts">
-                    Контакти
-                  </StyledMobileNavLink>
-                </>
-              )}
+              <StyledMobileNavLink
+                data-scroll="about-me"
+                onClick={handleScrollToElement}
+              >
+                Про мене
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="services"
+                onClick={handleScrollToElement}
+              >
+                Послуги
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="rules"
+                onClick={handleScrollToElement}
+              >
+                Правила роботи
+              </StyledMobileNavLink>
+              <StyledMobileNavLink
+                data-scroll="contacts"
+                onClick={handleScrollToElement}
+              >
+                Контакти
+              </StyledMobileNavLink>
             </StyledMobileNavList>
           </StyledMobileMenu>
         </StyledInner>
