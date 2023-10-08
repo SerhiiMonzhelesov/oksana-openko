@@ -103,8 +103,8 @@ export const StyledMobileMenu = styled.div`
   z-index: 10;
   transition: left 0.3s ease-in-out;
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ open }) =>
+    open &&
     css`
       left: 0;
     `}

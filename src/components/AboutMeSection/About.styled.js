@@ -136,13 +136,7 @@ export const StyledAboutSpan = styled.span`
   line-height: 1.11;
   color: var(--main-text);
 `;
-export const StyledAboutText = styled.p`
-  font-family: 'ProximaNova-400';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.11;
-  color: var(--main-text);
-`;
+
 export const StyledAboutAccentText = styled.p`
   margin-top: 40px;
   margin-bottom: 56px;
@@ -155,4 +149,14 @@ export const StyledAboutAccentText = styled.p`
 export const StyledWrapperGames = styled.ul`
   display: grid;
   grid-gap: 8px;
+`;
+
+//Slider
+export const StyledSliderAboutSubtitle = styled.h3`
+  margin-bottom: 24px;
+  font-family: 'ProximaNova-600';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.11;
+  color: var(--main-text);
 `;

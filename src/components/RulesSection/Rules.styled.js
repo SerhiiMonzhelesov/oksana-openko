@@ -14,10 +14,11 @@ export const StyledRulesSection = styled.section`
 `;
 export const StyledRulesTitle = styled.h2`
   margin-bottom: 56px;
+  font-family: 'IBMPlexSans-200';
   font-weight: 200;
   font-size: 32px;
   line-height: 1.25;
-  color: #7b6bda;
+  color: var(--primery-text);
   @media screen and (min-width: 768px) {
     margin-bottom: 64px;
   }
@@ -38,23 +39,23 @@ export const StyledListWrapper = styled.div`
     gap: 32px;
     margin-bottom: 96px;
   }
-`;
-export const StyledRulesListRules = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 544px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 544px;
+  }
 `;
 
 //List reject
 
 export const StyledRulesSubtitle = styled.h3`
   margin-bottom: 24px;
-
+  font-family: 'ProximaNova-300';
   font-weight: 300;
   font-size: 20px;
   line-height: 1.2;
-  color: #7b6bda;
+  color: var(--primery-text);
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
   }
