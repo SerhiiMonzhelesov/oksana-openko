@@ -37,7 +37,6 @@ export const StyledContactWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 `;
 export const StyledText = styled.p`
   font-family: 'ProximaNova-400';
@@ -49,12 +48,19 @@ export const StyledText = styled.p`
 `;
 
 export const StyledPhoneLink = styled(Link)`
+  margin-bottom: 32px;
   font-family: 'ProximaNova-400';
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2;
   text-align: center;
   color: var(--secondary-text);
+  @media screen and (min-width: 768px) {
+    margin-bottom: 12px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 8px;
+  }
 `;
 export const StyledTextBr = styled.br`
   @media screen and (min-width: 1440px) {
@@ -65,6 +71,9 @@ export const StyledTextBr = styled.br`
 export const StyledWrapperSoc = styled.ul`
   display: flex;
   gap: 32px;
+  @media screen and (min-width: 1440px) {
+    gap: 59px;
+  }
 `;
 
 //SVG
