@@ -150,6 +150,7 @@ export const StyledWrapperGames = styled.ul`
   display: grid;
   grid-gap: 8px;
 `;
+
 //Slider
 export const StyledSliderAboutSubtitle = styled.h3`
   margin-bottom: 24px;
