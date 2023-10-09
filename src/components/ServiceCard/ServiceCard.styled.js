@@ -69,4 +69,11 @@ export const StyledLinkCard = styled(Link)`
     transform: scale(1.02);
     box-shadow: 0px 0px 12px 2px rgb(80 61 61 / 75%);
   }
+  &:hover p,
+  &:focus p {
+    background: rgba(149, 137, 225, 0.8);
+  }
+  &:active p {
+    background: rgba(91, 77, 172, 0.8);
+  }
 `;
