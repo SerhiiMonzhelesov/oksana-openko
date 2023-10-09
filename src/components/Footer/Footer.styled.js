@@ -55,6 +55,7 @@ export const StyledPhoneLink = styled(Link)`
   line-height: 1.2;
   text-align: center;
   color: var(--secondary-text);
+
   @media screen and (min-width: 768px) {
     margin-bottom: 12px;
   }

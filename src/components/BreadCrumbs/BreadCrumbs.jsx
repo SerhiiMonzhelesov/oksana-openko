@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { StyledBreadCrumbs } from './BreadCrumbs.styled';
 import sprite from '../../assets/images/icons.svg';
+import { confirmNamePage } from 'helpers/confirmNamePage';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function BreadCrumbs({ namePage }) {
-  const isConsultationPage = namePage === 'Консультація';
-  const isSelfSatisfactionPage = namePage === 'Практикум по самозадоволенню';
+  const location = useLocation();
 
   return (
-    <StyledBreadCrumbs
-      $consultation={isConsultationPage}
-      $satisfaction={isSelfSatisfactionPage}
-    >
-      <Link to="/">Послуги</Link>
+    <StyledBreadCrumbs $name={confirmNamePage(location.pathname)}>
+      <Link smooth to="/#services">
+        Послуги
+      </Link>
       <svg>
         <use href={sprite + '#chevron-right'}></use>
       </svg>

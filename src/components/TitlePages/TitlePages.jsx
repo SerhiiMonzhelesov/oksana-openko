@@ -1,20 +1,12 @@
+import { useLocation } from 'react-router-dom';
 import { StyledTitlePages } from './TitlePages.styled';
+import { confirmNamePage } from 'helpers/confirmNamePage';
 
 export default function TitlePages({ namePage }) {
-  const isSexEducationPage = namePage === 'Статеве виховання';
-  const isInvitedSpeakerPage = namePage === 'Запрошений спікер';
-  const isPsychotherapyPage = namePage === 'Психотерапія';
-  const isSelfSatisfactionPage = namePage === 'Практикум по самозадоволенню';
-  const isPlayingCardsPage = namePage === 'Гра з картками';
+  const location = useLocation();
 
   return (
-    <StyledTitlePages
-      $education={isSexEducationPage}
-      $speaker={isInvitedSpeakerPage}
-      $psychotherapy={isPsychotherapyPage}
-      $satisfaction={isSelfSatisfactionPage}
-      $cards={isPlayingCardsPage}
-    >
+    <StyledTitlePages $name={confirmNamePage(location.pathname)}>
       {namePage}
     </StyledTitlePages>
   );

@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   padding: 40px 0 16px 0;
   background: #685c588f;
   backdrop-filter: blur(21px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;

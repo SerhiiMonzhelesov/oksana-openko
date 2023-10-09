@@ -4,8 +4,8 @@ export const StyledBreadCrumbs = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-top: ${props => (props.$consultation ? '144px' : '128px')};
-  margin-bottom: ${props => (props.$consultation ? '24px' : '40px')};
+  padding-top: ${props => (props.$name.consultation ? '144px' : '128px')};
+  margin-bottom: ${props => (props.$name.consultation ? '24px' : '40px')};
 
   font-family: 'Manrope-400';
   font-size: 14px;
@@ -18,7 +18,11 @@ export const StyledBreadCrumbs = styled.div`
 
   @media screen and (min-width: 768px) {
     padding-top: ${props =>
-      props.$consultation ? '112px' : props.$satisfaction ? '121px' : '128px'};
+      props.$name.consultation
+        ? '112px'
+        : props.$name.satisfaction
+        ? '121px'
+        : '128px'};
     margin-bottom: 64px;
   }
 
