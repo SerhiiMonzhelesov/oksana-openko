@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'components/Container/Container';
 import {
   StyledArrowSvg,
@@ -12,6 +13,13 @@ import {
 import svgSprite from '../../assets/images/icons.svg';
 
 export default function HeroSection() {
+  const scrollToContacts = () => {
+    const contactsSection = document.getElementById('contacts');
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <section>
@@ -29,7 +37,7 @@ export default function HeroSection() {
                   </StyledArrowSvg>
                 </StyledPositionLeft>
 
-                <StyledButtonApplication>
+                <StyledButtonApplication onClick={scrollToContacts}>
                   Залишити заявку
                 </StyledButtonApplication>
               </StyledContent>
