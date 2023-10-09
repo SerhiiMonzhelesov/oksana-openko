@@ -1,8 +1,5 @@
-import {
-  // NavLink,
-  Outlet,
-} from 'react-router-dom';
-// import { HashLink as NavLink } from 'react-router-hash-link';
+import { Outlet } from 'react-router-dom';
+
 import Container from '../Container/Container';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
