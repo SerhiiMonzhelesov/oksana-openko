@@ -21,7 +21,7 @@ export default function RulesSection() {
                 <Item key={`left-${index}`} text={rule} />
               ))}
             </ul>
-            <ul>
+            <ul style={{ gap: '8px' }}>
               {rightRules.map((rule, index) => (
                 <Item key={`right-${index}`} text={rule} />
               ))}

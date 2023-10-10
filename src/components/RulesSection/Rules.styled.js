@@ -59,9 +59,6 @@ export const StyledRulesSubtitle = styled.h3`
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
   }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 24px;
-  }
 `;
 export const StyledRulesList = styled.ul`
   display: grid;

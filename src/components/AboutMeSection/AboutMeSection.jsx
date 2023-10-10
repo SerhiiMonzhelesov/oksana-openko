@@ -9,6 +9,7 @@ import {
   StyledVideo,
 } from './About.styled';
 import AboutText from './AboutText';
+import SliderDiploms from './SliderDiploms';
 
 export default function AboutMeSection() {
   return (
@@ -28,23 +29,14 @@ export default function AboutMeSection() {
           <StyledAboutTitle>Про мене</StyledAboutTitle>
           <StyledAboutImgList>
             <li>
-              <StyledImgTop
-                src=""
-                width="142"
-                height="152"
-                alt="Portret of sexologist"
-              />
+              <StyledImgTop />
             </li>
             <li>
-              <StyledImgBottom
-                src=""
-                width="186"
-                height="233"
-                alt="Another portret of sexologist"
-              />
+              <StyledImgBottom />
             </li>
           </StyledAboutImgList>
           <AboutText />
+          <SliderDiploms />
         </Container>
       </StyledAboutMeSection>
     </>
