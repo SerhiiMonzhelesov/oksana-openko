@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import imgTopJPEG from '../../assets/images/about-top.jpg';
+import imgTopWEBP from '../../assets/images/about-top.webp';
+import imgBottomJPEG from '../../assets/images/about-bottom.jpg';
+import imgBottomWEBP from '../../assets/images/about-bottom.webp';
+import { Swiper } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export const StyledAboutMeSection = styled.section`
   padding-top: 112px;
@@ -77,12 +84,23 @@ export const StyledAboutImgList = styled.ul`
   @media screen and (min-width: 1440px) {
   }
 `;
-export const StyledImgBottom = styled.img`
+export const StyledImgBottom = styled.div`
   display: block;
   position: relative;
   z-index: 10;
+  width: 142px;
+  height: 152px;
+  background-image: url(${imgBottomJPEG});
+  background-image: -webkit-image-set(url(${imgBottomWEBP}) 1x);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media screen and (min-width: 1440px) {
+    width: 178px;
+    height: 190px;
+  }
 
-  &::after {
+  /* &::after {
     content: ' ';
     display: block;
     position: absolute;
@@ -91,15 +109,27 @@ export const StyledImgBottom = styled.img`
     width: 210px;
     height: 209px;
     background-color: #887b79;
-    z-index: -1;
-  }
+    z-index: 0;
+  } */
 `;
-export const StyledImgTop = styled.img`
+export const StyledImgTop = styled.div`
   display: block;
   position: relative;
   z-index: 10;
+  width: 183px;
+  height: 233px;
+  background-image: url(${imgTopJPEG});
+  background-image: -webkit-image-set(url(${imgTopWEBP}) 1x);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-  &::after {
+  @media screen and (min-width: 1440px) {
+    width: 170px;
+    height: 213px;
+  }
+
+  /* &::after {
     content: ' ';
     display: block;
     position: absolute;
@@ -109,7 +139,7 @@ export const StyledImgTop = styled.img`
     height: 157px;
     background-color: var(--bg-brown);
     z-index: -1;
-  }
+  } */
 `;
 
 //Text
@@ -159,4 +189,17 @@ export const StyledSliderAboutSubtitle = styled.h3`
   font-size: 18px;
   line-height: 1.11;
   color: var(--main-text);
+`;
+
+export const StyledSwiper = styled(Swiper)`
+  padding-bottom: 45px;
+  span {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #777e90;
+    background-color: #f2f1f3;
+  }
+  span {
+    background-color: var(--bg-primery);
+  }
 `;
