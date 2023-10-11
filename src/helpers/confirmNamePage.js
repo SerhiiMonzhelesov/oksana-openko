@@ -8,10 +8,8 @@ export const confirmNamePage = namePage => {
     cards: false,
   };
 
-  const arrDetailsPath = namePage.replace('/', '').split('-');
-
   Object.keys(confirmedNamePages).forEach(item => {
-    if (arrDetailsPath.includes(item)) {
+    if (namePage.includes(item)) {
       confirmedNamePages[item] = true;
     }
   });
