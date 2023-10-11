@@ -1,6 +1,12 @@
 import React from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Keyboard,
+} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/keyboard';
@@ -12,7 +18,6 @@ const SliderDiploms = () => {
   const breakpoints = {
     0: {
       slidesPerView: 1,
-      spaceBetween: 28,
     },
     768: {
       slidesPerView: 3,
@@ -29,13 +34,12 @@ const SliderDiploms = () => {
         Дипломи та Сертифікати
       </StyledSliderAboutSubtitle>
       <StyledSwiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
-        slidesPerView={1}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
         pagination={{ clickable: true }}
         breakpoints={breakpoints}
         zoom={true}
         centeredSlides={true}
+        keyboard={{ enabled: true }}
       >
         {aboutSlider.map((img, index) => (
           <SwiperSlide key={index}>
