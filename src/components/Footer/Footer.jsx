@@ -19,8 +19,10 @@ const Footer = ({ handleScrollToTop }) => {
         Оксана Опенько
       </StyledFooterTitle>
       <StyledContactWrapper>
+
         <StyledPhoneLink to="tel:+380976172636">
           +38 097 617 26 36
+
         </StyledPhoneLink>
         <StyledText>
           Консультації проводяться в <StyledTextBr /> м. Київ / м. Бровари
