@@ -67,7 +67,10 @@ export const StyledLinkCard = styled(Link)`
   &:hover,
   &:focus {
     transform: scale(1.02);
-    box-shadow: 0px 0px 12px 2px rgb(80 61 61 / 75%);
+    box-shadow: 0px 10px 23px 0px rgba(0, 0, 0, 0.1),
+      0px 41px 41px 0px rgba(0, 0, 0, 0.09),
+      0px 93px 56px 0px rgba(0, 0, 0, 0.05),
+      0px 165px 66px 0px rgba(0, 0, 0, 0.01);
   }
 
   &:hover p,
