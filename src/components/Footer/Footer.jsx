@@ -19,7 +19,7 @@ const Footer = ({ handleScrollToTop }) => {
         Оксана Опенько
       </StyledFooterTitle>
       <StyledContactWrapper>
-        <StyledPhoneLink to="tel:+37127266966">
+        <StyledPhoneLink to="tel:+380964923411">
           +38 096 492 34 11
         </StyledPhoneLink>
         <StyledText>

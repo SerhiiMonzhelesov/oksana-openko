@@ -3,7 +3,6 @@ import {
   StyledAboutImgList,
   StyledAboutMeSection,
   StyledAboutTitle,
-  StyledAboutVideoWrapper,
   StyledImgBottom,
   StyledImgTop,
   StyledVideo,
@@ -11,28 +10,29 @@ import {
 import AboutText from './AboutText';
 import SliderDiploms from './SliderDiploms';
 
+import React from 'react';
+// import about from '../../assets/video/aboutMe.MOV';
+
 export default function AboutMeSection() {
   return (
     <>
       <StyledAboutMeSection id="about-me">
         <Container>
-          <StyledAboutVideoWrapper>
-            <StyledVideo
-              width="324"
-              height="494"
-              controls
-              autoPlay={false}
-              type="video/mp4"
-            ></StyledVideo>
-          </StyledAboutVideoWrapper>
+          <StyledVideo
+            width="324"
+            height="494"
+            type="video/mp4"
+            playsInline
+            // src={about}
+          />
 
           <StyledAboutTitle>Про мене</StyledAboutTitle>
           <StyledAboutImgList>
             <li>
               <StyledImgTop />
+              <div></div>
             </li>
             <li>
-              <div></div>
               <StyledImgBottom />
             </li>
           </StyledAboutImgList>
