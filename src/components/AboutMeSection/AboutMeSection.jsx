@@ -18,12 +18,12 @@ export default function AboutMeSection() {
         <Container>
           <StyledAboutVideoWrapper>
             <StyledVideo
-              autoPlay={false}
               width="324"
               height="494"
-              controls="controls"
+              controls
+              autoPlay={false}
               type="video/mp4"
-            />
+            ></StyledVideo>
           </StyledAboutVideoWrapper>
 
           <StyledAboutTitle>Про мене</StyledAboutTitle>
@@ -32,6 +32,7 @@ export default function AboutMeSection() {
               <StyledImgTop />
             </li>
             <li>
+              <div></div>
               <StyledImgBottom />
             </li>
           </StyledAboutImgList>

@@ -87,7 +87,7 @@ export const StyledAboutImgList = styled.ul`
 export const StyledImgBottom = styled.div`
   display: block;
   position: relative;
-  z-index: 10;
+  z-index: 100;
   width: 142px;
   height: 152px;
   background-image: url(${imgBottomJPEG});
@@ -100,22 +100,23 @@ export const StyledImgBottom = styled.div`
     height: 190px;
   }
 
-  /* &::after {
+  &::after {
     content: ' ';
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 210px;
-    height: 209px;
+    width: 153px;
+    height: 157px;
+
     background-color: #887b79;
-    z-index: 0;
-  } */
+    z-index: -1;
+  }
 `;
 export const StyledImgTop = styled.div`
   display: block;
-  position: relative;
-  z-index: 10;
+  /* position: relative;
+  z-index: 10; */
   width: 183px;
   height: 233px;
   background-image: url(${imgTopJPEG});
@@ -129,17 +130,17 @@ export const StyledImgTop = styled.div`
     height: 213px;
   }
 
-  /* &::after {
+  &::after {
     content: ' ';
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 153px;
-    height: 157px;
+    width: 210px;
+    height: 209px;
     background-color: var(--bg-brown);
     z-index: -1;
-  } */
+  }
 `;
 
 //Text
@@ -192,14 +193,20 @@ export const StyledSliderAboutSubtitle = styled.h3`
 `;
 
 export const StyledSwiper = styled(Swiper)`
-  padding-bottom: 45px;
-  span {
+  padding-bottom: 24px;
+  .swiper-pagination-bullet {
+    margin: 0 12px;
     width: 12px;
     height: 12px;
     border: 1px solid #777e90;
     background-color: #f2f1f3;
   }
-  span {
+  .swiper-pagination-bullet-active {
     background-color: var(--bg-primery);
+  }
+  img {
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
   }
 `;
