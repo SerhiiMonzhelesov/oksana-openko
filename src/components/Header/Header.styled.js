@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   width: 100%;
-  padding: 40px 0 16px 0;
+  padding: 16px 0 16px 0;
   background: #685c588f;
   backdrop-filter: blur(21px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
@@ -94,7 +94,8 @@ export const StyledMobileMenu = styled.div`
   display: flex;
   justify-content: center;
   width: 335px;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 667px;
   padding-top: 144px;
   background-color: var(--bg-brown);
   position: absolute;
@@ -114,6 +115,7 @@ export const StyledMobileMenu = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 391px;
+    min-height: 944px;
     padding-top: 0;
   }
 

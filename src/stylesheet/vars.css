@@ -1,12 +1,11 @@
 :root {
-
   /* colors */
   --main-text: #575150;
-  --primery-text:#7B6BDA;
-  --secondary-text:#F2F1F3;
+  --primery-text: #7b6bda;
+  --secondary-text: #f2f1f3;
 
   /* backgrounds color */
-  --bg-main: #F2F1F3;
-  --bg-brown: #887B79;
-  --bg-primery: #7B6BDA;
+  --bg-main: #f2f1f3;
+  --bg-brown: #887b79;
+  --bg-primery: #7b6bda;
 }
