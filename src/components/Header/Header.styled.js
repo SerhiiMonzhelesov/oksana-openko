@@ -94,8 +94,7 @@ export const StyledMobileMenu = styled.div`
   display: flex;
   justify-content: center;
   width: 335px;
-  /* height: 100vh; */
-  min-height: 667px;
+  height: 100vh;
   padding-top: 144px;
   background-color: var(--bg-brown);
   position: absolute;
@@ -115,7 +114,6 @@ export const StyledMobileMenu = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 391px;
-    min-height: 944px;
     padding-top: 0;
   }
 

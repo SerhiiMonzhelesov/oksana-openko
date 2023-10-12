@@ -48,7 +48,7 @@ export default function Header() {
       const scrollId = document.querySelector(`#${scrollToBlock}`);
 
       if (scrollId) {
-        const scrollTop = scrollId.offsetTop;
+        const scrollTop = scrollId.offsetTop - 80;
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       }
       if (window.innerWidth <= 1439) {
@@ -65,7 +65,7 @@ export default function Header() {
       const scrollId = document.querySelector(`#${targetScroll}`);
 
       if (scrollId) {
-        const scrollTop = scrollId.offsetTop;
+        const scrollTop = scrollId.offsetTop - 80;
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
         if (window.innerWidth <= 1439) {
           closeMenu();

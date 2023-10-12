@@ -117,8 +117,6 @@ export default function LeaveRequestSection() {
     setIsModalVisible(false);
   };
 
-  console.log(isModalVisible);
-
   return (
     <section id="contacts">
       <StyledSectionInner>
@@ -206,8 +204,8 @@ export default function LeaveRequestSection() {
                 <StyledTextarea
                   type="text"
                   name="comment"
+                  maxLength="200"
                   placeholder="Ваше питання"
-                  rows={4}
                   value={formData.comment}
                   onChange={handleCommentChange}
                 />

@@ -49,6 +49,7 @@ export const StyledButtonRequest = styled.button`
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 344px;
   margin: 0 auto;
   padding: 15px 0;
   font-family: 'ProximaNova-600', sans-serif;
@@ -77,6 +78,7 @@ export const StyledButtonRequest = styled.button`
 
 export const StyledForm = styled.form`
   width: 100%;
+  max-width: 344px;
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
@@ -126,9 +128,11 @@ export const StyledInput = styled.input`
 
 export const StyledTextarea = styled.textarea`
   display: block;
+  height: 49px;
   width: 100%;
+  max-width: 344px;
   margin-bottom: 32px;
-  padding: 14px 12px;
+  padding: 15px 12px 13px 12px;
   font-family: 'ProximaNova-400', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -148,6 +152,10 @@ export const StyledTextarea = styled.textarea`
     font-weight: 500;
     line-height: 16px;
     color: #979899;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 416px;
   }
 
   /* Для веб-кит браузеров (Chrome, Safari) */
