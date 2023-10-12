@@ -3,9 +3,11 @@ import imgTopJPEG from '../../assets/images/about-top.jpg';
 import imgTopWEBP from '../../assets/images/about-top.webp';
 import imgBottomJPEG from '../../assets/images/about-bottom.jpg';
 import imgBottomWEBP from '../../assets/images/about-bottom.webp';
+import { Player } from 'video-react';
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'video-react/dist/video-react.css';
 
 export const StyledAboutMeSection = styled.section`
   padding-top: 112px;
@@ -30,17 +32,15 @@ export const StyledAboutTitle = styled.h2`
 `;
 
 //Video
-export const StyledAboutVideoWrapper = styled.div`
-  display: block;
+export const StyledVideo = styled(Player)`
   position: relative;
   margin-bottom: 40px;
-  margin-left: auto;
-  width: 329px;
-  height: 470px;
+  width: 324px;
+  height: 494px;
   z-index: 10;
   @media screen and (min-width: 1440px) {
-    width: 378px;
-    height: 549px;
+    width: 448px;
+    height: 844px;
   }
   &::after {
     content: ' ';
@@ -59,14 +59,25 @@ export const StyledAboutVideoWrapper = styled.div`
       height: 549px;
     }
   }
-`;
 
-export const StyledVideo = styled.video`
-  width: 324px;
-  height: 494px;
-  @media screen and (min-width: 1440px) {
-    width: 448px;
-    height: 844px;
+  &&.video-react.video-react-fluid,
+  &&.video-react.video-react-16-9,
+  &&.video-react.video-react-4-3 &&.video-react &&.video-react-video {
+    margin-left: auto;
+    padding-top: 0;
+    width: 324px;
+    height: 494px;
+    background-color: transparent;
+    @media screen and (min-width: 1440px) {
+      width: 448px;
+      height: 844px;
+    }
+  }
+  &&.video-react .video-react-big-play-button {
+    left: 81px;
+    bottom: 133px;
+    border: none;
+    background-color: transparent;
   }
 `;
 

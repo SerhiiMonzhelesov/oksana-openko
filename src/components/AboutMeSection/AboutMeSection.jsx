@@ -11,7 +11,7 @@ import AboutText from './AboutText';
 import SliderDiploms from './SliderDiploms';
 
 import React from 'react';
-// import about from '../../assets/video/aboutMe.MOV';
+import about from '../../assets/video/about_me.mp4';
 
 export default function AboutMeSection() {
   return (
@@ -23,7 +23,7 @@ export default function AboutMeSection() {
             height="494"
             type="video/mp4"
             playsInline
-            // src={about}
+            src={about}
           />
 
           <StyledAboutTitle>Про мене</StyledAboutTitle>
