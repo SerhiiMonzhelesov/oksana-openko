@@ -25,6 +25,6 @@ export const StyledLeftWrapperContent = styled.div`
         : props.$name.cards || props.$name.speaker
         ? '448px'
         : '593px'};
-    margin-bottom: 0;
+    margin-bottom: ${props => (props.$name.education ? '137px' : '0')};
   }
 `;
