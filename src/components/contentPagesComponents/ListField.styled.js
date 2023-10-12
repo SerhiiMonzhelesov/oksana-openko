@@ -4,6 +4,7 @@ export const StyledListField = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 124px;
 
   p.title-list {
     /* display: ${props => (props.$name.psychotherapy ? 'none' : 'block')};
@@ -57,6 +58,8 @@ export const StyledListField = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    margin-bottom: ${props => (props.$name.education ? '88px' : '0')};
+
     ul {
       max-width: ${props =>
         props.$name.education
@@ -66,7 +69,10 @@ export const StyledListField = styled.div`
           : '342px'};
     }
   }
+
   @media screen and (min-width: 1440px) {
+    margin-bottom: 0;
+
     ul {
       max-width: ${props =>
         props.$name.education

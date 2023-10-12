@@ -11,7 +11,7 @@ export const StyledRigthWrapperContent = styled.div`
       : '0'};
 
   @media screen and (min-width: 1440px) {
-    ${props =>
+    margin-bottom: ${props =>
       props.$name.psychotherapy || props.$name.speaker ? '152px' : '136px'};
   }
 `;
