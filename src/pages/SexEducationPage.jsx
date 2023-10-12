@@ -6,10 +6,15 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
+import ListField from 'components/contentPagesComponents/ListField';
 
 export default function SexEducationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isTablet = useMediaQuery({
+    minWidth: 768,
+    maxWidth: 1439,
+  });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const namePage = 'Статеве виховання';
   return (
     <>
@@ -21,6 +26,7 @@ export default function SexEducationPage() {
                 <BreadCrumbs namePage={namePage} />
                 <TitlePages namePage={namePage} />
                 <MediaThumb />
+                <ListField />
               </>
             )}
 
@@ -29,6 +35,19 @@ export default function SexEducationPage() {
                 <LeftWrapperContent>
                   <BreadCrumbs namePage={namePage} />
                   <TitlePages namePage={namePage} />
+                </LeftWrapperContent>
+                <RigthWrapperContent>
+                  <MediaThumb />
+                </RigthWrapperContent>
+                <ListField />
+              </>
+            )}
+            {isDesktop && (
+              <>
+                <LeftWrapperContent>
+                  <BreadCrumbs namePage={namePage} />
+                  <TitlePages namePage={namePage} />
+                  <ListField />
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />

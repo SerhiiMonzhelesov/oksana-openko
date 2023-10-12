@@ -21,5 +21,3 @@ export default function DescriptionAccentPage() {
     </>
   );
 }
-
-// Fixed style for Cards Page !!
