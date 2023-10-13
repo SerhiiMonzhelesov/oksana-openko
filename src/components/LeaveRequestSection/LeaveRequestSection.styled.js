@@ -157,7 +157,6 @@ export const StyledTextarea = styled.textarea`
   @media screen and (min-width: 768px) {
     max-width: 416px;
   }
-
   /* Для веб-кит браузеров (Chrome, Safari) */
   &::-webkit-scrollbar {
     width: 5px; /* Ширина полосы прокрутки */
