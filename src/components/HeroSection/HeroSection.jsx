@@ -16,7 +16,8 @@ export default function HeroSection() {
   const scrollToContacts = () => {
     const contactsSection = document.getElementById('contacts');
     if (contactsSection) {
-      contactsSection.scrollIntoView({ behavior: 'smooth' });
+      const scrollTop = contactsSection.offsetTop - 80;
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     }
   };
 
