@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
+import { Link } from 'react-router-dom';
+import LinkBonus from 'components/LinkBonus/LinkBonus';
 
 export default function SexEducationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -28,6 +30,7 @@ export default function SexEducationPage() {
                 <TitlePages namePage={namePage} />
                 <MediaThumb />
                 <TextField />
+                <LinkBonus />
                 <ListField />
               </>
             )}
@@ -38,6 +41,7 @@ export default function SexEducationPage() {
                   <BreadCrumbs namePage={namePage} />
                   <TitlePages namePage={namePage} />
                   <TextField />
+                  <LinkBonus />
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />
@@ -51,6 +55,7 @@ export default function SexEducationPage() {
                   <BreadCrumbs namePage={namePage} />
                   <TitlePages namePage={namePage} />
                   <TextField />
+                  <LinkBonus />
                   <ListField />
                 </LeftWrapperContent>
                 <RigthWrapperContent>
