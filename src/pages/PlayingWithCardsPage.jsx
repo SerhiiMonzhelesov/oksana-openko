@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import TextField from 'components/contentPagesComponents/TextField';
+import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 
 export default function PlayingWithCardsPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -40,6 +41,7 @@ export default function PlayingWithCardsPage() {
               </RigthWrapperContent>
             </>
           )}
+          <ButtonApplication />
         </MainWrapperContent>
       </Container>
     </section>

@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
+import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 
 export default function SelfSatisfactionWorkPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -40,6 +41,7 @@ export default function SelfSatisfactionWorkPage() {
               </RigthWrapperContent>
             </>
           )}
+          <ButtonApplication />
         </MainWrapperContent>
       </Container>
     </section>

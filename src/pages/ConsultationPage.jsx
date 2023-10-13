@@ -8,6 +8,7 @@ import LeftWrapperContent from 'components/ContentPageWrappers/LeftWrapperConten
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
+import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 
 export default function ConsultationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -41,6 +42,7 @@ export default function ConsultationPage() {
                 </RigthWrapperContent>
               </>
             )}
+            <ButtonApplication />
           </MainWrapperContent>
         </Container>
       </section>
