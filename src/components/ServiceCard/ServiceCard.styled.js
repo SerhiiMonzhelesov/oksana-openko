@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 export const StyledServiceCard = styled.li`
@@ -60,7 +61,7 @@ export const StyledServiceCard = styled.li`
   }
 `;
 
-export const StyledLinkCard = styled(Link)`
+export const StyledLinkCard = styled(HashLink)`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

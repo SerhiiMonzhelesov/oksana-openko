@@ -10,6 +10,7 @@ import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
 import { Link } from 'react-router-dom';
 import LinkBonus from 'components/LinkBonus/LinkBonus';
+import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 
 export default function SexEducationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -63,6 +64,7 @@ export default function SexEducationPage() {
                 </RigthWrapperContent>
               </>
             )}
+            <ButtonApplication />
           </MainWrapperContent>
         </Container>
       </section>

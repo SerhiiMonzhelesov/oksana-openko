@@ -7,6 +7,7 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import TextField from 'components/contentPagesComponents/TextField';
+import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 
 export default function InvitedSpeakerPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -36,6 +37,7 @@ export default function InvitedSpeakerPage() {
               </RigthWrapperContent>
             </>
           )}
+          <ButtonApplication />
         </MainWrapperContent>
       </Container>
     </section>
