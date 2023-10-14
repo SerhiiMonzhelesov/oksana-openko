@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
+import PriceField from 'components/PriceField/PriceField';
 
 export default function InvitedSpeakerPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -23,6 +24,7 @@ export default function InvitedSpeakerPage() {
               <TitlePages namePage={namePage} />
               <MediaThumb />
               <TextField />
+              <PriceField />
             </>
           )}
           {isTablet && (
@@ -34,6 +36,7 @@ export default function InvitedSpeakerPage() {
               </LeftWrapperContent>
               <RigthWrapperContent>
                 <MediaThumb />
+                <PriceField />
               </RigthWrapperContent>
             </>
           )}

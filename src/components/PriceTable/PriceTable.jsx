@@ -6,7 +6,9 @@ export default function PriceTable({ name }) {
       <thead>
         <tr className="first-row">
           <td className="first-cell"></td>
-          <td className="second-cell">Індивідуальна</td>
+          <td className="second-cell">
+            {name.speaker ? 'За домовленістю' : 'Індивідуальна'}
+          </td>
           <td className="third-cell">Для пари</td>
         </tr>
       </thead>

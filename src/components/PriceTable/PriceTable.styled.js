@@ -11,16 +11,20 @@ export const StyledTable = styled.table`
   }
 
   thead > tr > :first-child {
-    border-right: ${props => (props.name.cards ? '1px solid #f2f1f3' : 'none')};
+    border-right: ${props =>
+      props.name.cards || props.name.speaker ? '1px solid #f2f1f3' : 'none'};
+    width: ${props => props.name.speaker && '56px'};
   }
 
   tbody {
     font-size: 16px;
     line-height: 1.5;
+    display: ${props => props.name.speaker && 'none'};
   }
 
   .first-row > td {
-    padding-bottom: ${props => (props.name.cards ? '29px' : '26px')};
+    padding-bottom: ${props =>
+      props.name.cards ? '29px' : props.name.speaker ? '0' : '26px'};
   }
 
   .second-row > td {
@@ -36,21 +40,29 @@ export const StyledTable = styled.table`
   }
 
   td {
-    /* border: 1px solid black; */
     text-align: center;
   }
 
   .second-cell {
     display: ${props => props.name.cards && 'none'};
+    height: ${props => props.name.speaker && '56px'};
+    display: ${props => props.name.speaker && 'flex'};
+    align-items: ${props => props.name.speaker && 'center'};
+    padding-left: ${props => props.name.speaker && '32px'};
   }
 
   .third-cell {
-    display: ${props => props.name.psychotherapy && 'none'};
+    display: ${props =>
+      (props.name.psychotherapy || props.name.speaker) && 'none'};
     padding-left: 12px;
     padding-right: ${props => (props.name.cards ? '58px' : '12px')};
   }
 
   @media screen and (min-width: 1440px) {
+    thead > tr > :first-child {
+      width: ${props => props.name.speaker && '112px'};
+    }
+
     .first-row > td {
       padding-bottom: ${props => props.name.education && '22px'};
     }
