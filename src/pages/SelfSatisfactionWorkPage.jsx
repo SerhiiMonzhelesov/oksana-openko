@@ -9,6 +9,7 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
+import PriceField from 'components/PriceField/PriceField';
 
 export default function SelfSatisfactionWorkPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -25,6 +26,7 @@ export default function SelfSatisfactionWorkPage() {
               <MediaThumb />
               <TextField />
               <ListField />
+              <PriceField />
             </>
           )}
 
@@ -38,6 +40,7 @@ export default function SelfSatisfactionWorkPage() {
               </LeftWrapperContent>
               <RigthWrapperContent>
                 <MediaThumb />
+                <PriceField />
               </RigthWrapperContent>
             </>
           )}
