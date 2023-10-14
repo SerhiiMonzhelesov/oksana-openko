@@ -28,6 +28,7 @@ const SliderDiploms = () => {
       spaceBetween: 24,
     },
   };
+
   return (
     <>
       <StyledSliderAboutSubtitle>
@@ -40,6 +41,7 @@ const SliderDiploms = () => {
         zoom={true}
         centeredSlides={true}
         keyboard={{ enabled: true }}
+        loop={true}
       >
         {aboutSlider.map((img, index) => (
           <SwiperSlide key={index}>

@@ -95,62 +95,49 @@ export const StyledAboutImgList = styled.ul`
   @media screen and (min-width: 1440px) {
   }
 `;
-export const StyledImgBottom = styled.div`
-  display: block;
+
+export const StyledWrapperImg = styled.div`
   position: relative;
-  z-index: 100;
+  z-index: 1;
+  width: 186px;
+  height: 233px;
+  /* overflow: hidden; */
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: -11px;
+    right: 13px;
+    width: 210px;
+    height: 209px;
+    background-color: var(--bg-brown);
+    z-index: -1;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 170px;
+    height: 213px;
+  }
+`;
+
+export const StyledWrapperImgBottom = styled(StyledWrapperImg)`
   width: 142px;
   height: 152px;
-  background-image: url(${imgBottomJPEG});
-  background-image: -webkit-image-set(url(${imgBottomWEBP}) 1x);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   @media screen and (min-width: 1440px) {
     width: 178px;
     height: 190px;
   }
 
   &::after {
-    content: ' ';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+    top: -32px;
+    left: 13px;
     width: 153px;
     height: 157px;
-
-    background-color: #887b79;
-    z-index: -1;
-  }
-`;
-export const StyledImgTop = styled.div`
-  display: block;
-  /* position: relative;
-  z-index: 10; */
-  width: 183px;
-  height: 233px;
-  background-image: url(${imgTopJPEG});
-  background-image: -webkit-image-set(url(${imgTopWEBP}) 1x);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  @media screen and (min-width: 1440px) {
-    width: 170px;
-    height: 213px;
-  }
-
-  &::after {
-    content: ' ';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 210px;
-    height: 209px;
-    background-color: var(--bg-brown);
-    z-index: -1;
   }
 `;
 
@@ -205,6 +192,9 @@ export const StyledSliderAboutSubtitle = styled.h3`
 
 export const StyledSwiper = styled(Swiper)`
   padding-bottom: 24px;
+  .swiper-wrapper {
+    padding-bottom: 24px;
+  }
   .swiper-pagination-bullet {
     margin: 0 12px;
     width: 12px;
