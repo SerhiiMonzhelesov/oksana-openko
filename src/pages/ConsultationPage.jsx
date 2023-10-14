@@ -1,4 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
+import { useLocation } from 'react-router-dom';
+
 import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs';
 import Container from 'components/Container/Container';
 import MainWrapperContent from 'components/ContentPageWrappers/MainWrapperContent';
@@ -10,38 +12,42 @@ import DescriptionAccentPage from 'components/contentPagesComponents/Description
 import ListField from 'components/contentPagesComponents/ListField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import { confirmNamePage } from 'helpers/confirmNamePage';
 
 export default function ConsultationPage() {
+  const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
-  const namePage = 'Консультація';
+  const namePage = confirmNamePage(location.pathname);
+  const titlePage = 'Консультація';
+
   return (
     <>
       <section>
         <Container>
-          <MainWrapperContent>
+          <MainWrapperContent name={namePage}>
             {isMobile && (
               <>
-                <BreadCrumbs namePage={namePage} />
-                <TitlePages namePage={namePage} />
-                <MediaThumb />
-                <DescriptionAccentPage />
-                <ListField />
-                <PriceField />
+                <BreadCrumbs titlePage={titlePage} name={namePage} />
+                <TitlePages titlePage={titlePage} name={namePage} />
+                <MediaThumb name={namePage} />
+                <DescriptionAccentPage name={namePage} />
+                <ListField name={namePage} />
+                <PriceField name={namePage} />
               </>
             )}
             {isTablet && (
               <>
-                <LeftWrapperContent>
-                  <BreadCrumbs namePage={namePage} />
-                  <TitlePages namePage={namePage} />
-                  <DescriptionAccentPage />
-                  <ListField />
+                <LeftWrapperContent name={namePage}>
+                  <BreadCrumbs titlePage={titlePage} name={namePage} />
+                  <TitlePages titlePage={titlePage} name={namePage} />
+                  <DescriptionAccentPage name={namePage} />
+                  <ListField name={namePage} />
                 </LeftWrapperContent>
-                <RigthWrapperContent>
-                  <MediaThumb />
-                  <PriceField />
+                <RigthWrapperContent name={namePage}>
+                  <MediaThumb name={namePage} />
+                  <PriceField name={namePage} />
                 </RigthWrapperContent>
               </>
             )}
