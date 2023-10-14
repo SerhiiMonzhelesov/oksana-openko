@@ -24,6 +24,7 @@ export const StyledAboutMeSection = styled.section`
 
 export const StyledAboutTitle = styled.h2`
   margin-bottom: 32px;
+  grid-area: title;
   font-family: 'IBMPlexSans-200';
   font-weight: 200;
   font-size: 32px;
@@ -32,15 +33,22 @@ export const StyledAboutTitle = styled.h2`
 `;
 
 //Video
-export const StyledVideo = styled(Player)`
+
+export const StyledWrapperVideo = styled.div`
   position: relative;
-  margin-bottom: 40px;
+  grid-area: video;
+  margin: 0 auto;
   width: 324px;
   height: 494px;
+
   z-index: 10;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    margin-top: 58px;
+  }
   @media screen and (min-width: 1440px) {
-    width: 448px;
-    height: 844px;
+    width: 378px;
+    height: 549px;
   }
   &::after {
     content: ' ';
@@ -50,8 +58,9 @@ export const StyledVideo = styled(Player)`
     right: 13px;
     width: 329px;
     height: 470px;
-    border: 1px solid var(--primery-text);
+    border: 1px solid var(--bg-primery);
     z-index: -1;
+
     @media screen and (min-width: 1440px) {
       bottom: 61px;
       right: 102px;
@@ -59,38 +68,56 @@ export const StyledVideo = styled(Player)`
       height: 549px;
     }
   }
+  //Video
+  video {
+    display: block;
+    margin: 0 auto;
 
-  &&.video-react.video-react-fluid,
-  &&.video-react.video-react-16-9,
-  &&.video-react.video-react-4-3 &&.video-react &&.video-react-video {
-    margin-left: auto;
-    padding-top: 0;
-    width: 324px;
+    object-fit: cover;
+    width: 100%;
     height: 494px;
-    background-color: transparent;
+    z-index: 0;
     @media screen and (min-width: 1440px) {
       width: 448px;
       height: 844px;
     }
   }
-  &&.video-react .video-react-big-play-button {
-    left: 81px;
-    bottom: 133px;
-    border: none;
-    background-color: transparent;
-  }
 `;
 
 //Image
 export const StyledAboutImgList = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 56px;
+  display: grid;
+  grid-area: images;
+  grid-template-areas: 'second first';
+  margin-bottom: 84px;
+  li:nth-child(1) {
+    order: 2;
+    grid-area: first;
+    @media screen and (min-width: 768px) {
+      padding-left: 10px;
+    }
+  }
+  li:nth-child(2) {
+    display: flex;
+    order: 1;
+    transform: translateY(28px);
+    align-items: end;
+    grid-area: second;
+    z-index: 10;
+
+    @media screen and (min-width: 768px) {
+      grid-column-start: 2;
+      align-items: start;
+      transform: translate(-20px, 32px);
+    }
+  }
 
   @media screen and (min-width: 768px) {
-    justify-content: center;
+    row-gap: 60px;
+    grid-template-areas:
+      'first '
+      'second ';
+    margin-bottom: 0;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -101,7 +128,7 @@ export const StyledWrapperImg = styled.div`
   z-index: 1;
   width: 186px;
   height: 233px;
-  /* overflow: hidden; */
+
   img {
     width: 100%;
     object-fit: cover;
@@ -145,6 +172,7 @@ export const StyledWrapperImgBottom = styled(StyledWrapperImg)`
 export const StyledAboutList = styled.ul`
   display: grid;
   grid-gap: 24px;
+  grid-area: text;
 `;
 export const StyledWrapperIntro = styled.div`
   display: grid;
