@@ -9,6 +9,7 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
+import PriceField from 'components/PriceField/PriceField';
 
 export default function PlayingWithCardsPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -25,6 +26,7 @@ export default function PlayingWithCardsPage() {
               <MediaThumb />
               <DescriptionAccentPage />
               <TextField />
+              <PriceField />
             </>
           )}
 
@@ -38,6 +40,7 @@ export default function PlayingWithCardsPage() {
               </LeftWrapperContent>
               <RigthWrapperContent>
                 <MediaThumb />
+                <PriceField />
               </RigthWrapperContent>
             </>
           )}

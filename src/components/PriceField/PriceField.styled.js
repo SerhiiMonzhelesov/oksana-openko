@@ -21,7 +21,7 @@ export const StyledPriceField = styled.div`
     padding: 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: ${props => (props.name.satisfaction ? 'normal' : 'center')};
 
     color: var(--secondary-text);
     background: var(--bg-primery);
@@ -29,20 +29,22 @@ export const StyledPriceField = styled.div`
   }
 
   p.first-additional-text {
-    font-family: 'ProximaNova-700';
-    font-weight: 700;
-    font-size: 24px;
+    font-family: ${props =>
+      props.name.satisfaction ? 'ProximaNova-600' : 'ProximaNova-700'};
+    font-weight: ${props => (props.name.satisfaction ? '600' : '700')};
+    font-size: ${props => (props.name.satisfaction ? '18px' : '24px')};
     margin-bottom: 16px;
-    line-height: 1;
+    line-height: ${props => (props.name.satisfaction ? '1.11' : '1')};
   }
 
   p.second-additional-text {
-    font-family: 'ProximaNova-600';
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1;
+    font-family: ${props =>
+      props.name.satisfaction ? 'ProximaNova-500' : 'ProximaNova-600'};
+    font-weight: ${props => (props.name.satisfaction ? '500' : '600')};
+    font-size: ${props => (props.name.satisfaction ? '18px' : '24px')};
+    line-height: ${props => (props.name.satisfaction ? '1.11' : '1')};
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: ${props => props.name.education && '40px'};
   }
 
   svg {

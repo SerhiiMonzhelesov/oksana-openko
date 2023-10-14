@@ -13,24 +13,32 @@ export default function PriceField() {
     <>
       <StyledPriceField name={namePage}>
         <h2>Вартість:</h2>
-        {namePage.consultation && (
-          <div className="accent-block-wrapp">
-            <PriceTable name={namePage} />
-          </div>
-        )}
-        {namePage.education && (
-          <div className="accent-block-wrapp">
-            <p className="first-additional-text">Запис вебінару</p>
-            <p className="second-additional-text">
-              399 грн. +{' '}
-              <svg width="24px" height="24px">
-                <use href={sprite + '#gift'}></use>
-              </svg>{' '}
-              бонус
-            </p>
-            <PriceTable name={namePage} />
-          </div>
-        )}
+        <div className="accent-block-wrapp">
+          {(namePage.education || namePage.satisfaction) && (
+            <>
+              <p className="first-additional-text">
+                {namePage.satisfaction
+                  ? 'Наразі триває передзапис на практикум.'
+                  : 'Запис вебінару'}
+              </p>
+              {namePage.satisfaction ? (
+                <p className="second-additional-text">
+                  Залишивши заявку, ви першими дізнаєтесь про дату проведення та
+                  всі умови участі.
+                </p>
+              ) : (
+                <p className="second-additional-text">
+                  399 грн. +
+                  <svg width="24px" height="24px">
+                    <use href={sprite + '#gift'}></use>
+                  </svg>
+                  бонус
+                </p>
+              )}
+            </>
+          )}
+          {!namePage.satisfaction && <PriceTable name={namePage} />}
+        </div>
       </StyledPriceField>
     </>
   );
