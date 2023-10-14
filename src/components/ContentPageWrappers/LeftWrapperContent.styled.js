@@ -21,7 +21,7 @@ export const StyledLeftWrapperContent = styled.div`
         : props.$name.psychotherapy
         ? '544px'
         : props.$name.education
-        ? '545px'
+        ? '547px'
         : props.$name.cards || props.$name.speaker
         ? '448px'
         : '593px'};

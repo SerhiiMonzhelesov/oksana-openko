@@ -37,5 +37,8 @@
 <symbol id="marker" viewBox="0 0 32 32">
 <path fill="#7b6bda" style="fill: var(--color1, #7b6bda)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
 </symbol>
+<symbol id="gift" viewBox="0 0 32 32">
+<path fill="none" stroke="#f2f1f3" style="stroke: var(--color1, #f2f1f3)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M26.667 16v13.333h-21.333v-13.333M16 29.333v-20M16 9.333h-6c-0.884 0-1.732-0.351-2.357-0.976s-0.976-1.473-0.976-2.357c0-0.884 0.351-1.732 0.976-2.357s1.473-0.976 2.357-0.976c4.667 0 6 6.667 6 6.667zM16 9.333h6c0.884 0 1.732-0.351 2.357-0.976s0.976-1.473 0.976-2.357-0.351-1.732-0.976-2.357c-0.625-0.625-1.473-0.976-2.357-0.976-4.667 0-6 6.667-6 6.667zM2.667 9.333h26.667v6.667h-26.667v-6.667z"></path>
+</symbol>
 </defs>
 </svg>

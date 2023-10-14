@@ -9,6 +9,7 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
+import PriceField from 'components/PriceField/PriceField';
 
 export default function ConsultationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -27,6 +28,7 @@ export default function ConsultationPage() {
                 <MediaThumb />
                 <DescriptionAccentPage />
                 <ListField />
+                <PriceField />
               </>
             )}
             {isTablet && (
@@ -39,6 +41,7 @@ export default function ConsultationPage() {
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />
+                  <PriceField />
                 </RigthWrapperContent>
               </>
             )}

@@ -8,9 +8,9 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
-import { Link } from 'react-router-dom';
 import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
+import PriceField from 'components/PriceField/PriceField';
 
 export default function SexEducationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -33,6 +33,7 @@ export default function SexEducationPage() {
                 <TextField />
                 <LinkBonus />
                 <ListField />
+                <PriceField />
               </>
             )}
 
@@ -46,6 +47,7 @@ export default function SexEducationPage() {
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />
+                  <PriceField />
                 </RigthWrapperContent>
                 <ListField />
               </>
@@ -61,6 +63,7 @@ export default function SexEducationPage() {
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />
+                  <PriceField />
                 </RigthWrapperContent>
               </>
             )}
