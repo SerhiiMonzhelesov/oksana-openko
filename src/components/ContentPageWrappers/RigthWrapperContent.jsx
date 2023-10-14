@@ -1,12 +1,8 @@
-import { confirmNamePage } from 'helpers/confirmNamePage';
-import { useLocation } from 'react-router-dom';
 import { StyledRigthWrapperContent } from './RigthWrapperContent.styled';
 
-export default function RigthWrapperContent({ children }) {
-  const location = useLocation();
-
+export default function RigthWrapperContent({ children, name }) {
   return (
-    <StyledRigthWrapperContent $name={confirmNamePage(location.pathname)}>
+    <StyledRigthWrapperContent name={name}>
       {children}
     </StyledRigthWrapperContent>
   );

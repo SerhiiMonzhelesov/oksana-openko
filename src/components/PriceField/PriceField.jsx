@@ -1,27 +1,21 @@
+import sprite from '../../assets/images/icons.svg';
 import PriceTable from 'components/PriceTable/PriceTable';
 import { StyledPriceField } from './PriceField.styled';
-import { confirmNamePage } from 'helpers/confirmNamePage';
-import { useLocation } from 'react-router-dom';
-import sprite from '../../assets/images/icons.svg';
 
-export default function PriceField() {
-  const location = useLocation();
-
-  const namePage = confirmNamePage(location.pathname);
-
+export default function PriceField({ name }) {
   return (
     <>
-      <StyledPriceField name={namePage}>
+      <StyledPriceField name={name}>
         <h2>Вартість:</h2>
         <div className="accent-block-wrapp">
-          {(namePage.education || namePage.satisfaction) && (
+          {(name.education || name.satisfaction) && (
             <>
               <p className="first-additional-text">
-                {namePage.satisfaction
+                {name.satisfaction
                   ? 'Наразі триває передзапис на практикум.'
                   : 'Запис вебінару'}
               </p>
-              {namePage.satisfaction ? (
+              {name.satisfaction ? (
                 <p className="second-additional-text">
                   Залишивши заявку, ви першими дізнаєтесь про дату проведення та
                   всі умови участі.
@@ -37,7 +31,7 @@ export default function PriceField() {
               )}
             </>
           )}
-          {!namePage.satisfaction && <PriceTable name={namePage} />}
+          {!name.satisfaction && <PriceTable name={name} />}
         </div>
       </StyledPriceField>
     </>

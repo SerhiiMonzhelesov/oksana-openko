@@ -1,11 +1,9 @@
-import { useLocation } from 'react-router-dom';
-import images from '../../data/pagesMedia';
-import { StyledMediaThumb } from './MediaThumb.styled.js';
-import { confirmNamePage } from 'helpers/confirmNamePage';
 import { useMediaQuery } from 'react-responsive';
 
-export default function MediaThumb() {
-  const location = useLocation();
+import images from '../../data/pagesMedia';
+import { StyledMediaThumb } from './MediaThumb.styled.js';
+
+export default function MediaThumb({ name }) {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({
     minWidth: 768,
@@ -13,14 +11,12 @@ export default function MediaThumb() {
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const pathPage = location.pathname;
-
-  const imagesPage = images.find(item => pathPage.includes(item.path_page));
+  const imagesPage = images.find(item => name[item.path_page] === true);
 
   return (
     <>
       {isMobile && (
-        <StyledMediaThumb $name={confirmNamePage(location.pathname)}>
+        <StyledMediaThumb name={name}>
           <img
             src={imagesPage.img_mobile}
             alt={imagesPage.alt_img}
@@ -29,7 +25,7 @@ export default function MediaThumb() {
         </StyledMediaThumb>
       )}
       {isTablet && (
-        <StyledMediaThumb $name={confirmNamePage(location.pathname)}>
+        <StyledMediaThumb name={name}>
           <img
             src={imagesPage.img_tablet}
             alt={imagesPage.alt_img}
@@ -38,7 +34,7 @@ export default function MediaThumb() {
         </StyledMediaThumb>
       )}
       {isDesktop && (
-        <StyledMediaThumb $name={confirmNamePage(location.pathname)}>
+        <StyledMediaThumb name={name}>
           <img
             src={imagesPage.img_desktop}
             alt={imagesPage.alt_img}

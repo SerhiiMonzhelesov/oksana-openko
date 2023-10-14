@@ -1,20 +1,15 @@
-import { confirmNamePage } from 'helpers/confirmNamePage';
-import { useLocation } from 'react-router';
 import { StyledTextField } from './TextField.styled';
 import textContent from '../../data/pagesTextContent';
 
-export default function TextField() {
-  const location = useLocation();
-  const pathPage = location.pathname;
-
-  const { path_page, text_block1, text_block2 } = textContent.find(item =>
-    pathPage.includes(item.path_page)
+export default function TextField({ name }) {
+  const { path_page, text_block1, text_block2 } = textContent.find(
+    item => name[item.path_page] === true
   );
 
   const sentences = text_block1.split('. ');
 
   return (
-    <StyledTextField $name={confirmNamePage(location.pathname)}>
+    <StyledTextField name={name}>
       {path_page === 'education' ? (
         <p className="first-text">
           {sentences[0]}.<br />

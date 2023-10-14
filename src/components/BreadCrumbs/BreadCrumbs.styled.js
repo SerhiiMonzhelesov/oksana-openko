@@ -5,7 +5,7 @@ export const StyledBreadCrumbs = styled.div`
   align-items: center;
   gap: 8px;
 
-  margin-bottom: ${props => (props.$name.consultation ? '24px' : '40px')};
+  margin-bottom: ${props => (props.name.consultation ? '24px' : '40px')};
 
   font-family: 'Manrope-400';
   font-size: 14px;
