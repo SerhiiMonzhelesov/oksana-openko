@@ -6,6 +6,8 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import LeftWrapperContent from 'components/ContentPageWrappers/LeftWrapperContent';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
+import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
+import ListField from 'components/contentPagesComponents/ListField';
 
 export default function ConsultationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -22,14 +24,17 @@ export default function ConsultationPage() {
                 <BreadCrumbs namePage={namePage} />
                 <TitlePages namePage={namePage} />
                 <MediaThumb />
+                <DescriptionAccentPage />
+                <ListField />
               </>
             )}
-
             {isTablet && (
               <>
                 <LeftWrapperContent>
                   <BreadCrumbs namePage={namePage} />
                   <TitlePages namePage={namePage} />
+                  <DescriptionAccentPage />
+                  <ListField />
                 </LeftWrapperContent>
                 <RigthWrapperContent>
                   <MediaThumb />

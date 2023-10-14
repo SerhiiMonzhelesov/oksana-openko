@@ -6,6 +6,8 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
+import ListField from 'components/contentPagesComponents/ListField';
+import TextField from 'components/contentPagesComponents/TextField';
 
 export default function SelfSatisfactionWorkPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -20,6 +22,8 @@ export default function SelfSatisfactionWorkPage() {
               <BreadCrumbs namePage={namePage} />
               <TitlePages namePage={namePage} />
               <MediaThumb />
+              <TextField />
+              <ListField />
             </>
           )}
 
@@ -28,6 +32,8 @@ export default function SelfSatisfactionWorkPage() {
               <LeftWrapperContent>
                 <BreadCrumbs namePage={namePage} />
                 <TitlePages namePage={namePage} />
+                <TextField />
+                <ListField />
               </LeftWrapperContent>
               <RigthWrapperContent>
                 <MediaThumb />

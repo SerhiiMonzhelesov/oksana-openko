@@ -6,6 +6,7 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
+import TextField from 'components/contentPagesComponents/TextField';
 
 export default function InvitedSpeakerPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -20,6 +21,7 @@ export default function InvitedSpeakerPage() {
               <BreadCrumbs namePage={namePage} />
               <TitlePages namePage={namePage} />
               <MediaThumb />
+              <TextField />
             </>
           )}
           {isTablet && (
@@ -27,6 +29,7 @@ export default function InvitedSpeakerPage() {
               <LeftWrapperContent>
                 <BreadCrumbs namePage={namePage} />
                 <TitlePages namePage={namePage} />
+                <TextField />
               </LeftWrapperContent>
               <RigthWrapperContent>
                 <MediaThumb />
