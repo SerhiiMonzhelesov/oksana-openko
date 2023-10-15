@@ -1,22 +1,17 @@
-import { useLocation } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-import { confirmNamePage } from 'helpers/confirmNamePage';
-import { StyledListField } from './ListField.styled.js';
+
 import sprite from '../../assets/images/icons.svg';
+import { StyledListField } from './ListField.styled.js';
 import textContent from '../../data/pagesTextContent';
 
-export default function ListField() {
-  const location = useLocation();
-
-  const pathPage = location.pathname;
-
-  const { titleList, dataList } = textContent.find(item =>
-    pathPage.includes(item.path_page)
+export default function ListField({ name }) {
+  const { titleList, dataList } = textContent.find(
+    item => name[item.path_page] === true
   );
 
   return (
     <>
-      <StyledListField $name={confirmNamePage(location.pathname)}>
+      <StyledListField name={name}>
         {titleList === 'create title' ? (
           <p className="title-list">
             Якщо ви відчуваєте себе не впевненими при розмові з дітьми{' '}

@@ -35,7 +35,7 @@ export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 347px;
+  margin-top: 312px;
 
   @media screen and (min-width: 768px) {
     margin-top: 272px;

@@ -48,3 +48,61 @@ button {
 img {
   display: block;
 }
+
+.PhoneInput {
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.PhoneInputCountry {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.PhoneInputCountrySelectArrow {
+  color: var(--bg-primery);
+}
+
+.PhoneInputInput {
+  padding: 14px 12px 14px 63px;
+  font-family: 'ProximaNova-500', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--main-text);
+  background-color: var(--bg-main);
+  border: none;
+  outline: transparent;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.PhoneInputInput:focus {
+  outline: 2px solid var(--bg-primery);
+}
+
+.PhoneInputCountrySelect {
+  height: 59px;
+  width: 55px;
+  left: -13px;
+  top: -10px;
+}
+
+.PhoneInputCountrySelect option {
+  color: var(--primery-text);
+  font-family: 'ProximaNova-500';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* Для веб-кит браузеров (Chrome, Safari) */
+.PhoneInputCountrySelect::-webkit-scrollbar {
+  width: 5px; /* Ширина полосы прокрутки */
+}
+
+.PhoneInputCountrySelect::-webkit-scrollbar-thumb {
+  background-color: var(--bg-brown); /* Цвет ползунка */
+  border-radius: 5px; /* Скругление углов ползунка */
+}

@@ -1,13 +1,7 @@
-import { confirmNamePage } from 'helpers/confirmNamePage';
-import { useLocation } from 'react-router-dom';
-import {  StyledLeftWrapperContent } from './LeftWrapperContent.styled';
+import { StyledLeftWrapperContent } from './LeftWrapperContent.styled';
 
-export default function LeftContentWrapper({ children }) {
-  const location = useLocation();
-
+export default function LeftContentWrapper({ children, name }) {
   return (
-    <StyledLeftWrapperContent $name={confirmNamePage(location.pathname)}>
-      {children}
-    </StyledLeftWrapperContent>
+    <StyledLeftWrapperContent name={name}>{children}</StyledLeftWrapperContent>
   );
 }
