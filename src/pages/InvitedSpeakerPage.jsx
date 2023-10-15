@@ -10,6 +10,8 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import TextField from 'components/contentPagesComponents/TextField';
+import { invitedSpeakerSlider } from 'data/dataInvitedSpeakerFeedback';
+import Slider from 'components/Slider/Slider';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 
@@ -49,6 +51,7 @@ export default function InvitedSpeakerPage() {
           )}
           <ButtonApplication />
         </MainWrapperContent>
+        <Slider title="Відгуки" data={invitedSpeakerSlider} />
       </Container>
     </section>
   );
