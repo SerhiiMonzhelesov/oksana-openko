@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   width: 100%;
-  padding: 40px 0 16px 0;
+  padding: 16px 0 16px 0;
   background: #685c588f;
   backdrop-filter: blur(21px);
   position: fixed;

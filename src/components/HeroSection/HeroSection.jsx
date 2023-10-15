@@ -23,7 +23,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section>
+      <section id="hero">
         <StyledWrapper>
           <StyledInner>
             <Container>
