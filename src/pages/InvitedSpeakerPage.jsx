@@ -33,6 +33,11 @@ export default function InvitedSpeakerPage() {
               <TitlePages titlePage={titlePage} name={namePage} />
               <MediaThumb name={namePage} />
               <TextField name={namePage} />
+              <Slider
+                title="Відгуки"
+                data={invitedSpeakerSlider}
+                name={namePage}
+              />
               <PriceField name={namePage} />
             </>
           )}
@@ -47,11 +52,15 @@ export default function InvitedSpeakerPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
+              <Slider
+                title="Відгуки"
+                data={invitedSpeakerSlider}
+                name={namePage}
+              />
             </>
           )}
           <ButtonApplication />
         </MainWrapperContent>
-        <Slider title="Відгуки" data={invitedSpeakerSlider} />
       </Container>
     </section>
   );

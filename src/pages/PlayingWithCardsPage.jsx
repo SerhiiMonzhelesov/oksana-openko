@@ -36,6 +36,11 @@ export default function PlayingWithCardsPage() {
               <MediaThumb name={namePage} />
               <DescriptionAccentPage name={namePage} />
               <TextField name={namePage} />
+              <Slider
+                title="Відгуки"
+                data={playWithCardSlider}
+                name={namePage}
+              />
               <PriceField name={namePage} />
             </>
           )}
@@ -52,11 +57,15 @@ export default function PlayingWithCardsPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
+              <Slider
+                title="Відгуки"
+                data={playWithCardSlider}
+                name={namePage}
+              />
             </>
           )}
           <ButtonApplication />
         </MainWrapperContent>
-        <Slider title="Відгуки" data={playWithCardSlider} />
       </Container>
     </section>
   );

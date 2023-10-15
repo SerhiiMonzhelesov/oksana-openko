@@ -56,7 +56,7 @@ export default function SelfSatisfactionWorkPage() {
           )}
           <ButtonApplication />
         </MainWrapperContent>
-        <Slider title="Відгуки" data={practiceSlider} />
+        <Slider title="Відгуки" data={practiceSlider} name={namePage} />
       </Container>
     </section>
   );

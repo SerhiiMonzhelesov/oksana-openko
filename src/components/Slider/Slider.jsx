@@ -8,13 +8,11 @@ import {
   Zoom,
 } from 'swiper/modules';
 import { StyledSliderAboutSubtitle, StyledSwiper } from './Slider.styled';
-import { useLocation } from 'react-router-dom';
-import { confirmNamePage } from 'helpers/confirmNamePage';
 
-const Slider = ({ data, title }) => {
-  const location = useLocation();
-  const namePage = confirmNamePage(location.pathname);
-  console.log('fff', namePage);
+const Slider = ({ data, title, name }) => {
+  // const dataFeedback= dataAllFeedback.find(
+  //   item => name[item.path_page] === true
+  // );
 
   const breakpoints = {
     0: {
@@ -42,7 +40,7 @@ const Slider = ({ data, title }) => {
         keyboard={{ enabled: true }}
         // rewind={true}
         loop={true}
-        name={namePage}
+        name={name}
       >
         {data.map((img, index) => (
           <SwiperSlide key={index}>
