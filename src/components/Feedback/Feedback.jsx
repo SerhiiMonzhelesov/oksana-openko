@@ -1,0 +1,34 @@
+import SpriteSvg from '../../assets/images/icons.svg';
+import {
+  StyledButtonClose,
+  StyledFeedback,
+  StyledFeedbackContent,
+  StyledFeedbackHeader,
+  StyledFeedbackText,
+  StyledFeedbackTitle,
+  StyledWrapperFeedback,
+} from './Feedback.styled';
+
+export default function Feedback({ onFeedbackClose }) {
+  return (
+    <StyledWrapperFeedback>
+      <StyledFeedback>
+        <StyledFeedbackHeader>
+          <svg width="88" height="88" viewBox="0 0 88 88">
+            <use href={SpriteSvg + '#done'} />
+          </svg>
+        </StyledFeedbackHeader>
+        <StyledFeedbackContent>
+          <StyledFeedbackTitle>Дякуємо!</StyledFeedbackTitle>
+          <StyledFeedbackText>Ваша заявка прийнята.</StyledFeedbackText>
+          <p>Очікуйте відповідь.</p>
+        </StyledFeedbackContent>
+        <StyledButtonClose onClick={onFeedbackClose}>
+          <svg width="40" height="40" viewBox="0 0 40 40">
+            <use href={SpriteSvg + '#close-r'} />
+          </svg>
+        </StyledButtonClose>
+      </StyledFeedback>
+    </StyledWrapperFeedback>
+  );
+}

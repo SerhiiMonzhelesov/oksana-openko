@@ -15,10 +15,12 @@ import {
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import { dataFormat, dataServices } from 'data/data-request';
+import ButtonToTop from '../ButtonToTop/ButtonToTop';
+import Feedback from 'components/Feedback/Feedback';
 
 export default function LeaveRequestSection() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -68,6 +70,16 @@ export default function LeaveRequestSection() {
     });
   };
 
+  const handleFormReset = () => {
+    setFormData({
+      name: '',
+      phone: '',
+      services: null,
+      format: null,
+      comment: '',
+    });
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -89,10 +101,11 @@ export default function LeaveRequestSection() {
 
     setErrors(newErrors);
 
-    // Если есть ошибки, не отправлять данные на бэкенд
+    console.log(formData);
+
     if (Object.keys(newErrors).length === 0) {
       setIsFormSubmitted(true);
-      setIsModalVisible(true);
+      setIsFeedbackVisible(true);
       // Здесь вы можете отправить formData на бэкенд, например, с использованием fetch или axios.
       // Пример:
       // fetch('/your-backend-endpoint', {
@@ -110,11 +123,13 @@ export default function LeaveRequestSection() {
       //   });
       // };
     }
+
+    handleFormReset();
   };
 
-  const handleModalClose = () => {
-    console.log('закрыть');
-    setIsModalVisible(false);
+  const handleFeedbackClose = () => {
+    setIsFormSubmitted(false);
+    setIsFeedbackVisible(false);
   };
 
   return (
@@ -122,13 +137,7 @@ export default function LeaveRequestSection() {
       <StyledSectionInner>
         <Container>
           {isFormSubmitted ? (
-            <div>
-              <p>Ваша форма успешно отправлена!</p>
-              <p>Простите Людмила!!! Я еще не готово</p>
-              <p>P.S. Твое модальное окно</p>
-              <p>Перезагрузи, пожалуйста, страницу</p>
-              <button onClick={handleModalClose}>Закрыть</button>
-            </div>
+            <Feedback onFeedbackClose={handleFeedbackClose} />
           ) : (
             <>
               <StyledSectionTitle>Залишити заявку</StyledSectionTitle>
@@ -214,6 +223,8 @@ export default function LeaveRequestSection() {
                   Відправити
                 </StyledButtonRequest>
               </StyledForm>
+
+              <ButtonToTop />
             </>
           )}
         </Container>
