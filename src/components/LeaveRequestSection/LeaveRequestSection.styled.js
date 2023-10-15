@@ -5,7 +5,7 @@ import leaveRequestBgDesktop from '../../assets/images/leave-request-bg/leave-re
 import Select from 'react-select';
 
 export const StyledSectionInner = styled.div`
-  min-height: 813px;
+  height: 813px;
   margin: 0 auto;
   padding-top: 112px;
   padding-bottom: 163px;
@@ -13,18 +13,19 @@ export const StyledSectionInner = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
 
   @media screen and (min-width: 768px) {
-    min-height: 1009px;
+    height: 1009px;
     padding-top: 248px;
     padding-bottom: 248px;
     background-image: url(${leaveRequestBgTablet});
   }
 
   @media screen and (min-width: 1440px) {
+    height: 801px;
     padding-top: 136px;
     padding-bottom: 152px;
-    min-height: 801px;
     background-image: url(${leaveRequestBgDesktop});
   }
 `;
@@ -60,6 +61,7 @@ export const StyledButtonRequest = styled.button`
   color: var(--secondary-text);
   background-color: var(--bg-primery);
   border: none;
+  cursor: pointer;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -170,8 +172,9 @@ export const StyledTextarea = styled.textarea`
 
 export const StyledSelect = styled(Select)`
   /* Добавьте остальные стили здесь */
+  background-color: black;
 
-  & .option:hover {
+  &.option:hover {
     background-color: red; // Цвет фона при наведении
   }
 `;
@@ -189,6 +192,7 @@ export const stylesSelect = {
     cursor: 'pointer',
     transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   }),
+
   singleValue: (baseStyles, state) => ({
     ...baseStyles,
     fontFamily: 'ProximaNova-400',
@@ -197,6 +201,7 @@ export const stylesSelect = {
     lineHeight: '20px',
     color: 'var(--main-text)',
   }),
+
   placeholder: (baseStyles, state) => ({
     ...baseStyles,
     fontFamily: 'ProximaNova-500',
@@ -207,25 +212,44 @@ export const stylesSelect = {
     outlineColor: state.isFocused ? 'var(--bg-primery)' : 'transparent',
     transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   }),
+
   indicatorSeparator: (baseStyles, state) => ({
     ...baseStyles,
     display: 'none',
   }),
+
   dropdownIndicator: (baseStyles, state) => ({
     ...baseStyles,
     color: 'var(--primery-text)',
   }),
+
   menu: (baseStyles, state) => ({
     ...baseStyles,
     maxWidth: '268px',
     marginTop: '17px',
-    right: 0,
     left: 'auto',
     fontSize: '46px',
     background: 'var(--bg-main)',
     borderRadius: '0',
-    overflow: 'auto',
+    position: 'absolute',
+    right: 0,
+    zIndex: 2,
+
+    ':after': {
+      position: 'absolute',
+      display: 'block',
+      content: '""',
+      width: 28,
+      height: 12,
+      borderLeft: '14px solid transparent',
+      borderRight: '14px solid transparent',
+      borderBottom: '12px solid #F2F1F3',
+      top: -9,
+      right: 0,
+      zIndex: 1,
+    },
   }),
+
   option: (baseStyles, state) => ({
     ...baseStyles,
     fontFamily: 'ProximaNova-500',
@@ -235,12 +259,18 @@ export const stylesSelect = {
     color: 'var(--primery-text)',
     backgroundColor: state.isSelected ? '#E1DEE5' : 'none',
     borderBottom: '1px solid rgba(136, 123, 121, 0.20)',
-    ':last-child': {
-      borderBottom: 'none',
+    cursor: 'pointer',
+
+    ':hover': {
+      backgroundColor: '#E1DEE5',
     },
+
     ':active': {
       backgroundColor: 'none',
     },
-    cursor: 'pointer',
+
+    ':last-child': {
+      borderBottom: 'none',
+    },
   }),
 };
