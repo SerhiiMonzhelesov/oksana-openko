@@ -10,7 +10,7 @@ import {
 } from './About.styled';
 import AboutText from './AboutText';
 import React from 'react';
-import about from '../../assets/video/about_me.mp4';
+// import about from '../../assets/video/about_me.mp4';
 import imgTop from '../../assets/images/about-top.jpg';
 import imgBottom from '../../assets/images/about-bottom.jpg';
 
@@ -30,7 +30,7 @@ export default function AboutMeSection() {
                 height="494"
                 type="video/mp4"
                 playsInline
-                src={about}
+                // src={about}
               />
             </StyledWrapperVideo>
 
