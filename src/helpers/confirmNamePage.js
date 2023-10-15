@@ -7,7 +7,7 @@ export const confirmNamePage = namePage => {
     satisfaction: false,
     cards: false,
   };
-
+  console.log(namePage);
   Object.keys(confirmedNamePages).forEach(item => {
     if (namePage.includes(item)) {
       confirmedNamePages[item] = true;

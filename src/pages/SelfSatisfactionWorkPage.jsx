@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
+import { practiceSlider } from 'data/dataSelfSatisfactioFeedback';
+import Slider from 'components/Slider/Slider';
 
 export default function SelfSatisfactionWorkPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -41,6 +43,7 @@ export default function SelfSatisfactionWorkPage() {
             </>
           )}
         </MainWrapperContent>
+        <Slider title="Відгуки" data={practiceSlider} />
       </Container>
     </section>
   );

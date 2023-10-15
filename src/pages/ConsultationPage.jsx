@@ -8,6 +8,8 @@ import LeftWrapperContent from 'components/ContentPageWrappers/LeftWrapperConten
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
+import Slider from 'components/Slider/Slider';
+import { consultationSlider } from 'data/dataConsultationFeedback';
 
 export default function ConsultationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -42,6 +44,11 @@ export default function ConsultationPage() {
               </>
             )}
           </MainWrapperContent>
+          <Slider
+            title="Відгуки"
+            data={consultationSlider}
+          
+          />
         </Container>
       </section>
     </>

@@ -7,6 +7,8 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import TextField from 'components/contentPagesComponents/TextField';
+import { invitedSpeakerSlider } from 'data/dataInvitedSpeakerFeedback';
+import Slider from 'components/Slider/Slider';
 
 export default function InvitedSpeakerPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -37,6 +39,7 @@ export default function InvitedSpeakerPage() {
             </>
           )}
         </MainWrapperContent>
+        <Slider title="Відгуки" data={invitedSpeakerSlider} />
       </Container>
     </section>
   );

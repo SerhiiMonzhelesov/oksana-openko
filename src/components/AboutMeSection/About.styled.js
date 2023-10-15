@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import imgTopJPEG from '../../assets/images/about-top.jpg';
-import imgTopWEBP from '../../assets/images/about-top.webp';
-import imgBottomJPEG from '../../assets/images/about-bottom.jpg';
-import imgBottomWEBP from '../../assets/images/about-bottom.webp';
-import { Player } from 'video-react';
-import { Swiper } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+
 import 'video-react/dist/video-react.css';
 
 export const StyledAboutMeSection = styled.section`
@@ -22,6 +15,32 @@ export const StyledAboutMeSection = styled.section`
   }
 `;
 
+export const Grid = styled.section`
+  @media screen and (min-width: 768px) {
+    display: grid;
+    justify-content: space-between;
+    column-gap: 38px;
+    align-items: center;
+    grid-template-areas:
+      'images video'
+      'images video'
+      'title video'
+      'text text'
+      'accent accent';
+  }
+  @media screen and (min-width: 1440px) {
+    grid-template-areas:
+      'images video'
+      'images video'
+      'title video'
+      'text video'
+      'accent video';
+    align-items: start;
+    justify-content: normal;
+    column-gap: 142px;
+  }
+`;
+
 export const StyledAboutTitle = styled.h2`
   margin-bottom: 32px;
   grid-area: title;
@@ -30,6 +49,9 @@ export const StyledAboutTitle = styled.h2`
   font-size: 32px;
   line-height: 1.25;
   color: var(--primery-text);
+  @media screen and (min-width: 768px) {
+    margin-bottom: 56px;
+  }
 `;
 
 //Video
@@ -47,8 +69,8 @@ export const StyledWrapperVideo = styled.div`
     margin-top: 58px;
   }
   @media screen and (min-width: 1440px) {
-    width: 378px;
-    height: 549px;
+    width: 448px;
+    height: 844px;
   }
   &::after {
     content: ' ';
@@ -62,8 +84,8 @@ export const StyledWrapperVideo = styled.div`
     z-index: -1;
 
     @media screen and (min-width: 1440px) {
-      bottom: 61px;
-      right: 102px;
+      top: -61px;
+      left: -32px;
       width: 378px;
       height: 549px;
     }
@@ -78,7 +100,6 @@ export const StyledWrapperVideo = styled.div`
     height: 494px;
     z-index: 0;
     @media screen and (min-width: 1440px) {
-      width: 448px;
       height: 844px;
     }
   }
@@ -96,6 +117,9 @@ export const StyledAboutImgList = styled.ul`
     @media screen and (min-width: 768px) {
       padding-left: 10px;
     }
+    @media screen and (min-width: 1440px) {
+      padding-top: 11px;
+    }
   }
   li:nth-child(2) {
     display: flex;
@@ -110,6 +134,9 @@ export const StyledAboutImgList = styled.ul`
       align-items: start;
       transform: translate(-20px, 32px);
     }
+    @media screen and (min-width: 1440px) {
+      transform: translate(0, 105px);
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -120,6 +147,10 @@ export const StyledAboutImgList = styled.ul`
     margin-bottom: 0;
   }
   @media screen and (min-width: 1440px) {
+    grid-template-areas: 'first second';
+    justify-content: start;
+    margin-bottom: 40px;
+    column-gap: 172px;
   }
 `;
 
@@ -145,6 +176,10 @@ export const StyledWrapperImg = styled.div`
     height: 209px;
     background-color: var(--bg-brown);
     z-index: -1;
+    @media screen and (min-width: 1440px) {
+      width: 192px;
+      height: 191px;
+    }
   }
   @media screen and (min-width: 1440px) {
     width: 170px;
@@ -165,6 +200,10 @@ export const StyledWrapperImgBottom = styled(StyledWrapperImg)`
     left: 13px;
     width: 153px;
     height: 157px;
+    @media screen and (min-width: 1440px) {
+      width: 192px;
+      height: 196px;
+    }
   }
 `;
 
@@ -173,6 +212,9 @@ export const StyledAboutList = styled.ul`
   display: grid;
   grid-gap: 24px;
   grid-area: text;
+  @media screen and (min-width: 1440px) {
+    max-width: 544px;
+  }
 `;
 export const StyledWrapperIntro = styled.div`
   display: grid;
@@ -195,6 +237,7 @@ export const StyledAboutSpan = styled.span`
 `;
 
 export const StyledAboutAccentText = styled.p`
+  grid-area: accent;
   margin-top: 40px;
   margin-bottom: 56px;
   font-family: 'ProximaNova-500';
@@ -202,40 +245,16 @@ export const StyledAboutAccentText = styled.p`
   font-size: 18px;
   line-height: 1.11;
   color: var(--primery-text);
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 16px;
+    margin-bottom: 83px;
+    max-width: 544px;
+  }
 `;
 export const StyledWrapperGames = styled.ul`
   display: grid;
   grid-gap: 8px;
-`;
-
-//Slider
-export const StyledSliderAboutSubtitle = styled.h3`
-  margin-bottom: 24px;
-  font-family: 'ProximaNova-600';
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.11;
-  color: var(--main-text);
-`;
-
-export const StyledSwiper = styled(Swiper)`
-  padding-bottom: 24px;
-  .swiper-wrapper {
-    padding-bottom: 24px;
-  }
-  .swiper-pagination-bullet {
-    margin: 0 12px;
-    width: 12px;
-    height: 12px;
-    border: 1px solid #777e90;
-    background-color: #f2f1f3;
-  }
-  .swiper-pagination-bullet-active {
-    background-color: var(--bg-primery);
-  }
-  img {
-    @media screen and (max-width: 767px) {
-      margin: 0 auto;
-    }
-  }
 `;

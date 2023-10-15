@@ -6,11 +6,6 @@ import Footer from 'components/Footer/Footer';
 import { StyledFooter } from 'components/Footer/Footer.styled';
 
 export default function Layout() {
-  const handleScrollToTop = event => {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <>
       <Header />
@@ -19,7 +14,7 @@ export default function Layout() {
       </main>
       <StyledFooter>
         <Container>
-          <Footer handleScrollToTop={handleScrollToTop} />
+          <Footer />
         </Container>
       </StyledFooter>
     </>

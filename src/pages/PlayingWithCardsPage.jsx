@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import TextField from 'components/contentPagesComponents/TextField';
+import { playWithCardSlider } from 'data/dataPlayWithCardFeedback';
+import Slider from 'components/Slider/Slider';
 
 export default function PlayingWithCardsPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -41,6 +43,7 @@ export default function PlayingWithCardsPage() {
             </>
           )}
         </MainWrapperContent>
+        <Slider title="Відгуки" data={playWithCardSlider} />
       </Container>
     </section>
   );

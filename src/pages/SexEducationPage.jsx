@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
+import Slider from 'components/Slider/Slider';
+import { sexEducationSlider } from 'data/dataSexEducationFeedback';
 
 export default function SexEducationPage() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -17,6 +19,7 @@ export default function SexEducationPage() {
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const namePage = 'Статеве виховання';
+
   return (
     <>
       <section>
@@ -59,6 +62,7 @@ export default function SexEducationPage() {
               </>
             )}
           </MainWrapperContent>
+          <Slider title="Відгуки" data={sexEducationSlider} />
         </Container>
       </section>
     </>

@@ -1,43 +1,21 @@
 import Container from 'components/Container/Container';
 import {
+  Grid,
   StyledAboutImgList,
   StyledAboutMeSection,
   StyledAboutTitle,
-  StyledVideo,
   StyledWrapperImg,
   StyledWrapperImgBottom,
   StyledWrapperVideo,
 } from './About.styled';
 import AboutText from './AboutText';
-import SliderDiploms from './SliderDiploms';
-
 import React from 'react';
 import about from '../../assets/video/about_me.mp4';
 import imgTop from '../../assets/images/about-top.jpg';
 import imgBottom from '../../assets/images/about-bottom.jpg';
-import styled from 'styled-components';
 
-export const Grid = styled.section`
-  @media screen and (min-width: 768px) {
-    display: grid;
-
-    justify-content: space-between;
-    gap: 38px;
-    align-items: center;
-    grid-template-areas:
-      'images video'
-      'images video'
-      'title video'
-      'text text';
-  }
-  @media screen and (min-width: 1440px) {
-    grid-template-areas:
-      'images video'
-      'images video'
-      'title video'
-      'text video';
-  }
-`;
+import { aboutSlider } from 'data/dataAboutSlider';
+import Slider from 'components/Slider/Slider';
 
 export default function AboutMeSection() {
   return (
@@ -72,7 +50,11 @@ export default function AboutMeSection() {
             <AboutText />
           </Grid>
 
-          <SliderDiploms />
+          <Slider
+            title="Дипломи та Сертифікати"
+            data={aboutSlider}
+            isHomePage={true}
+          />
         </Container>
       </StyledAboutMeSection>
     </>
