@@ -52,8 +52,6 @@ const Slider = ({ data, title }) => {
                 alt={img.alt}
                 width={img.width}
                 height={img.height}
-
-                // $isHomePage={isHomePage}
               />
             </div>
           </SwiperSlide>
