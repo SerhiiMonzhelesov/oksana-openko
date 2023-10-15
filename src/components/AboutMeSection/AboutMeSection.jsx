@@ -17,7 +17,7 @@ import imgBottom from '../../assets/images/about-bottom.jpg';
 import { aboutSlider } from 'data/dataAboutSlider';
 import Slider from 'components/Slider/Slider';
 
-export default function AboutMeSection() {
+export default function AboutMeSection({ name }) {
   return (
     <>
       <StyledAboutMeSection id="about-me">
@@ -53,7 +53,7 @@ export default function AboutMeSection() {
           <Slider
             title="Дипломи та Сертифікати"
             data={aboutSlider}
-            isHomePage={true}
+            name={name}
           />
         </Container>
       </StyledAboutMeSection>

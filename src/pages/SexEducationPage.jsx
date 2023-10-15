@@ -43,6 +43,11 @@ export default function SexEducationPage() {
                 <TextField name={namePage} />
                 <LinkBonus />
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                />
                 <PriceField name={namePage} />
               </>
             )}
@@ -60,6 +65,11 @@ export default function SexEducationPage() {
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                />
               </>
             )}
             {isDesktop && (
@@ -75,11 +85,15 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
+                {/* <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                /> */}
               </>
             )}
             <ButtonApplication />
           </MainWrapperContent>
-          <Slider title="Відгуки" data={sexEducationSlider} />
         </Container>
       </section>
     </>

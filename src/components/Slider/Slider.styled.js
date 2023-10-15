@@ -14,8 +14,8 @@ export const StyledSliderAboutSubtitle = styled.h3`
 `;
 
 export const StyledSwiper = styled(Swiper)`
+  margin-bottom: ${props => (props.name.home ? '0' : '160px')};
   padding-bottom: 24px;
-
   display: flex;
   width: 100%;
   height: 100%;
@@ -36,12 +36,18 @@ export const StyledSwiper = styled(Swiper)`
     background-color: var(--bg-primery);
   }
   img {
-    padding: ${props => (props.name.consultation ? '0' : '16px 12px')};
+    padding: ${props => (props.name.home ? '0' : '16px 12px')};
     border: ${props =>
-      props.name.consultation ? 'none' : '1px solid var(--bg-primery)'};
+      props.name.home ? 'none' : '1px solid var(--bg-primery)'};
 
     @media screen and (max-width: 767px) {
       margin: 0 auto;
     }
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: ${props => (props.name.home ? '0' : '188px')};
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: ${props => props.name.cards && '152px'};
   }
 `;

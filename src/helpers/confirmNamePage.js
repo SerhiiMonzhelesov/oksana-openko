@@ -6,10 +6,13 @@ export const confirmNamePage = namePage => {
     speaker: false,
     satisfaction: false,
     cards: false,
+    home: false,
   };
-  console.log(namePage);
+
   Object.keys(confirmedNamePages).forEach(item => {
-    if (namePage.includes(item)) {
+    if (namePage === '/') {
+      confirmedNamePages.home = true;
+    } else if (namePage.includes(item)) {
       confirmedNamePages[item] = true;
     }
   });

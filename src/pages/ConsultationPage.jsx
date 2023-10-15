@@ -36,6 +36,11 @@ export default function ConsultationPage() {
                 <MediaThumb name={namePage} />
                 <DescriptionAccentPage name={namePage} />
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={consultationSlider}
+                  name={namePage}
+                />
                 <PriceField name={namePage} />
               </>
             )}
@@ -51,11 +56,16 @@ export default function ConsultationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
+                <Slider
+                  title="Відгуки"
+                  data={consultationSlider}
+                  name={namePage}
+                />
               </>
             )}
+
             <ButtonApplication />
           </MainWrapperContent>
-          <Slider title="Відгуки" data={consultationSlider} />
         </Container>
       </section>
     </>
