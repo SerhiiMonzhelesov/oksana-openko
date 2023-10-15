@@ -11,6 +11,10 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import TextField from 'components/contentPagesComponents/TextField';
+
+import { playWithCardSlider } from 'data/dataPlayWithCardFeedback';
+import Slider from 'components/Slider/Slider';
+
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 
@@ -32,6 +36,11 @@ export default function PlayingWithCardsPage() {
               <MediaThumb name={namePage} />
               <DescriptionAccentPage name={namePage} />
               <TextField name={namePage} />
+              <Slider
+                title="Відгуки"
+                data={playWithCardSlider}
+                name={namePage}
+              />
               <PriceField name={namePage} />
             </>
           )}
@@ -48,6 +57,11 @@ export default function PlayingWithCardsPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
+              <Slider
+                title="Відгуки"
+                data={playWithCardSlider}
+                name={namePage}
+              />
             </>
           )}
           <ButtonApplication />

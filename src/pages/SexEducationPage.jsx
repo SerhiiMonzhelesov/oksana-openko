@@ -11,6 +11,9 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
+import Slider from 'components/Slider/Slider';
+import { sexEducationSlider } from 'data/dataSexEducationFeedback';
+
 import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
@@ -26,6 +29,7 @@ export default function SexEducationPage() {
 
   const namePage = confirmNamePage(location.pathname);
   const titlePage = 'Статеве виховання';
+
   return (
     <>
       <section>
@@ -39,6 +43,11 @@ export default function SexEducationPage() {
                 <TextField name={namePage} />
                 <LinkBonus />
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                />
                 <PriceField name={namePage} />
               </>
             )}
@@ -56,6 +65,11 @@ export default function SexEducationPage() {
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                />
               </>
             )}
             {isDesktop && (
@@ -71,6 +85,11 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
+                {/* <Slider
+                  title="Відгуки"
+                  data={sexEducationSlider}
+                  name={namePage}
+                /> */}
               </>
             )}
             <ButtonApplication />

@@ -22,7 +22,7 @@ export const StyledFooterWrapper = styled.div`
     gap: 100px;
   }
 `;
-export const StyledFooterTitle = styled(Link)`
+export const StyledFooterTitle = styled.h2`
   font-family: 'IBMPlexSans-300', sans-serif;
   font-weight: 300;
   font-size: 20px;

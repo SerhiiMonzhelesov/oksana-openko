@@ -10,6 +10,8 @@ import LeftWrapperContent from 'components/ContentPageWrappers/LeftWrapperConten
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
+import Slider from 'components/Slider/Slider';
+import { consultationSlider } from 'data/dataConsultationFeedback';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import { confirmNamePage } from 'helpers/confirmNamePage';
@@ -34,6 +36,11 @@ export default function ConsultationPage() {
                 <MediaThumb name={namePage} />
                 <DescriptionAccentPage name={namePage} />
                 <ListField name={namePage} />
+                <Slider
+                  title="Відгуки"
+                  data={consultationSlider}
+                  name={namePage}
+                />
                 <PriceField name={namePage} />
               </>
             )}
@@ -49,8 +56,14 @@ export default function ConsultationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
+                <Slider
+                  title="Відгуки"
+                  data={consultationSlider}
+                  name={namePage}
+                />
               </>
             )}
+
             <ButtonApplication />
           </MainWrapperContent>
         </Container>
