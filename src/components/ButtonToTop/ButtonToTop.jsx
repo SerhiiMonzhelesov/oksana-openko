@@ -41,11 +41,11 @@ export const StyledButtonToTop = styled.button`
 
   @media screen and (min-width: 768px) {
     right: 32px;
-    bottom: 380px;
+    bottom: 338px;
   }
 
   @media screen and (min-width: 1440px) {
     right: 160px;
-    bottom: 256px;
+    bottom: 215px;
   }
 `;
