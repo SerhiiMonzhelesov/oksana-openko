@@ -7,22 +7,17 @@ export const StyledListField = styled.div`
   margin-bottom: 124px;
 
   p.title-list {
-    /* display: ${props => (props.$name.psychotherapy ? 'none' : 'block')};
+    display: ${props => (props.name.psychotherapy ? 'none' : 'block')};
     color: ${props =>
-      props.$name.education ? 'inherit' : 'var(--primery-text)'};
-    font-family: 'ProximaNova-600';
-    font-weight: 600; */
-    display: ${props => (props.$name.psychotherapy ? 'none' : 'block')};
-    color: ${props =>
-      props.$name.education ? 'inherit' : 'var(--primery-text)'};
+      props.name.education ? 'inherit' : 'var(--primery-text)'};
     font-family: ${props =>
-      props.$name.satisfaction ? 'ProximaNova-500' : 'ProximaNova-600'};
-    font-weight: ${props => (props.$name.satisfaction ? '500' : '600')};
-    font-size: ${props => (props.$name.satisfaction ? '20px' : '18px')};
-    margin-bottom: ${props => (props.$name.satisfaction ? '24px' : '16px')};
-    line-height: ${props => (props.$name.satisfaction ? '1.2' : '1.33')};
+      props.name.satisfaction ? 'ProximaNova-500' : 'ProximaNova-600'};
+    font-weight: ${props => (props.name.satisfaction ? '500' : '600')};
+    font-size: ${props => (props.name.satisfaction ? '20px' : '18px')};
+    margin-bottom: ${props => (props.name.satisfaction ? '24px' : '16px')};
+    line-height: ${props => (props.name.satisfaction ? '1.2' : '1.33')};
     letter-spacing: ${props =>
-      props.$name.satisfaction ? '-0.2px' : '-0.18px'};
+      props.name.satisfaction ? '-0.2px' : '-0.18px'};
   }
 
   .accent-text {
@@ -58,13 +53,13 @@ export const StyledListField = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin-bottom: ${props => (props.$name.education ? '88px' : '0')};
+    margin-bottom: ${props => (props.name.education ? '88px' : '0')};
 
     ul {
       max-width: ${props =>
-        props.$name.education
+        props.name.education
           ? '632px'
-          : props.$name.consultation
+          : props.name.consultation
           ? '343px'
           : '342px'};
     }
@@ -75,11 +70,11 @@ export const StyledListField = styled.div`
 
     ul {
       max-width: ${props =>
-        props.$name.education
-          ? '545px'
-          : props.$name.consultation
+        props.name.education
+          ? '546px'
+          : props.name.consultation
           ? '480px'
-          : props.$name.psychotherapy
+          : props.name.psychotherapy
           ? '526px'
           : '544px'};
     }
