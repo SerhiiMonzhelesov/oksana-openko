@@ -35,10 +35,14 @@ export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 312px;
+  margin-top: 347px;
 
   @media screen and (min-width: 768px) {
     margin-top: 272px;
+  }
+
+  @media screen and (min-width: 1440) {
+    margin-top: 312px;
   }
 `;
 
@@ -113,6 +117,7 @@ export const StyledButtonApplication = styled.button`
   color: var(--secondary-text);
   background-color: var(--bg-primery);
   border: none;
+  cursor: pointer;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,

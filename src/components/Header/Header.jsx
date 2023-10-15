@@ -44,11 +44,12 @@ export default function Header() {
   }, [isOpen]);
 
   useEffect(() => {
+    console.log(document.querySelector('header').offsetHeight);
     if (scrollToBlock) {
       const scrollId = document.querySelector(`#${scrollToBlock}`);
 
       if (scrollId) {
-        const scrollTop = scrollId.offsetTop;
+        const scrollTop = scrollId.offsetTop - 80;
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       }
       if (window.innerWidth <= 1439) {
