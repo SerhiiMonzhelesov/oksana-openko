@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledServiceList = styled.ul`
+export const StyledServicesList = styled.ul`
   width: 100%;
   max-width: 343px;
   display: flex;

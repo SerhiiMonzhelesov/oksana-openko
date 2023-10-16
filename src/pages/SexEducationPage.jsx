@@ -20,10 +20,10 @@ import PriceField from 'components/PriceField/PriceField';
 
 export default function SexEducationPage() {
   const location = useLocation();
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({
     minWidth: 768,
-    maxWidth: 1439,
+    maxWidth: 1439.9,
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 

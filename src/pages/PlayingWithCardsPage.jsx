@@ -20,7 +20,7 @@ import PriceField from 'components/PriceField/PriceField';
 
 export default function PlayingWithCardsPage() {
   const location = useLocation();
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   const namePage = confirmNamePage(location.pathname);
