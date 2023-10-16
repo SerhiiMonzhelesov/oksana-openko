@@ -74,8 +74,6 @@ export const StyledListField = styled.div`
           ? '546px'
           : props.name.consultation
           ? '480px'
-          : props.name.psychotherapy
-          ? '526px'
           : '544px'};
     }
   }
