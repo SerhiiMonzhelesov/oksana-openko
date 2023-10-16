@@ -4,10 +4,10 @@ import images from '../../data/pagesMedia';
 import { StyledMediaThumb } from './MediaThumb.styled.js';
 
 export default function MediaThumb({ name }) {
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({
     minWidth: 768,
-    maxWidth: 1439,
+    maxWidth: 1439.9,
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 

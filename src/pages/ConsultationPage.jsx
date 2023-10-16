@@ -18,7 +18,7 @@ import { confirmNamePage } from 'helpers/confirmNamePage';
 
 export default function ConsultationPage() {
   const location = useLocation();
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   const namePage = confirmNamePage(location.pathname);
