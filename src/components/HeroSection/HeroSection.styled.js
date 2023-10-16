@@ -41,7 +41,7 @@ export const StyledContent = styled.div`
     margin-top: 272px;
   }
 
-  @media screen and (min-width: 1440) {
+  @media screen and (min-width: 1440px) {
     margin-top: 312px;
   }
 `;
