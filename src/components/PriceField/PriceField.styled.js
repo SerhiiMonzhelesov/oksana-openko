@@ -63,6 +63,7 @@ export const StyledPriceField = styled.div`
       flex-direction: ${props => props.name.education && 'row'};
       flex-wrap: ${props => props.name.education && 'wrap'};
       align-items: ${props => props.name.education && 'normal'};
+      padding: ${props => props.name.psychotherapy && '24px 40px'};
     }
 
     p.first-additional-text {
