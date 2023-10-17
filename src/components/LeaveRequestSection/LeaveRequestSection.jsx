@@ -1,6 +1,6 @@
 import Container from 'components/Container/Container';
 import Select from 'react-select';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   StyledButtonRequest,
   StyledForm,
@@ -24,16 +24,17 @@ export default function LeaveRequestSection() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    services: null,
+    service: null,
     format: null,
-    comment: '',
+    question: '',
   });
   const [errors, setErrors] = useState({
     name: '',
     phone: '',
-    services: '',
+    service: '',
     format: '',
   });
+  const BASE_URL = 'http://localhost:3000/api';
 
   const handleNameChange = event => {
     setFormData({
@@ -45,18 +46,20 @@ export default function LeaveRequestSection() {
   const handleCommentChange = event => {
     setFormData({
       ...formData,
-      comment: event.target.value,
+      question: event.target.value,
     });
   };
 
   const handleServiceChange = selectedOption => {
+    console.log(selectedOption.value);
     setFormData({
       ...formData,
-      services: selectedOption,
+      service: selectedOption,
     });
   };
 
   const handleFormatChange = selectedOption => {
+    console.log(selectedOption.value);
     setFormData({
       ...formData,
       format: selectedOption,
@@ -74,57 +77,100 @@ export default function LeaveRequestSection() {
     setFormData({
       name: '',
       phone: '',
-      services: null,
+      service: null,
       format: null,
-      comment: '',
+      question: '',
     });
   };
+
+  useEffect(() => {
+    const storedUserData = JSON.parse(localStorage.getItem('USER_DATA'));
+    if (storedUserData) {
+      setFormData(storedUserData);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('USER_DATA', JSON.stringify(formData));
+  }, [formData]);
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    console.log('message');
-
     const newErrors = {};
-    if (formData.name.length <= 1) {
+    if (formData.name.length === 0) {
       newErrors.name = 'Введіть ім’я';
+    } else if (formData.name.length <= 1 || formData.name.length > 50) {
+      newErrors.name = "Ім'я має містити від 2 до 50 символів";
     }
+
     if (!formData.phone) {
       newErrors.phone = 'Вкажіть номер телефону';
+    } else if (!formData.phone) {
+      newErrors.phone = 'Номер телефону повинен містити від ...';
     }
-    if (!formData.services) {
-      newErrors.services = 'Виберіть послугу';
+
+    if (!formData.service) {
+      newErrors.service = 'Виберіть послугу';
     }
+
     if (!formData.format) {
       newErrors.format = 'Виберіть формат';
     }
 
     setErrors(newErrors);
 
-    console.log(formData);
-
     if (Object.keys(newErrors).length === 0) {
       setIsFormSubmitted(true);
       setIsFeedbackVisible(true);
-      // Здесь вы можете отправить formData на бэкенд, например, с использованием fetch или axios.
-      // Пример:
-      // fetch('/your-backend-endpoint', {
-      //   method: 'POST',
-      //   body: JSON.stringify(formData),
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // })
-      //   .then(response => {
-      //     // Обработка ответа от бэкенда
-      //   })
-      //   .catch(error => {
-      //     // Обработка ошибок
-      //   });
-      // };
+      localStorage.removeItem('USER_DATA');
+
+      const formDataForBackend = {
+        ...formData,
+        service: formData.service.value,
+        format: formData.format.value,
+      };
+
+      console.log(formDataForBackend);
+
+      function addContact(formData) {
+        const options = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        };
+
+        return fetch(`${BASE_URL}/application`, options)
+          .then(response => response.json())
+          .catch(err => {
+            console.warn(err.message);
+          });
+      }
+
+      addContact(
+        formDataForBackend
+
+        // format: 'offline',
+        // name: 'Андрей',
+        // phone: '+380667777778',
+        // question: 'пппппппппппппппппппппппппппппп',
+        // service: 'Запрошений спікер',
+
+        // name: 'Петруха',
+        // phone: '+380667777778',
+        // service: 'Психотерапія',
+        // format: 'online',
+        // question: 'лролролролрло',
+
+        // name: 'Taras',
+        // phone: '+380667777778',
+        // service: 'Психотерапія',
+        // format: 'online',
+        // question: 'hello',
+      );
     }
 
-    handleFormReset();
+    // handleFormReset();
   };
 
   const handleFeedbackClose = () => {
@@ -180,16 +226,16 @@ export default function LeaveRequestSection() {
                   <Select
                     styles={stylesSelect}
                     options={dataServices}
-                    value={formData.services}
+                    value={formData.service}
                     onChange={handleServiceChange}
                     placeholder="Послуга*"
                   />
                   <StyledSpanError
                     style={{
-                      visibility: errors.services ? 'visible' : 'hidden',
+                      visibility: errors.service ? 'visible' : 'hidden',
                     }}
                   >
-                    {errors.services}
+                    {errors.service}
                   </StyledSpanError>
                 </StyledInputWrapper>
 
@@ -212,10 +258,10 @@ export default function LeaveRequestSection() {
 
                 <StyledTextarea
                   type="text"
-                  name="comment"
+                  name="question"
                   maxLength="200"
                   placeholder="Ваше питання"
-                  value={formData.comment}
+                  value={formData.question}
                   onChange={handleCommentChange}
                 />
 
