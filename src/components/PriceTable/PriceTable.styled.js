@@ -10,6 +10,11 @@ export const StyledTable = styled.table`
     line-height: 1.11;
   }
 
+  thead > tr > td,
+  tbody > tr > td {
+    padding: 0;
+  }
+
   thead > tr > :first-child {
     border-right: ${props =>
       props.name.cards || props.name.speaker ? '1px solid #f2f1f3' : 'none'};
@@ -24,7 +29,7 @@ export const StyledTable = styled.table`
 
   .first-row > td {
     padding-bottom: ${props =>
-      props.name.cards ? '29px' : props.name.speaker ? '0' : '26px'};
+      props.name.cards ? '32px' : props.name.speaker ? '0' : '30px'};
   }
 
   .second-row > td {
@@ -49,13 +54,19 @@ export const StyledTable = styled.table`
     display: ${props => props.name.speaker && 'flex'};
     align-items: ${props => props.name.speaker && 'center'};
     padding-left: ${props => props.name.speaker && '32px'};
+    padding-right: ${props => props.name.psychotherapy && '12px'};
   }
 
   .third-cell {
     display: ${props =>
-      (props.name.psychotherapy || props.name.speaker) && 'none'};
-    padding-left: 12px;
-    padding-right: ${props => (props.name.cards ? '58px' : '12px')};
+      props.name.psychotherapy || props.name.speaker
+        ? 'none'
+        : props.name.cards
+        ? 'flex'
+        : 'table-cell'};
+    justify-content: ${props => props.name.cards && 'center'};
+    padding-left: ${props => (props.name.cards ? '53px' : '17px')}; /*17px;*/
+    padding-right: ${props => (props.name.cards ? '106px' : '12px')}; /*12px;*/
   }
 
   @media screen and (min-width: 1440px) {
@@ -69,11 +80,12 @@ export const StyledTable = styled.table`
 
     .second-cell {
       padding-left: 32px;
+      padding-right: ${props => props.name.psychotherapy && '24px'};
     }
 
     .third-cell {
-      padding-left: ${props => (props.name.cards ? '0px' : '86px')};
-      padding-right: ${props => (props.name.cards ? '58px' : '12px')};
+      padding-left: ${props => (props.name.cards ? '99px' : '91px')};
+      padding-right: ${props => (props.name.cards ? '167px' : '12px')};
     }
   }
 `;
