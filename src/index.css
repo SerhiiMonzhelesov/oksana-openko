@@ -106,7 +106,3 @@ img {
   background-color: var(--bg-brown); /* Цвет ползунка */
   border-radius: 5px; /* Скругление углов ползунка */
 }
-
-.react-select__option:hover {
-  color: red;
-}

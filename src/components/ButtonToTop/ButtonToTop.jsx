@@ -1,15 +1,39 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SpriteSvg from '../../assets/images/icons.svg';
 
 export default function ButtonToTop() {
   const scrollToTop = () => {
-    const heroSection = document.getElementById('hero');
-    const scrollTop = heroSection.offsetTop - 80;
-    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const [heroHeight, setHeroHeight] = useState(0);
+
+  useEffect(() => {
+    const heroSection = document.querySelector('#hero');
+    if (heroSection) {
+      setHeroHeight(heroSection.offsetHeight);
+    }
+
+    const handleScroll = () => {
+      if (window.scrollY >= heroHeight - 80) {
+        setIsButtonVisible(true);
+      } else {
+        setIsButtonVisible(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [heroHeight]);
+
   return (
-    <StyledButtonToTop onClick={scrollToTop}>
+    <StyledButtonToTop
+      onClick={scrollToTop}
+      style={{ display: isButtonVisible ? 'flex' : 'none' }}
+    >
       <svg width="28" height="29" viewBox="0 0 28 29">
         <use href={SpriteSvg + '#arrow-up'} />
       </svg>
@@ -30,8 +54,8 @@ export const StyledButtonToTop = styled.button`
   cursor: pointer;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   position: fixed;
-  right: 17px;
-  bottom: 325px;
+  right: 16px;
+  bottom: 36px;
   z-index: 1000;
 
   &:hover,
@@ -41,11 +65,11 @@ export const StyledButtonToTop = styled.button`
 
   @media screen and (min-width: 768px) {
     right: 32px;
-    bottom: 338px;
+    bottom: 64px;
   }
 
   @media screen and (min-width: 1440px) {
     right: 160px;
-    bottom: 215px;
+    bottom: 160px;
   }
 `;
