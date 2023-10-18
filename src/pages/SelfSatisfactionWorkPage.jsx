@@ -12,11 +12,11 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
 
-import { practiceSlider } from 'data/dataSelfSatisfactioFeedback';
 import Slider from 'components/Slider/Slider';
 
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import dataAllFeedback from 'data/dataFeddback';
 
 export default function SelfSatisfactionWorkPage() {
   const location = useLocation();
@@ -36,6 +36,7 @@ export default function SelfSatisfactionWorkPage() {
               <MediaThumb name={namePage} />
               <TextField name={namePage} />
               <ListField name={namePage} />
+              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
               <PriceField name={namePage} />
             </>
           )}
@@ -56,7 +57,7 @@ export default function SelfSatisfactionWorkPage() {
           )}
           <ButtonApplication />
         </MainWrapperContent>
-        <Slider title="Відгуки" data={practiceSlider} name={namePage} />
+        <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
       </Container>
     </section>
   );

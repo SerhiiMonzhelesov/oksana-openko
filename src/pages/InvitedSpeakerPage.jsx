@@ -10,10 +10,10 @@ import MediaThumb from 'components/MediaThumb/MediaThumb';
 import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import TextField from 'components/contentPagesComponents/TextField';
-import { invitedSpeakerSlider } from 'data/dataInvitedSpeakerFeedback';
 import Slider from 'components/Slider/Slider';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import dataAllFeedback from 'data/dataFeddback';
 
 export default function InvitedSpeakerPage() {
   const location = useLocation();
@@ -31,13 +31,9 @@ export default function InvitedSpeakerPage() {
             <>
               <BreadCrumbs titlePage={titlePage} name={namePage} />
               <TitlePages titlePage={titlePage} name={namePage} />
-              <MediaThumb name={namePage} />
+              <MediaThumb name={namePage}></MediaThumb>
               <TextField name={namePage} />
-              <Slider
-                title="Відгуки"
-                data={invitedSpeakerSlider}
-                name={namePage}
-              />
+              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
               <PriceField name={namePage} />
             </>
           )}
@@ -52,11 +48,7 @@ export default function InvitedSpeakerPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
-              <Slider
-                title="Відгуки"
-                data={invitedSpeakerSlider}
-                name={namePage}
-              />
+              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
             </>
           )}
           <ButtonApplication />

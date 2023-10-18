@@ -29,7 +29,6 @@ export const StyledFooterTitle = styled.h2`
   line-height: 1.2;
   color: var(--secondary-text);
   text-align: center;
-  cursor: pointer;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const StyledContactWrapper = styled.div`

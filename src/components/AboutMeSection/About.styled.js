@@ -62,7 +62,7 @@ export const StyledWrapperVideo = styled.div`
   margin: 0 auto;
   width: 324px;
   height: 494px;
-
+  margin-right: 0;
   z-index: 10;
   margin-bottom: 40px;
   @media screen and (min-width: 768px) {
@@ -103,6 +103,12 @@ export const StyledWrapperVideo = styled.div`
       height: 844px;
     }
   }
+`;
+
+export const StyledIframe = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 100%;
 `;
 
 //Image
