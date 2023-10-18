@@ -8,12 +8,13 @@ import {
   Zoom,
 } from 'swiper/modules';
 import { StyledSliderAboutSubtitle, StyledSwiper } from './Slider.styled';
+import dataAllFeedback from 'data/dataFeddback';
 
 const Slider = ({ data, title, name }) => {
-  // const dataFeedback= dataAllFeedback.find(
-  //   item => name[item.path_page] === true
-  // );
-
+  const dataFeedback = dataAllFeedback.find(
+    item => name[item.path_page] === true
+  );
+  const { dataSlider } = dataFeedback;
   const breakpoints = {
     0: {
       slidesPerView: 1,
@@ -38,11 +39,10 @@ const Slider = ({ data, title, name }) => {
         zoom={true}
         centeredSlides={true}
         keyboard={{ enabled: true }}
-        // rewind={true}
         loop={true}
         name={name}
       >
-        {data.map((img, index) => (
+        {dataSlider.map((img, index) => (
           <SwiperSlide key={index}>
             <div className="swiper-zoom-container">
               <img
@@ -50,6 +50,7 @@ const Slider = ({ data, title, name }) => {
                 alt={img.alt}
                 width={img.width}
                 height={img.height}
+                loading="lazy"
               />
             </div>
           </SwiperSlide>

@@ -4,18 +4,19 @@ import {
   StyledAboutImgList,
   StyledAboutMeSection,
   StyledAboutTitle,
+  StyledIframe,
   StyledWrapperImg,
   StyledWrapperImgBottom,
   StyledWrapperVideo,
 } from './About.styled';
 import AboutText from './AboutText';
 import React from 'react';
-// import about from '../../assets/video/about_me.mp4';
 import imgTop from '../../assets/images/about-top.jpg';
 import imgBottom from '../../assets/images/about-bottom.jpg';
 
-import { aboutSlider } from 'data/dataAboutSlider';
 import Slider from 'components/Slider/Slider';
+import dataAllFeedback from 'data/dataFeddback';
+// import { Player } from 'video-react';
 
 export default function AboutMeSection({ name }) {
   return (
@@ -25,13 +26,33 @@ export default function AboutMeSection({ name }) {
           <Grid>
             <StyledWrapperVideo>
               <video
+                src="https://res.cloudinary.com/dfqclpulu/video/upload/v1697549116/hblydatogsa2bup0k3rl.mp4"
                 width="324"
-                controls={'controls'}
                 height="494"
-                type="video/mp4"
+                controls
+              ></video>
+              {/* <Player
                 playsInline
-                // src={about}
-              />
+                poster="/assets/poster.png"
+                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+              /> */}
+              {/* <StyledIframe
+                width="324"
+                height="494"
+                title="Introduction video of Sexologist Oksana Openko"
+                src="https://drive.google.com/file/d/1w-uCP8AShlNYc9XtVaV-a6Xd80BMdPGE/preview"
+                allow="autoplay"
+              ></StyledIframe> */}
+              {/* 
+              <StyledIframe
+                width="324"
+                height="494"
+                src="https://www.youtube.com/embed/f96YvU9RT_8?si=x4OUPIWFbrrOdspf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></StyledIframe> */}
             </StyledWrapperVideo>
 
             <StyledAboutTitle>Про мене</StyledAboutTitle>
@@ -52,7 +73,7 @@ export default function AboutMeSection({ name }) {
 
           <Slider
             title="Дипломи та Сертифікати"
-            data={aboutSlider}
+            data={dataAllFeedback}
             name={name}
           />
         </Container>

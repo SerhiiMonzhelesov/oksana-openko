@@ -2,6 +2,10 @@ import { useMediaQuery } from 'react-responsive';
 
 import images from '../../data/pagesMedia';
 import { StyledMediaThumb } from './MediaThumb.styled.js';
+// import Slider from 'components/Slider/Slider';
+// import { invitedSpeakerSlider } from 'data/dataInvitedSpeakerFeedback';
+
+import SliderVideo from 'components/SliderVideo.jsx/SliderVideo';
 
 export default function MediaThumb({ name }) {
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
@@ -17,11 +21,15 @@ export default function MediaThumb({ name }) {
     <>
       {isMobile && (
         <StyledMediaThumb name={name}>
-          <img
-            src={imagesPage.img_mobile}
-            alt={imagesPage.alt_img}
-            width="343"
-          />
+          {name.speaker ? (
+            <SliderVideo />
+          ) : (
+            <img
+              src={imagesPage.img_mobile}
+              alt={imagesPage.alt_img}
+              width="343"
+            />
+          )}
         </StyledMediaThumb>
       )}
       {isTablet && (

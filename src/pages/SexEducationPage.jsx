@@ -12,11 +12,11 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
 import Slider from 'components/Slider/Slider';
-import { sexEducationSlider } from 'data/dataSexEducationFeedback';
 
 import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import dataAllFeedback from 'data/dataFeddback';
 
 export default function SexEducationPage() {
   const location = useLocation();
@@ -45,7 +45,7 @@ export default function SexEducationPage() {
                 <ListField name={namePage} />
                 <Slider
                   title="Відгуки"
-                  data={sexEducationSlider}
+                  data={dataAllFeedback}
                   name={namePage}
                 />
                 <PriceField name={namePage} />
@@ -67,7 +67,7 @@ export default function SexEducationPage() {
                 <ListField name={namePage} />
                 <Slider
                   title="Відгуки"
-                  data={sexEducationSlider}
+                  data={dataAllFeedback}
                   name={namePage}
                 />
               </>
@@ -85,11 +85,11 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                {/* <Slider
+                <Slider
                   title="Відгуки"
-                  data={sexEducationSlider}
+                  data={dataAllFeedback}
                   name={namePage}
-                /> */}
+                />
               </>
             )}
             <ButtonApplication />

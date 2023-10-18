@@ -11,10 +11,10 @@ import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperCont
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
 import Slider from 'components/Slider/Slider';
-import { consultationSlider } from 'data/dataConsultationFeedback';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import { confirmNamePage } from 'helpers/confirmNamePage';
+import dataAllFeedback from 'data/dataFeddback';
 
 export default function ConsultationPage() {
   const location = useLocation();
@@ -38,7 +38,7 @@ export default function ConsultationPage() {
                 <ListField name={namePage} />
                 <Slider
                   title="Відгуки"
-                  data={consultationSlider}
+                  data={dataAllFeedback}
                   name={namePage}
                 />
                 <PriceField name={namePage} />
@@ -58,7 +58,7 @@ export default function ConsultationPage() {
                 </RigthWrapperContent>
                 <Slider
                   title="Відгуки"
-                  data={consultationSlider}
+                  data={dataAllFeedback}
                   name={namePage}
                 />
               </>
