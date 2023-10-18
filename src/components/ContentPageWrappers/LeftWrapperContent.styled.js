@@ -26,5 +26,13 @@ export const StyledLeftWrapperContent = styled.div`
         ? '448px'
         : '593px'};
     margin-bottom: ${props => (props.name.education ? '137px' : '0')};
+    margin-right: ${props =>
+      props.name.consultation
+        ? '192px'
+        : props.name.education
+        ? '125px'
+        : props.name.cards || props.name.speaker
+        ? '224px'
+        : 'auto'};
   }
 `;
