@@ -35,10 +35,9 @@ export default function LeaveRequestSection() {
     service: '',
     format: '',
   });
-  const BASE_URL = 'http://localhost:3000/api';
 
   const handleNameChange = event => {
-    if (/^[a-zA-Zа-яА-Я\s]*$/.test(event.target.value)) {
+    if (/^[a-zA-Zа-яА-ЯґҐєЄіІїЇ\s]*$/.test(event.target.value)) {
       setFormData({
         ...formData,
         name: event.target.value,
@@ -46,7 +45,7 @@ export default function LeaveRequestSection() {
     } else {
       setErrors({
         ...errors,
-        name: 'Введіть своє  кирилицею ім’я або латиницею',
+        name: 'Введіть своє ім’я кирилицею або латиницею',
       });
     }
   };
@@ -116,8 +115,8 @@ export default function LeaveRequestSection() {
 
     if (!formData.phone) {
       newErrors.phone = 'Вкажіть номер телефону';
-    } else if (formData.phone.length < 11 || formData.phone.length > 50) {
-      newErrors.phone = 'Номер телефону повинен містити від 10 до 50 символів';
+    } else if (formData.phone.length < 12 || formData.phone.length > 50) {
+      newErrors.phone = 'Номер телефону повинен містити від 12 до 50 символів';
     }
 
     if (!formData.service) {
@@ -142,9 +141,8 @@ export default function LeaveRequestSection() {
       };
 
       addContact(formDataForBackend);
+      handleFormReset();
     }
-
-    handleFormReset();
   };
 
   const handleFeedbackClose = () => {
@@ -236,7 +234,7 @@ export default function LeaveRequestSection() {
                   type="text"
                   name="question"
                   maxLength="500"
-                  placeholder="Ваше питання"
+                  placeholder="Ваше питання (до 500 символiв)"
                   value={formData.question}
                   onChange={handleCommentChange}
                 />
