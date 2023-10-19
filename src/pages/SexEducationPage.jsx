@@ -16,7 +16,6 @@ import Slider from 'components/Slider/Slider';
 import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
-import dataAllFeedback from 'data/dataFeddback';
 
 export default function SexEducationPage() {
   const location = useLocation();
@@ -43,11 +42,7 @@ export default function SexEducationPage() {
                 <TextField name={namePage} />
                 <LinkBonus />
                 <ListField name={namePage} />
-                <Slider
-                  title="Відгуки"
-                  data={dataAllFeedback}
-                  name={namePage}
-                />
+                <Slider title="Відгуки" name={namePage} />
                 <PriceField name={namePage} />
               </>
             )}
@@ -65,11 +60,7 @@ export default function SexEducationPage() {
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
                 <ListField name={namePage} />
-                <Slider
-                  title="Відгуки"
-                  data={dataAllFeedback}
-                  name={namePage}
-                />
+                <Slider title="Відгуки" name={namePage} />
               </>
             )}
             {isDesktop && (
@@ -85,11 +76,7 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <Slider
-                  title="Відгуки"
-                  data={dataAllFeedback}
-                  name={namePage}
-                />
+                <Slider title="Відгуки" name={namePage} />
               </>
             )}
             <ButtonApplication />

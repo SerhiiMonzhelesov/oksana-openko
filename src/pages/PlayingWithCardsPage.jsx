@@ -15,7 +15,6 @@ import Slider from 'components/Slider/Slider';
 
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
-import dataAllFeedback from 'data/dataFeddback';
 
 export default function PlayingWithCardsPage() {
   const location = useLocation();
@@ -35,7 +34,7 @@ export default function PlayingWithCardsPage() {
               <MediaThumb name={namePage} />
               <DescriptionAccentPage name={namePage} />
               <TextField name={namePage} />
-              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
+              <Slider title="Відгуки" name={namePage} />
               <PriceField name={namePage} />
             </>
           )}
@@ -52,7 +51,7 @@ export default function PlayingWithCardsPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
-              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
+              <Slider title="Відгуки" name={namePage} />
             </>
           )}
           <ButtonApplication />
