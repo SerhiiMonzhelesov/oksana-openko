@@ -14,7 +14,6 @@ import Slider from 'components/Slider/Slider';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import { confirmNamePage } from 'helpers/confirmNamePage';
-import dataAllFeedback from 'data/dataFeddback';
 
 export default function ConsultationPage() {
   const location = useLocation();
@@ -36,11 +35,7 @@ export default function ConsultationPage() {
                 <MediaThumb name={namePage} />
                 <DescriptionAccentPage name={namePage} />
                 <ListField name={namePage} />
-                <Slider
-                  title="Відгуки"
-                  data={dataAllFeedback}
-                  name={namePage}
-                />
+                <Slider title="Відгуки" name={namePage} />
                 <PriceField name={namePage} />
               </>
             )}
@@ -56,11 +51,7 @@ export default function ConsultationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <Slider
-                  title="Відгуки"
-                  data={dataAllFeedback}
-                  name={namePage}
-                />
+                <Slider title="Відгуки" name={namePage} />
               </>
             )}
 

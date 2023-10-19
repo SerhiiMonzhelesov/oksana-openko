@@ -34,20 +34,28 @@ export default function MediaThumb({ name }) {
       )}
       {isTablet && (
         <StyledMediaThumb name={name}>
-          <img
-            src={imagesPage.img_tablet}
-            alt={imagesPage.alt_img}
-            width="342"
-          />
+          {name.speaker ? (
+            <SliderVideo />
+          ) : (
+            <img
+              src={imagesPage.img_mobile}
+              alt={imagesPage.alt_img}
+              width="343"
+            />
+          )}
         </StyledMediaThumb>
       )}
       {isDesktop && (
         <StyledMediaThumb name={name}>
-          <img
-            src={imagesPage.img_desktop}
-            alt={imagesPage.alt_img}
-            width="448"
-          />
+          {name.speaker ? (
+            <SliderVideo />
+          ) : (
+            <img
+              src={imagesPage.img_mobile}
+              alt={imagesPage.alt_img}
+              width="343"
+            />
+          )}
         </StyledMediaThumb>
       )}
     </>

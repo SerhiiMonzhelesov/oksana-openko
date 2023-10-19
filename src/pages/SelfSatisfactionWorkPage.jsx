@@ -16,7 +16,6 @@ import Slider from 'components/Slider/Slider';
 
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
-import dataAllFeedback from 'data/dataFeddback';
 
 export default function SelfSatisfactionWorkPage() {
   const location = useLocation();
@@ -36,7 +35,7 @@ export default function SelfSatisfactionWorkPage() {
               <MediaThumb name={namePage} />
               <TextField name={namePage} />
               <ListField name={namePage} />
-              <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
+              <Slider title="Відгуки" name={namePage} />
               <PriceField name={namePage} />
             </>
           )}
@@ -55,9 +54,9 @@ export default function SelfSatisfactionWorkPage() {
               </RigthWrapperContent>
             </>
           )}
+          <Slider title="Відгуки" name={namePage} />
           <ButtonApplication />
         </MainWrapperContent>
-        <Slider title="Відгуки" data={dataAllFeedback} name={namePage} />
       </Container>
     </section>
   );

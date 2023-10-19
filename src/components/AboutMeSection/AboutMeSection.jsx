@@ -15,7 +15,7 @@ import imgTop from '../../assets/images/about-top.jpg';
 import imgBottom from '../../assets/images/about-bottom.jpg';
 
 import Slider from 'components/Slider/Slider';
-import dataAllFeedback from 'data/dataFeddback';
+
 // import { Player } from 'video-react';
 
 export default function AboutMeSection({ name }) {
@@ -71,11 +71,7 @@ export default function AboutMeSection({ name }) {
             <AboutText />
           </Grid>
 
-          <Slider
-            title="Дипломи та Сертифікати"
-            data={dataAllFeedback}
-            name={name}
-          />
+          <Slider title="Дипломи та Сертифікати" name={name} />
         </Container>
       </StyledAboutMeSection>
     </>
