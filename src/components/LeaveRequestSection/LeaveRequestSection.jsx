@@ -17,6 +17,7 @@ import PhoneInput from 'react-phone-number-input';
 import { dataFormat, dataServices } from 'data/data-request';
 import ButtonToTop from '../ButtonToTop/ButtonToTop';
 import Feedback from 'components/Feedback/Feedback';
+import { addContact } from 'data/api-service';
 
 export default function LeaveRequestSection() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -37,10 +38,17 @@ export default function LeaveRequestSection() {
   const BASE_URL = 'http://localhost:3000/api';
 
   const handleNameChange = event => {
-    setFormData({
-      ...formData,
-      name: event.target.value,
-    });
+    if (/^[a-zA-Zа-яА-Я\s]*$/.test(event.target.value)) {
+      setFormData({
+        ...formData,
+        name: event.target.value,
+      });
+    } else {
+      setErrors({
+        ...errors,
+        name: 'Введіть своє  кирилицею ім’я або латиницею',
+      });
+    }
   };
 
   const handleCommentChange = event => {
@@ -102,12 +110,14 @@ export default function LeaveRequestSection() {
       newErrors.name = 'Введіть ім’я';
     } else if (formData.name.length <= 1 || formData.name.length > 50) {
       newErrors.name = "Ім'я має містити від 2 до 50 символів";
+    } else if (formData.name.includes('  ')) {
+      newErrors.name = 'Введіть правильне ім’я';
     }
 
     if (!formData.phone) {
       newErrors.phone = 'Вкажіть номер телефону';
-    } else if (!formData.phone) {
-      newErrors.phone = 'Номер телефону повинен містити від ...';
+    } else if (formData.phone.length < 11 || formData.phone.length > 50) {
+      newErrors.phone = 'Номер телефону повинен містити від 10 до 50 символів';
     }
 
     if (!formData.service) {
@@ -131,46 +141,10 @@ export default function LeaveRequestSection() {
         format: formData.format.value,
       };
 
-      console.log(formDataForBackend);
-
-      function addContact(formData) {
-        const options = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        };
-
-        return fetch(`${BASE_URL}/application`, options)
-          .then(response => response.json())
-          .catch(err => {
-            console.warn(err.message);
-          });
-      }
-
-      addContact(
-        formDataForBackend
-
-        // format: 'offline',
-        // name: 'Андрей',
-        // phone: '+380667777778',
-        // question: 'пппппппппппппппппппппппппппппп',
-        // service: 'Запрошений спікер',
-
-        // name: 'Петруха',
-        // phone: '+380667777778',
-        // service: 'Психотерапія',
-        // format: 'online',
-        // question: 'лролролролрло',
-
-        // name: 'Taras',
-        // phone: '+380667777778',
-        // service: 'Психотерапія',
-        // format: 'online',
-        // question: 'hello',
-      );
+      addContact(formDataForBackend);
     }
 
-    // handleFormReset();
+    handleFormReset();
   };
 
   const handleFeedbackClose = () => {
@@ -193,6 +167,7 @@ export default function LeaveRequestSection() {
                     type="text"
                     name="name"
                     placeholder="Ім’я*"
+                    maxLength="50"
                     value={formData.name}
                     onChange={handleNameChange}
                   />
@@ -210,6 +185,7 @@ export default function LeaveRequestSection() {
                     international
                     countryCallingCodeEditable={false}
                     defaultCountry="UA"
+                    maxLength="50"
                     value={formData.phone}
                     onChange={handlePhoneChange}
                   />
@@ -259,7 +235,7 @@ export default function LeaveRequestSection() {
                 <StyledTextarea
                   type="text"
                   name="question"
-                  maxLength="200"
+                  maxLength="500"
                   placeholder="Ваше питання"
                   value={formData.question}
                   onChange={handleCommentChange}

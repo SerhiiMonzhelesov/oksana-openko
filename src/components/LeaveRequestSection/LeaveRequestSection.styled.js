@@ -131,6 +131,7 @@ export const StyledInput = styled.input`
 export const StyledTextarea = styled.textarea`
   display: block;
   height: 49px;
+  max-height: 180px;
   width: 100%;
   max-width: 344px;
   margin-bottom: 32px;
