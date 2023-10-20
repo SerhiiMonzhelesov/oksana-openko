@@ -15,7 +15,12 @@ import imgTop from '../../assets/images/about-top.jpg';
 import imgBottom from '../../assets/images/about-bottom.jpg';
 
 import Slider from 'components/Slider/Slider';
+<<<<<<< Updated upstream
 
+=======
+import dataAllFeedback from 'data/dataFeddback';
+import SliderSimple from 'components/Slider/SliderSimple';
+>>>>>>> Stashed changes
 // import { Player } from 'video-react';
 
 export default function AboutMeSection({ name }) {
@@ -71,7 +76,17 @@ export default function AboutMeSection({ name }) {
             <AboutText />
           </Grid>
 
+<<<<<<< Updated upstream
           <Slider title="Дипломи та Сертифікати" name={name} />
+=======
+          {/* <Slider
+            title="Дипломи та Сертифікати"
+            data={dataAllFeedback}
+            name={name}
+          /> */}
+
+          <SliderSimple name={name} />
+>>>>>>> Stashed changes
         </Container>
       </StyledAboutMeSection>
     </>
