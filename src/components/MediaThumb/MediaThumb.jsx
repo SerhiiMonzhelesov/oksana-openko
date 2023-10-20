@@ -1,9 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
-
 import images from '../../data/pagesMedia';
 import { StyledMediaThumb } from './MediaThumb.styled.js';
-// import Slider from 'components/Slider/Slider';
-// import { invitedSpeakerSlider } from 'data/dataInvitedSpeakerFeedback';
 
 import SliderVideo from 'components/SliderVideo.jsx/SliderVideo';
 

@@ -34,6 +34,8 @@ const Footer = () => {
               width: '24px',
               height: '24px',
             }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <StyledIcon
               viewBox="0 0 32 32"
@@ -47,14 +49,22 @@ const Footer = () => {
           </StyledIconLink>
         </li>
         <li>
-          <StyledIconLink to="https://t.me/oksana_openko_sexolog">
+          <StyledIconLink
+            to="https://t.me/oksana_openko_sexolog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <StyledIcon viewBox="0 0 32 32">
               <use href={sprite + '#telegram'}></use>
             </StyledIcon>
           </StyledIconLink>
         </li>
         <li>
-          <StyledIconLink to="https://www.facebook.com/profile.php?id=100075513560952 ">
+          <StyledIconLink
+            to="https://www.facebook.com/profile.php?id=100075513560952"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <StyledIcon viewBox="0 0 32 32">
               <use href={sprite + '#facebook'}></use>
             </StyledIcon>
