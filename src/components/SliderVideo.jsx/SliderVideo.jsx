@@ -150,7 +150,7 @@ export const StyledSwiperVideo = styled(Swiper)`
   //Media Desctop
   @media screen and (min-width: 1440px) {
     .swiper-wrapper {
-      max-height: 656px;
+      height: 656px;
     }
     .swiper-slide {
       max-height: 656px;

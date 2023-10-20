@@ -26,12 +26,12 @@ export default function AboutMeSection({ name }) {
         <Container>
           <Grid>
             <StyledWrapperVideo>
-              <video
+              {/* <video
                 src="https://res.cloudinary.com/dfqclpulu/video/upload/v1697549116/hblydatogsa2bup0k3rl.mp4"
                 width="324"
                 height="494"
                 controls
-              ></video>
+              ></video> */}
               {/* <Player
                 playsInline
                 poster="/assets/poster.png"
@@ -44,16 +44,22 @@ export default function AboutMeSection({ name }) {
                 src="https://drive.google.com/file/d/1w-uCP8AShlNYc9XtVaV-a6Xd80BMdPGE/preview"
                 allow="autoplay"
               ></StyledIframe> */}
-              {/* 
+
               <StyledIframe
                 width="324"
                 height="494"
-                src="https://www.youtube.com/embed/f96YvU9RT_8?si=x4OUPIWFbrrOdspf"
+                src="https://www.youtube.com/embed/f96YvU9RT_8?si=swajn3PTSSGXdyGh"
                 title="YouTube video player"
+              ></StyledIframe>
+              {/* <iframe
+                width="324"
+                height="494"
+                src="https://player.vimeo.com/video/876072611?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></StyledIframe> */}
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="IMG_1917"
+              ></iframe> */}
+              <script src="https://player.vimeo.com/api/player.js"></script>
             </StyledWrapperVideo>
 
             <StyledAboutTitle>Про мене</StyledAboutTitle>
