@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 export default function LinkBonus() {
   return (
-    <StyledLinkBonus to={'https://t.me/oksana_openko_sexolog'} target="_blank">
+    <StyledLinkBonus
+      to={'https://t.me/oksana_openko_sexolog/10'}
+      target="_blank"
+    >
       ДАРУЮ БЕЗКОШТОВНИЙ ВІДЕО-УРОК для батьків “10 фраз, що варто говорити
       дитині для формування її майбутньої здорової сексуальності”
     </StyledLinkBonus>
