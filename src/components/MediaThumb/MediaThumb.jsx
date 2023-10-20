@@ -38,9 +38,9 @@ export default function MediaThumb({ name }) {
             <SliderVideo />
           ) : (
             <img
-              src={imagesPage.img_mobile}
+              src={imagesPage.img_tablet}
               alt={imagesPage.alt_img}
-              width="343"
+              width="342"
             />
           )}
         </StyledMediaThumb>
@@ -51,9 +51,9 @@ export default function MediaThumb({ name }) {
             <SliderVideo />
           ) : (
             <img
-              src={imagesPage.img_mobile}
+              src={imagesPage.img_desktop}
               alt={imagesPage.alt_img}
-              width="343"
+              width="448"
             />
           )}
         </StyledMediaThumb>
