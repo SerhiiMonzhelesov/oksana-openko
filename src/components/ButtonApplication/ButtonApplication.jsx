@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function ButtonApplication() {
   const scrollWithOffset = el => {
     const yCoordinate = el.getBoundingClientRect().top + window.scrollY;
-    const yOffset = -80;
+    const yOffset = -79;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'auto' });
   };
 

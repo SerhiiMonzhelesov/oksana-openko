@@ -4,9 +4,14 @@ import { StyledBreadCrumbs } from './BreadCrumbs.styled';
 import sprite from '../../assets/images/icons.svg';
 
 export default function BreadCrumbs({ titlePage, name }) {
+  const scrollWithOffset = el => {
+    const yCoordinate = el.getBoundingClientRect().top + window.scrollY;
+    const yOffset = -79;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'auto' });
+  };
   return (
     <StyledBreadCrumbs name={name}>
-      <Link smooth to="/#services">
+      <Link smooth to="/#services" scroll={el => scrollWithOffset(el)}>
         Послуги
       </Link>
       <svg>
