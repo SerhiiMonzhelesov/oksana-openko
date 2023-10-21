@@ -8,6 +8,7 @@ import SexEducationPage from 'pages/SexEducationPage';
 import PlayingWithCardsPage from 'pages/PlayingWithCardsPage';
 import SelfSatisfactionWorkPage from 'pages/SelfSatisfactionWorkPage';
 import InvitedSpeakerPage from 'pages/InvitedSpeakerPage';
+import NotFound from 'pages/NotFound';
 
 export const App = () => {
   return (
@@ -24,6 +25,7 @@ export const App = () => {
         />
         <Route path="playing-with-cards" element={<PlayingWithCardsPage />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

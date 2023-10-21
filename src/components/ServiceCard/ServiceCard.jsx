@@ -9,7 +9,7 @@ export default function ServiceCard({ service }) {
     <>
       <StyledServiceCard>
         <StyledLinkCard to={pathToTop}>
-          <img src={img} alt={alt_img} width="352" />
+          <img src={img} alt={alt_img} width="352" height="366" />
           <p>{name}</p>
         </StyledLinkCard>
       </StyledServiceCard>

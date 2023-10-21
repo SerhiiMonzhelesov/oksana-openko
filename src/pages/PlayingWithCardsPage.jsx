@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { confirmNamePage } from 'helpers/confirmNamePage';
-
 import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs';
 import Container from 'components/Container/Container';
 import MainWrapperContent from 'components/ContentPageWrappers/MainWrapperContent';
@@ -11,10 +10,9 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import TextField from 'components/contentPagesComponents/TextField';
-import Slider from 'components/Slider/Slider';
-
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import SliderSimple from 'components/Slider/SliderSimple';
 
 export default function PlayingWithCardsPage() {
   const location = useLocation();
@@ -34,7 +32,7 @@ export default function PlayingWithCardsPage() {
               <MediaThumb name={namePage} />
               <DescriptionAccentPage name={namePage} />
               <TextField name={namePage} />
-              <Slider title="Відгуки" name={namePage} />
+              <SliderSimple title="Відгуки" name={namePage} />
               <PriceField name={namePage} />
             </>
           )}
@@ -51,7 +49,7 @@ export default function PlayingWithCardsPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
-              <Slider title="Відгуки" name={namePage} />
+              <SliderSimple title="Відгуки" name={namePage} />
             </>
           )}
           <ButtonApplication />
