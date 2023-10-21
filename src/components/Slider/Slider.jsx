@@ -10,7 +10,7 @@ import {
 import { StyledSliderAboutSubtitle, StyledSwiper } from './Slider.styled';
 import dataAllFeedback from 'data/dataFeddback';
 
-const Slider = ({ data, title, name }) => {
+const Slider = ({ title, name }) => {
   const dataFeedback = dataAllFeedback.find(
     item => name[item.path_page] === true
   );

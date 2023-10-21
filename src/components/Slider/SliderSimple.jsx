@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import styled from 'styled-components';
+import { StyledSliderAboutSubtitle } from './Slider.styled';
 
-export default function SliderSimple({ name }) {
+export default function SliderSimple({ title, name }) {
   const galleryRef = useRef(null);
   const bulletsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,35 +46,38 @@ export default function SliderSimple({ name }) {
   };
 
   return (
-    <Wrapper>
-      <div className="gallery" ref={galleryRef}>
-        {dataSlider.map((img, index) => (
-          <a
-            href={img.src}
-            key={index}
-            onClick={() => handlerSelectedImage(index)}
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              width={img.width}
-              height={img.height}
-            />
-          </a>
-        ))}
-      </div>
-      <div className="wrapper-bullets-nav" ref={bulletsRef}>
-        {dataSlider.map((_, index) => {
-          return (
-            <button
+    <>
+      <StyledSliderAboutSubtitle>{title}</StyledSliderAboutSubtitle>
+      <Wrapper name={name}>
+        <div className="gallery" ref={galleryRef}>
+          {dataSlider.map((img, index) => (
+            <a
+              href={img.src}
               key={index}
               onClick={() => handlerSelectedImage(index)}
-              className={index === activeIndex ? 'active' : ''}
-            ></button>
-          );
-        })}
-      </div>
-    </Wrapper>
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+              />
+            </a>
+          ))}
+        </div>
+        <div className="wrapper-bullets-nav" ref={bulletsRef}>
+          {dataSlider.map((_, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => handlerSelectedImage(index)}
+                className={index === activeIndex ? 'active' : ''}
+              ></button>
+            );
+          })}
+        </div>
+      </Wrapper>
+    </>
   );
 }
 
@@ -118,5 +122,16 @@ const Wrapper = styled.div`
 
   .active {
     background-color: #7b6bda;
+  }
+  img {
+    padding: ${props => (props.name.home ? '0' : '16px 12px')};
+    border: ${props =>
+      props.name.home ? 'none' : '1px solid var(--bg-primery)'};
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: ${props => (props.name.home ? '0' : '188px')};
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: ${props => props.name.cards && '152px'};
   }
 `;

@@ -1,5 +1,5 @@
 import consultation from '../assets/images/services/consultation.jpg';
-import sex_education from '../assets/images/services/sex_education.jpg';
+import sex_education from '../assets/images/services/sexeducation.jpg';
 import psychotherapy from '../assets/images/services/psychotherapy.jpg';
 import speaker from '../assets/images/services/speaker.jpg';
 import self_satisfaction from '../assets/images/services/self_satisfaction.jpg';
