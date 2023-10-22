@@ -1,6 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router-dom';
-
 import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs';
 import Container from 'components/Container/Container';
 import MainWrapperContent from 'components/ContentPageWrappers/MainWrapperContent';
@@ -10,10 +9,10 @@ import LeftWrapperContent from 'components/ContentPageWrappers/LeftWrapperConten
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import DescriptionAccentPage from 'components/contentPagesComponents/DescriptionAccentPage';
 import ListField from 'components/contentPagesComponents/ListField';
-import Slider from 'components/Slider/Slider';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import { confirmNamePage } from 'helpers/confirmNamePage';
+import SliderSimple from 'components/Slider/SliderSimple';
 
 export default function ConsultationPage() {
   const location = useLocation();
@@ -35,7 +34,8 @@ export default function ConsultationPage() {
                 <MediaThumb name={namePage} />
                 <DescriptionAccentPage name={namePage} />
                 <ListField name={namePage} />
-                <Slider title="Відгуки" name={namePage} />
+                <SliderSimple title="Відгуки" name={namePage} />
+
                 <PriceField name={namePage} />
               </>
             )}
@@ -51,7 +51,7 @@ export default function ConsultationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <Slider title="Відгуки" name={namePage} />
+                <SliderSimple title="Відгуки" name={namePage} />
               </>
             )}
 

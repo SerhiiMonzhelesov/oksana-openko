@@ -1,7 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router-dom';
 import { confirmNamePage } from 'helpers/confirmNamePage';
-
 import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs';
 import Container from 'components/Container/Container';
 import MainWrapperContent from 'components/ContentPageWrappers/MainWrapperContent';
@@ -11,11 +10,10 @@ import TitlePages from 'components/TitlePages/TitlePages';
 import RigthWrapperContent from 'components/ContentPageWrappers/RigthWrapperContent';
 import ListField from 'components/contentPagesComponents/ListField';
 import TextField from 'components/contentPagesComponents/TextField';
-import Slider from 'components/Slider/Slider';
-
 import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
+import SliderSimple from 'components/Slider/SliderSimple';
 
 export default function SexEducationPage() {
   const location = useLocation();
@@ -42,7 +40,7 @@ export default function SexEducationPage() {
                 <TextField name={namePage} />
                 <LinkBonus />
                 <ListField name={namePage} />
-                <Slider title="Відгуки" name={namePage} />
+                <SliderSimple title="Відгуки" name={namePage} />
                 <PriceField name={namePage} />
               </>
             )}
@@ -60,7 +58,7 @@ export default function SexEducationPage() {
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
                 <ListField name={namePage} />
-                <Slider title="Відгуки" name={namePage} />
+                <SliderSimple title="Відгуки" name={namePage} />
               </>
             )}
             {isDesktop && (
@@ -76,7 +74,7 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <Slider title="Відгуки" name={namePage} />
+                <SliderSimple title="Відгуки" name={namePage} />
               </>
             )}
             <ButtonApplication />

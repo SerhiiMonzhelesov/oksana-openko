@@ -30,6 +30,7 @@ export const StyledServiceCard = styled.li`
 
   img {
     width: 100%;
+    object-fit: cover;
   }
 
   @media screen and (min-width: 768px) {
@@ -44,6 +45,10 @@ export const StyledServiceCard = styled.li`
       font-weight: 500;
       line-height: 1.2;
     }
+    img {
+      width: 221px;
+      height: 235px;
+    }
   }
 
   @media screen and (min-width: 1440px) {
@@ -57,6 +62,10 @@ export const StyledServiceCard = styled.li`
       font-size: 24px;
       font-weight: 600;
       line-height: 1;
+    }
+    img {
+      width: 352px;
+      height: 376px;
     }
   }
 `;
