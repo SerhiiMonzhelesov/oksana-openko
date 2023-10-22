@@ -23,7 +23,7 @@ export default function SliderSimple({ name }) {
       gallery.scrollLeft += e.deltaY;
     };
 
-    if (gallery.current) {
+    if (gallery) {
       gallery.addEventListener('wheel', handleWheelScroll);
     }
 
