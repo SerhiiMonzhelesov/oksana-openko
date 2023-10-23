@@ -33,6 +33,7 @@ export default function ButtonToTop() {
     <StyledButtonToTop
       onClick={scrollToTop}
       style={{ display: isButtonVisible ? 'flex' : 'none' }}
+      aria-label="Scroll to top of page"
     >
       <svg width="28" height="29" viewBox="0 0 28 29">
         <use href={SpriteSvg + '#arrow-up'} />

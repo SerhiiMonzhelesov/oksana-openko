@@ -40,6 +40,17 @@ export const StyledWrapperGallery = styled.div`
       props.name.home ? 'none' : '1px solid var(--bg-primery)'};
   }
 
+  .blur-up {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    transition: filter 400ms, -webkit-filter 400ms;
+  }
+
+  .blur-up.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+
   @media screen and (min-width: 768px) {
     align-self: center;
     max-width: ${props => (props.name.home ? '704px' : '656px')};

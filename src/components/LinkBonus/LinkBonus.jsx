@@ -6,6 +6,7 @@ export default function LinkBonus() {
     <StyledLinkBonus
       to={'https://t.me/oksana_openko_sexolog/10'}
       target="_blank"
+      aria-label="Go to Telegram for a free video lesson"
     >
       ДАРУЮ БЕЗКОШТОВНИЙ ВІДЕО-УРОК для батьків “10 фраз, що варто говорити
       дитині для формування її майбутньої здорової сексуальності”

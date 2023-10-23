@@ -1,4 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import { StyledLinkCard, StyledServiceCard } from './ServiceCard.styled.js';
 
 export default function ServiceCard({ service }) {
@@ -14,8 +17,16 @@ export default function ServiceCard({ service }) {
   return (
     <>
       <StyledServiceCard>
-        <StyledLinkCard to={pathToTop}>
-          <img src={img} alt={alt_img} width={isTablet ? "221" : isDesktop ? "352" : "343"} />
+        <StyledLinkCard
+          to={pathToTop}
+          aria-label={`Go to ${path_to_page} page`}
+        >
+          <img
+            data-src={img}
+            alt={alt_img}
+            width={isTablet ? '221' : isDesktop ? '352' : '343'}
+            className="lazyload blur-up"
+          />
           <p>{name}</p>
         </StyledLinkCard>
       </StyledServiceCard>

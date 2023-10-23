@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import dataAllFeedback from 'data/dataFeddback';
 import { StyledSliderAboutSubtitle } from './Slider.styled';
@@ -56,12 +58,14 @@ export default function SliderSimple({ title, name }) {
               href={img.src}
               key={index}
               onClick={() => handlerSelectedImage(index)}
+              aria-label="go to view a larger image"
             >
               <img
-                src={img.src}
+                data-src={img.src}
                 alt={img.alt}
                 width={img.width}
                 height={img.height}
+                className="lazyload blur-up"
               />
             </a>
           ))}
@@ -73,6 +77,7 @@ export default function SliderSimple({ title, name }) {
                 key={index}
                 onClick={() => handlerSelectedImage(index)}
                 className={index === activeIndex ? 'active' : ''}
+                aria-label="show the corresponding image in the gallery"
               ></button>
             );
           })}

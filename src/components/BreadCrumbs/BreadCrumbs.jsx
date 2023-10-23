@@ -11,7 +11,12 @@ export default function BreadCrumbs({ titlePage, name }) {
   };
   return (
     <StyledBreadCrumbs name={name}>
-      <Link smooth to="/#services" scroll={el => scrollWithOffset(el)}>
+      <Link
+        smooth
+        to="/#services"
+        scroll={el => scrollWithOffset(el)}
+        aria-label="Navigate to services on homepage"
+      >
         Послуги
       </Link>
       <svg>

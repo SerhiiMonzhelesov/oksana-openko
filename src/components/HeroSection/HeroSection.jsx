@@ -38,7 +38,10 @@ export default function HeroSection() {
                   </StyledArrowSvg>
                 </StyledPositionLeft>
 
-                <StyledButtonApplication onClick={scrollToContacts}>
+                <StyledButtonApplication
+                  onClick={scrollToContacts}
+                  aria-label="Apply for the service"
+                >
                   Залишити заявку
                 </StyledButtonApplication>
               </StyledContent>
