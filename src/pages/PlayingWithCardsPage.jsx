@@ -15,7 +15,7 @@ import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
 import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
-export default function PlayingWithCardsPage() {
+function PlayingWithCardsPage() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -63,3 +63,5 @@ export default function PlayingWithCardsPage() {
     </section>
   );
 }
+
+export default PlayingWithCardsPage;

@@ -16,7 +16,7 @@ import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
 import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
-export default function SexEducationPage() {
+function SexEducationPage() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({
@@ -91,3 +91,5 @@ export default function SexEducationPage() {
     </>
   );
 }
+
+export default SexEducationPage;

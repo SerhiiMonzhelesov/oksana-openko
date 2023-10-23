@@ -11,6 +11,17 @@ export const StyledMediaThumb = styled.div`
     max-width: 343px;
   }
 
+  .blur-up {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    transition: filter 400ms, -webkit-filter 400ms;
+  }
+
+  .blur-up.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+
   @media screen and (min-width: 768px) {
     max-width: 342px;
     margin-bottom: 0;

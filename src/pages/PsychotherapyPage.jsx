@@ -14,7 +14,7 @@ import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 
-export default function PsychotherapyPage() {
+function PsychotherapyPage() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -58,3 +58,5 @@ export default function PsychotherapyPage() {
     </>
   );
 }
+
+export default PsychotherapyPage;

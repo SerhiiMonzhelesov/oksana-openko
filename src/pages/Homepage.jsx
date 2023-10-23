@@ -6,7 +6,7 @@ import ServicesSection from 'components/ServicesSection/ServicesSection';
 import { confirmNamePage } from 'helpers/confirmNamePage';
 import { useLocation } from 'react-router-dom';
 
-export default function HomePage() {
+function HomePage() {
   const location = useLocation();
   const namePage = confirmNamePage(location.pathname);
   return (
@@ -19,3 +19,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage;

@@ -1,9 +1,9 @@
-import consultation from '../assets/images/services/consultation.jpg';
-import sex_education from '../assets/images/services/sexeducation.jpg';
-import psychotherapy from '../assets/images/services/psychotherapy.jpg';
-import speaker from '../assets/images/services/speaker.jpg';
-import self_satisfaction from '../assets/images/services/self_satisfaction.jpg';
-import playing_cards from '../assets/images/services/game_vs_cards.jpg';
+import consultation from '../assets/images/services_section/consultation.jpg';
+import sex_education from '../assets/images/services_section/sexeducation.jpg';
+import psychotherapy from '../assets/images/services_section/psychotherapy.jpg';
+import speaker from '../assets/images/services_section/speaker.jpg';
+import self_satisfaction from '../assets/images/services_section/self_satisfaction.jpg';
+import playing_cards from '../assets/images/services_section/game_vs_cards.jpg';
 
 const dataServices = [
   {
