@@ -5,7 +5,7 @@ export const StyledWrapperGallery = styled.div`
   flex-direction: column;
   align-self: center;
   width: 100%;
-  max-width: ${props => (props.name.home ? '343px' : '311px')};
+  max-width: ${props => (props.name.home ? '343px' : '316px')};
 
   .gallery {
     display: flex;
@@ -34,7 +34,7 @@ export const StyledWrapperGallery = styled.div`
     background: var(--bg-primery);
   }
 
-  img {
+  a {
     padding: ${props => (props.name.home ? '0' : '16px 12px')};
     border: ${props =>
       props.name.home ? 'none' : '1px solid var(--bg-primery)'};
@@ -42,7 +42,7 @@ export const StyledWrapperGallery = styled.div`
 
   @media screen and (min-width: 768px) {
     align-self: center;
-    max-width: ${props => (props.name.home ? '704px' : '648px')};
+    max-width: ${props => (props.name.home ? '704px' : '656px')};
   }
 
   @media screen and (min-width: 1440px) {
