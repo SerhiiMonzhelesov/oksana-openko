@@ -71,7 +71,7 @@ export const StyledListField = styled.div`
     ul {
       max-width: ${props =>
         props.name.education
-          ? '546px'
+          ? '553px'
           : props.name.consultation
           ? '480px'
           : '544px'};
