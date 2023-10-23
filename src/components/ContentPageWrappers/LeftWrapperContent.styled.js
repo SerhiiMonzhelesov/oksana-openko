@@ -21,7 +21,7 @@ export const StyledLeftWrapperContent = styled.div`
         : props.name.psychotherapy
         ? '544px'
         : props.name.education
-        ? '547px'
+        ? '553px'
         : props.name.cards || props.name.speaker
         ? '448px'
         : '593px'};
@@ -30,7 +30,7 @@ export const StyledLeftWrapperContent = styled.div`
       props.name.consultation
         ? '192px'
         : props.name.education
-        ? '125px'
+        ? '119px'
         : props.name.cards || props.name.speaker
         ? '224px'
         : props.name.satisfaction
