@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-
-import dataAllFeedback from 'data/dataFeddback';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+import dataAllFeedback from 'data/dataFeddback';
 import { StyledSliderAboutSubtitle } from './Slider.styled';
 import { StyledWrapperGallery } from './SliderSimple.styled';
 

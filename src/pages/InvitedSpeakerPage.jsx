@@ -15,7 +15,7 @@ import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
 import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
-export default function InvitedSpeakerPage() {
+function InvitedSpeakerPage() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -61,3 +61,5 @@ export default function InvitedSpeakerPage() {
     </section>
   );
 }
+
+export default InvitedSpeakerPage;

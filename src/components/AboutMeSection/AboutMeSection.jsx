@@ -11,8 +11,8 @@ import {
 } from './About.styled';
 import AboutText from './AboutText';
 import React from 'react';
-import imgTop from '../../assets/images/about-top.jpg';
-import imgBottom from '../../assets/images/about-bottom.jpg';
+import imgTop from '../../assets/images/about_me_section/about-top.jpg';
+import imgBottom from '../../assets/images/about_me_section/about-bottom.jpg';
 
 import SliderSimple from 'components/Slider/SliderSimple';
 // import { Player } from 'video-react';
@@ -29,9 +29,9 @@ export default function AboutMeSection({ name }) {
                 height="494"
                 src="https://www.youtube.com/embed/f96YvU9RT_8?si=swajn3PTSSGXdyGh&rel=0"
                 title="YouTube video player"
-                frameborder="0"
+                // frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></StyledIframe>
             </StyledWrapperVideo>
 

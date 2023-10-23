@@ -16,7 +16,6 @@ const NotFound = () => {
     </StyledThumb>
   );
 };
-export default NotFound;
 
 export const StyledLink = styled(Link)`
   padding: 5px;
@@ -55,3 +54,5 @@ export const StyledThumb = styled.div`
     color: var(--secondary-text);
   }
 `;
+
+export default NotFound;

@@ -24,7 +24,7 @@ import {
   PlayToggle,
 } from 'video-react';
 
-const SliderVideo = () => {
+export default function SliderVideo() {
   return (
     <StyledSwiperVideo
       modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard, Zoom]}
@@ -76,9 +76,7 @@ const SliderVideo = () => {
       </SwiperSlide>
     </StyledSwiperVideo>
   );
-};
-
-export default SliderVideo;
+}
 
 export const StyledSwiperVideo = styled(Swiper)`
   display: flex;

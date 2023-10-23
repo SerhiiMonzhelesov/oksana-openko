@@ -15,7 +15,7 @@ import { confirmNamePage } from 'helpers/confirmNamePage';
 import SliderSimple from 'components/Slider/SliderSimple';
 import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
-export default function ConsultationPage() {
+function ConsultationPage() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -66,3 +66,5 @@ export default function ConsultationPage() {
     </>
   );
 }
+
+export default ConsultationPage;
