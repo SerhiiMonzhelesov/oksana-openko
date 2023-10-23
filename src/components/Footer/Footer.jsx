@@ -36,6 +36,7 @@ const Footer = () => {
             }}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Oksana Openko Instagram page"
           >
             <StyledIcon
               viewBox="0 0 32 32"
@@ -53,6 +54,7 @@ const Footer = () => {
             to="https://t.me/oksana_openko_sexolog"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Oksana Openko Telegram channel"
           >
             <StyledIcon viewBox="0 0 32 32">
               <use href={sprite + '#telegram'}></use>
@@ -64,6 +66,7 @@ const Footer = () => {
             to="https://www.facebook.com/profile.php?id=100075513560952"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Oksana Openko Facebook account"
           >
             <StyledIcon viewBox="0 0 32 32">
               <use href={sprite + '#facebook'}></use>

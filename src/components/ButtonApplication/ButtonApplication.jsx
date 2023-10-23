@@ -12,6 +12,7 @@ export default function ButtonApplication() {
     <StyledButtonApplication
       to="/#contacts"
       scroll={el => scrollWithOffset(el)}
+      aria-label="Apply for the service"
     >
       Залишити заявку
     </StyledButtonApplication>

@@ -86,12 +86,18 @@ export default function Header() {
       <Container>
         <StyledInner>
           <StyledWrapperBurgerLogo>
-            <StyledBurger onClick={toggleMenu}>
+            <StyledBurger
+              onClick={toggleMenu}
+              aria-label="Navigation menu on the homepage"
+            >
               <svg width="24" height="24" viewBox="0 0 24 24">
                 <use href={SvgSprite + '#burger'} />
               </svg>
             </StyledBurger>
-            <StyledLogo to="/">
+            <StyledLogo
+              to="/"
+              aria-label="Go to navigation menu on the homepage"
+            >
               <svg style={{ width: '48px', height: '48px' }}>
                 <use xlinkHref={`${logo}#logo`} />
               </svg>
@@ -103,6 +109,7 @@ export default function Header() {
             <StyledNavLink
               data-scroll="about-me"
               onClick={handleScrollToElement}
+              aria-label="Go to section About Me on the homepage"
             >
               Про мене
             </StyledNavLink>
@@ -112,29 +119,41 @@ export default function Header() {
             <StyledNavLink
               data-scroll="services"
               onClick={handleScrollToElement}
+              aria-label="Go to section Services Me on the homepage"
             >
               Послуги
             </StyledNavLink>
-            <StyledNavLink data-scroll="rules" onClick={handleScrollToElement}>
+            <StyledNavLink
+              data-scroll="rules"
+              onClick={handleScrollToElement}
+              aria-label="Go to section Rules of Work on the homepage"
+            >
               Правила роботи
             </StyledNavLink>
             <StyledNavLink
               data-scroll="contacts"
               onClick={handleScrollToElement}
+              aria-label="Go to section Contacts on the homepage"
             >
               Контакти
             </StyledNavLink>
           </StyledNavList>
 
           <StyledMobileMenu open={isOpen}>
-            <StyledButtonClose onClick={toggleMenu}>
+            <StyledButtonClose
+              onClick={toggleMenu}
+              aria-label="Close navigation menu"
+            >
               <svg width="40" height="40" viewBox="0 0 40 40">
                 <use href={SvgSprite + '#btn-close'} />
               </svg>
             </StyledButtonClose>
 
             <StyledMobileMenuHeader>
-              <StyledMobileLogo to="/">
+              <StyledMobileLogo
+                to="/"
+                aria-label="Go to navigation menu on the homepage"
+              >
                 <svg style={{ width: '48px', height: '48px' }}>
                   <use xlinkHref={`${logo}#logo`} />
                 </svg>
@@ -146,24 +165,28 @@ export default function Header() {
               <StyledMobileNavLink
                 data-scroll="about-me"
                 onClick={handleScrollToElement}
+                aria-label="Go to section About Me on the homepage"
               >
                 Про мене
               </StyledMobileNavLink>
               <StyledMobileNavLink
                 data-scroll="services"
                 onClick={handleScrollToElement}
+                aria-label="Go to section Services Me on the homepage"
               >
                 Послуги
               </StyledMobileNavLink>
               <StyledMobileNavLink
                 data-scroll="rules"
                 onClick={handleScrollToElement}
+                aria-label="Go to section Rules of Work on the homepage"
               >
                 Правила роботи
               </StyledMobileNavLink>
               <StyledMobileNavLink
                 data-scroll="contacts"
                 onClick={handleScrollToElement}
+                aria-label="Go to section Contacts on the homepage"
               >
                 Контакти
               </StyledMobileNavLink>
