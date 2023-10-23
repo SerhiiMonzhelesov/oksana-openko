@@ -33,6 +33,8 @@ export const StyledLeftWrapperContent = styled.div`
         ? '125px'
         : props.name.cards || props.name.speaker
         ? '224px'
+        : props.name.satisfaction
+        ? '79px'
         : 'auto'};
   }
 `;

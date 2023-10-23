@@ -14,6 +14,7 @@ import LinkBonus from 'components/LinkBonus/LinkBonus';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
+import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
 export default function SexEducationPage() {
   const location = useLocation();
@@ -40,7 +41,9 @@ export default function SexEducationPage() {
                 <TextField name={namePage} />
                 <LinkBonus />
                 <ListField name={namePage} />
-                <SliderSimple title="Відгуки" name={namePage} />
+                <FeedbackWrapperContent name={namePage}>
+                  <SliderSimple title="Відгуки" name={namePage} />
+                </FeedbackWrapperContent>
                 <PriceField name={namePage} />
               </>
             )}
@@ -58,7 +61,9 @@ export default function SexEducationPage() {
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
                 <ListField name={namePage} />
-                <SliderSimple title="Відгуки" name={namePage} />
+                <FeedbackWrapperContent name={namePage}>
+                  <SliderSimple title="Відгуки" name={namePage} />
+                </FeedbackWrapperContent>
               </>
             )}
             {isDesktop && (
@@ -74,7 +79,9 @@ export default function SexEducationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <SliderSimple title="Відгуки" name={namePage} />
+                <FeedbackWrapperContent name={namePage}>
+                  <SliderSimple title="Відгуки" name={namePage} />
+                </FeedbackWrapperContent>
               </>
             )}
             <ButtonApplication />

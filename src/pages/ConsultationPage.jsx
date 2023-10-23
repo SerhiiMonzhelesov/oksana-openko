@@ -13,6 +13,7 @@ import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import { confirmNamePage } from 'helpers/confirmNamePage';
 import SliderSimple from 'components/Slider/SliderSimple';
+import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
 export default function ConsultationPage() {
   const location = useLocation();
@@ -34,8 +35,9 @@ export default function ConsultationPage() {
                 <MediaThumb name={namePage} />
                 <DescriptionAccentPage name={namePage} />
                 <ListField name={namePage} />
-                <SliderSimple title="Відгуки" name={namePage} />
-
+                <FeedbackWrapperContent name={namePage}>
+                  <SliderSimple title="Відгуки" name={namePage} />
+                </FeedbackWrapperContent>
                 <PriceField name={namePage} />
               </>
             )}
@@ -51,7 +53,9 @@ export default function ConsultationPage() {
                   <MediaThumb name={namePage} />
                   <PriceField name={namePage} />
                 </RigthWrapperContent>
-                <SliderSimple title="Відгуки" name={namePage} />
+                <FeedbackWrapperContent name={namePage}>
+                  <SliderSimple title="Відгуки" name={namePage} />
+                </FeedbackWrapperContent>
               </>
             )}
 
