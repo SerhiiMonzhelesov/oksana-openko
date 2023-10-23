@@ -1,5 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router-dom';
+
 import { confirmNamePage } from 'helpers/confirmNamePage';
 import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs';
 import Container from 'components/Container/Container';
@@ -13,6 +14,7 @@ import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
+import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
 export default function SelfSatisfactionWorkPage() {
   const location = useLocation();
@@ -32,7 +34,9 @@ export default function SelfSatisfactionWorkPage() {
               <MediaThumb name={namePage} />
               <TextField name={namePage} />
               <ListField name={namePage} />
-              <SliderSimple title="Відгуки" name={namePage} />
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
               <PriceField name={namePage} />
             </>
           )}
@@ -49,9 +53,11 @@ export default function SelfSatisfactionWorkPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
             </>
           )}
-          <SliderSimple title="Відгуки" name={namePage} />
           <ButtonApplication />
         </MainWrapperContent>
       </Container>

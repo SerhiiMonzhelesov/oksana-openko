@@ -7,7 +7,7 @@ export default function BreadCrumbs({ titlePage, name }) {
   const scrollWithOffset = el => {
     const yCoordinate = el.getBoundingClientRect().top + window.scrollY;
     const yOffset = -79;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'auto' });
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
   return (
     <StyledBreadCrumbs name={name}>

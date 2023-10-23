@@ -13,6 +13,7 @@ import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
+import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
 export default function PlayingWithCardsPage() {
   const location = useLocation();
@@ -32,7 +33,9 @@ export default function PlayingWithCardsPage() {
               <MediaThumb name={namePage} />
               <DescriptionAccentPage name={namePage} />
               <TextField name={namePage} />
-              <SliderSimple title="Відгуки" name={namePage} />
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
               <PriceField name={namePage} />
             </>
           )}
@@ -49,7 +52,9 @@ export default function PlayingWithCardsPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
-              <SliderSimple title="Відгуки" name={namePage} />
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
             </>
           )}
           <ButtonApplication />

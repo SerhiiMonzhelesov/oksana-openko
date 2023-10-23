@@ -13,6 +13,7 @@ import TextField from 'components/contentPagesComponents/TextField';
 import ButtonApplication from 'components/ButtonApplication/ButtonApplication';
 import PriceField from 'components/PriceField/PriceField';
 import SliderSimple from 'components/Slider/SliderSimple';
+import FeedbackWrapperContent from 'components/ContentPageWrappers/FeedbackWrapperContent';
 
 export default function InvitedSpeakerPage() {
   const location = useLocation();
@@ -32,7 +33,9 @@ export default function InvitedSpeakerPage() {
               <TitlePages titlePage={titlePage} name={namePage} />
               <MediaThumb name={namePage}></MediaThumb>
               <TextField name={namePage} />
-              <SliderSimple title="Відгуки" name={namePage} />
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
               <PriceField name={namePage} />
             </>
           )}
@@ -47,7 +50,9 @@ export default function InvitedSpeakerPage() {
                 <MediaThumb name={namePage} />
                 <PriceField name={namePage} />
               </RigthWrapperContent>
-              <SliderSimple title="Відгуки" name={namePage} />
+              <FeedbackWrapperContent name={namePage}>
+                <SliderSimple title="Відгуки" name={namePage} />
+              </FeedbackWrapperContent>
             </>
           )}
           <ButtonApplication />

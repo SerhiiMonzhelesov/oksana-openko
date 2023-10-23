@@ -31,6 +31,7 @@ export const StyledServiceCard = styled.li`
   img {
     width: 100%;
     object-fit: cover;
+    aspect-ratio: 343 / 366;
   }
 
   @media screen and (min-width: 768px) {
@@ -46,8 +47,7 @@ export const StyledServiceCard = styled.li`
       line-height: 1.2;
     }
     img {
-      width: 221px;
-      height: 235px;
+      aspect-ratio: 221 / 235;
     }
   }
 
@@ -64,8 +64,7 @@ export const StyledServiceCard = styled.li`
       line-height: 1;
     }
     img {
-      width: 352px;
-      height: 376px;
+      aspect-ratio: 352 / 376;
     }
   }
 `;

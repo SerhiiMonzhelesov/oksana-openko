@@ -1,9 +1,10 @@
-import dataAllFeedback from 'data/dataFeddback';
 import { useEffect, useRef, useState } from 'react';
+
+import dataAllFeedback from 'data/dataFeddback';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import styled from 'styled-components';
 import { StyledSliderAboutSubtitle } from './Slider.styled';
+import { StyledWrapperGallery } from './SliderSimple.styled';
 
 export default function SliderSimple({ title, name }) {
   const galleryRef = useRef(null);
@@ -48,7 +49,7 @@ export default function SliderSimple({ title, name }) {
   return (
     <>
       <StyledSliderAboutSubtitle>{title}</StyledSliderAboutSubtitle>
-      <Wrapper name={name}>
+      <StyledWrapperGallery name={name}>
         <div className="gallery" ref={galleryRef}>
           {dataSlider.map((img, index) => (
             <a
@@ -76,62 +77,7 @@ export default function SliderSimple({ title, name }) {
             );
           })}
         </div>
-      </Wrapper>
+      </StyledWrapperGallery>
     </>
   );
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  .gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    max-width: 1120px;
-    gap: 24px;
-    overflow-x: scroll;
-    padding-bottom: 10px;
-
-    &::-webkit-scrollbar {
-      width: 5px; /* Ширина полосы прокрутки */
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--bg-brown); /* Цвет ползунка */
-      border-radius: 5px; /* Скругление углов ползунка */
-    }
-  }
-
-  .wrapper-bullets-nav {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding-top: 20px;
-  }
-
-  button {
-    width: 15px;
-    height: 15px;
-    border-radius: 10px;
-    border: 0.5px solid grey;
-  }
-
-  .active {
-    background-color: #7b6bda;
-  }
-  img {
-    padding: ${props => (props.name.home ? '0' : '16px 12px')};
-    border: ${props =>
-      props.name.home ? 'none' : '1px solid var(--bg-primery)'};
-  }
-  @media screen and (min-width: 768px) {
-    margin-bottom: ${props => (props.name.home ? '0' : '188px')};
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: ${props => props.name.cards && '152px'};
-  }
-`;
