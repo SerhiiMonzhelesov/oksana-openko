@@ -27,8 +27,11 @@ export default function AboutMeSection({ name }) {
               <StyledIframe
                 width="324"
                 height="494"
-                src="https://www.youtube.com/embed/f96YvU9RT_8?si=swajn3PTSSGXdyGh"
+                src="https://www.youtube.com/embed/f96YvU9RT_8?si=swajn3PTSSGXdyGh&rel=0"
                 title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
               ></StyledIframe>
             </StyledWrapperVideo>
 
