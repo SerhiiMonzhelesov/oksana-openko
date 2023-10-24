@@ -49,14 +49,14 @@ img {
   display: block;
 }
 
-.sl-wrapper .sl-close, 
-.sl-wrapper .sl-counter, 
-.sl-wrapper .sl-navigation button.sl-prev, 
+.sl-wrapper .sl-close,
+.sl-wrapper .sl-counter,
+.sl-wrapper .sl-navigation button.sl-prev,
 .sl-wrapper .sl-navigation button.sl-next {
   color: #575150;
 }
 
-.sl-overlay{
+.sl-overlay {
   background: rgb(234, 231, 231);
 }
 
@@ -66,7 +66,7 @@ img {
 }
 
 .PhoneInputCountry {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
