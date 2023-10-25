@@ -131,9 +131,10 @@ export const StyledInput = styled.input`
 export const StyledTextarea = styled.textarea`
   display: block;
   height: 49px;
-  max-height: 180px;
+  max-height: 90px;
   width: 100%;
   max-width: 344px;
+  resize: vertical;
   margin-bottom: 32px;
   padding: 15px 12px 13px 12px;
   font-family: 'ProximaNova-400', sans-serif;

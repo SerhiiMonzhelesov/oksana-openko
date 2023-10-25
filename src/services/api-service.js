@@ -13,7 +13,7 @@ export function addContact(formData) {
     .post(`${BASE_URL}/application`, formData, options)
     .then(response => response.data)
     .catch(error => {
-      console.warn(error.message);
+      console.warn('Ошибка при отправке запроса:', error.message);
       throw error;
     });
 }

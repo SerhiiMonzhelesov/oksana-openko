@@ -17,7 +17,7 @@ import PhoneInput from 'react-phone-number-input';
 import { dataFormat, dataServices } from 'data/data-request';
 import ButtonToTop from '../ButtonToTop/ButtonToTop';
 import Feedback from 'components/Feedback/Feedback';
-import { addContact } from 'data/api-service';
+import { addContact } from '../../services/api-service.js';
 
 export default function LeaveRequestSection() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -115,8 +115,8 @@ export default function LeaveRequestSection() {
 
     if (!formData.phone) {
       newErrors.phone = 'Вкажіть номер телефону';
-    } else if (formData.phone.length < 12 || formData.phone.length > 50) {
-      newErrors.phone = 'Номер телефону повинен містити від 12 до 50 символів';
+    } else if (formData.phone.length < 10 || formData.phone.length > 50) {
+      newErrors.phone = 'Некоректно введений номер';
     }
 
     if (!formData.service) {
