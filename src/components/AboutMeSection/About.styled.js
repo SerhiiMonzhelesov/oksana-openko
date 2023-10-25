@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import 'video-react/dist/video-react.css';
 
 export const StyledAboutMeSection = styled.section`
   padding-top: 112px;
