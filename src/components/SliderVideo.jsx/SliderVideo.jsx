@@ -37,9 +37,16 @@ export const StyledSwiperVideo = styled(Swiper)`
   display: flex;
   width: 100%;
   height: 100%;
+  padding-bottom: 32px !important;
 
   .swiper-slide {
     max-height: 376px;
+
+    video {
+      width: 342px;
+      height: 376px;
+      object-fit: cover;
+    }
   }
 
   //pagination
@@ -81,6 +88,10 @@ export const StyledSwiperVideo = styled(Swiper)`
     }
     .swiper-slide {
       max-height: 500px;
+      video {
+        width: 342px;
+        height: 500px;
+      }
     }
     .swiper-pagination {
       left: 50%;
@@ -97,6 +108,10 @@ export const StyledSwiperVideo = styled(Swiper)`
     }
     .swiper-slide {
       max-height: 656px;
+      video {
+        width: 448px;
+        height: 656px;
+      }
     }
   }
 `;

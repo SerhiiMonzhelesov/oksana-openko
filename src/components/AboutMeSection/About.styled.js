@@ -14,6 +14,11 @@ export const StyledAboutMeSection = styled.section`
     line-height: 1.25;
     color: var(--primery-text);
   }
+  video {
+    object-fit: cover;
+    width: 324px;
+    height: 494px;
+  }
 
   //Tablet
   @media screen and (min-width: 768px) {
@@ -57,6 +62,10 @@ export const StyledAboutMeSection = styled.section`
     h2 {
       margin-top: 40px;
       margin-bottom: 56px;
+    }
+    video {
+      width: 448px;
+      height: 905px;
     }
   }
 `;
