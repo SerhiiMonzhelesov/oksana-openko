@@ -99,7 +99,7 @@ export const StyledMobileMenu = styled.div`
   background-color: var(--bg-brown);
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -103%;
   z-index: 10;
   transition: left 0.3s ease-in-out;
 
@@ -108,6 +108,10 @@ export const StyledMobileMenu = styled.div`
     css`
       left: 0;
     `}
+
+  @media screen and (max-width: 375px) {
+    width: 320px;
+  }
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
