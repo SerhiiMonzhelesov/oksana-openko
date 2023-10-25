@@ -3,10 +3,7 @@ import React from 'react';
 import {
   StyledAboutAccentText,
   StyledAboutList,
-  StyledAboutSpan,
-  StyledAboutSubtitle,
   StyledWrapperGames,
-  StyledWrapperIntro,
 } from './About.styled';
 
 const AboutText = () => {
@@ -14,13 +11,10 @@ const AboutText = () => {
     <>
       <StyledAboutList>
         <li>
-          <StyledWrapperIntro>
+          <div>
             <p>
-              <StyledAboutSpan>
-                Оксана Опенько: дипломований сексолог,
-              </StyledAboutSpan>{' '}
-              який допоможе вам і вашому партнеру відкрити нові горизонти
-              інтимних відносин.
+              <span>Оксана Опенько: дипломований сексолог,</span> який допоможе
+              вам і вашому партнеру відкрити нові горизонти інтимних відносин.
             </p>
             <p>
               З індивідуальним підходом до кожного клієнта, я допоможу вам і
@@ -29,21 +23,21 @@ const AboutText = () => {
               тим, хто перебуває в довготривалих стосунках і шукає свіжі підходи
               до відновлення близькості.
             </p>
-          </StyledWrapperIntro>
+          </div>
         </li>
         <li>
-          <StyledAboutSubtitle>
-            Професійний ріст і спеціалізація:
-          </StyledAboutSubtitle>
+          <h3>Професійний ріст і спеціалізація:</h3>
           <p>
             На стадії завершення освіти з психотерапії, фокусуючись на методі
-            Consonance Therapy. Глибокий досвід роботи з травмами сексуального
-            насилля, негативним сексуальним досвідом та викликами статевого
-            виховання.
+            Consonance Therapy.
+          </p>
+          <p>
+            Досвід роботи з травмами сексуального насилля, негативним
+            сексуальним досвідом та викликами статевого виховання.
           </p>
         </li>
         <li>
-          <StyledAboutSubtitle>Авторські проекти:</StyledAboutSubtitle>
+          <h3>Авторські проекти:</h3>
           <StyledWrapperGames>
             <li>
               <p>

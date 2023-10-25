@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const StyledSliderAboutSubtitle = styled.h3`
+  margin-bottom: 24px;
+  font-family: 'ProximaNova-600';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.11;
+  color: var(--main-text);
+`;
+
 export const StyledWrapperGallery = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,11 +32,12 @@ export const StyledWrapperGallery = styled.div`
     gap: 12px;
   }
 
-  button {
+  span {
     width: 12px;
     height: 12px;
     border-radius: 8px;
     border: 1px solid #777e90;
+    cursor: pointer;
   }
 
   .active {

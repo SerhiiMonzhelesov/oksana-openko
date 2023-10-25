@@ -32,12 +32,13 @@ export default function SliderVideo() {
       slidesPerView={1}
       keyboard={{ enabled: true }}
       centeredSlides={true}
+      loop={true}
     >
       <SwiperSlide>
         <StyledPlayer
           width="342"
           height="376"
-          src="https://res.cloudinary.com/dfqclpulu/video/upload/v1697630980/imcyxbfoff1qo9tubmhk.mp4"
+          src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698178334/speaker_1_bnbuje.mp4"
         >
           <ControlBar>
             <ReplayControl seconds={10} order={1.1} />
@@ -54,7 +55,7 @@ export default function SliderVideo() {
         <StyledPlayer
           width="342"
           height="376"
-          src="https://res.cloudinary.com/dfqclpulu/video/upload/v1697631006/bgdgvdnnzdna6l6a40cu.mp4"
+          src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698178343/speaker_2_vimant.mp4"
         >
           <ControlBar>
             <ReplayControl seconds={10} order={1.1} />
@@ -71,7 +72,7 @@ export default function SliderVideo() {
         <StyledPlayer
           width="342"
           height="376"
-          src="https://res.cloudinary.com/dfqclpulu/video/upload/v1697630996/h9wraxeuj6ddeyyg0gzq.mp4"
+          src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698178337/speaker_3_jxwx7v.mp4"
         ></StyledPlayer>
       </SwiperSlide>
     </StyledSwiperVideo>
@@ -85,15 +86,13 @@ export const StyledSwiperVideo = styled(Swiper)`
 
   .swiper-slide {
     max-height: 376px;
-    video {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
   }
 
   //pagination
-  .swiper-pagination {
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
     left: 50%;
     transform: translateX(-50%);
     width: 74px;
@@ -128,14 +127,6 @@ export const StyledSwiperVideo = styled(Swiper)`
     }
     .swiper-slide {
       max-height: 500px;
-      video {
-        height: 500px;
-        &&.video-react-big-play-button {
-          bottom: 50%;
-          left: 50%;
-          transform: translate(-50%, -100%);
-        }
-      }
     }
     .swiper-pagination {
       left: 50%;
@@ -152,9 +143,6 @@ export const StyledSwiperVideo = styled(Swiper)`
     }
     .swiper-slide {
       max-height: 656px;
-      video {
-        height: 656px;
-      }
     }
   }
 `;

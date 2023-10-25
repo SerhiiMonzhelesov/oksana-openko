@@ -5,8 +5,10 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import dataAllFeedback from 'data/dataFeddback';
-import { StyledSliderAboutSubtitle } from './Slider.styled';
-import { StyledWrapperGallery } from './SliderSimple.styled';
+import {
+  StyledSliderAboutSubtitle,
+  StyledWrapperGallery,
+} from './SliderSimple.styled';
 
 export default function SliderSimple({ title, name }) {
   const galleryRef = useRef(null);
@@ -73,12 +75,12 @@ export default function SliderSimple({ title, name }) {
         <div className="wrapper-bullets-nav" ref={bulletsRef}>
           {dataSlider.map((_, index) => {
             return (
-              <button
+              <span
                 key={index}
                 onClick={() => handlerSelectedImage(index)}
                 className={index === activeIndex ? 'active' : ''}
                 aria-label="show the corresponding image in the gallery"
-              ></button>
+              ></span>
             );
           })}
         </div>
