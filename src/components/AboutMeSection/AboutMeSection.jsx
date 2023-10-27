@@ -47,7 +47,7 @@ export default function AboutMeSection({ name }) {
               <li>
                 <StyledWrapperImgBottom>
                   <picture>
-                    <source srcSet={imgTopWebp} type="image/webp" />
+                    <source srcSet={imgBottom} type="image/webp" />
                     <img src={imgBottomWebp} alt="Portrait of Sexologist" />
                   </picture>
                 </StyledWrapperImgBottom>
