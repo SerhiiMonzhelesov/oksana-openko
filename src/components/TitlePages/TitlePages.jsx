@@ -21,18 +21,10 @@ const StyledTitlePages = styled.h1`
         : props.name.speaker
         ? '-1.2px'
         : '-0.4px'};
-    margin-bottom: ${props =>
-      props.name.education
-        ? '56px'
-        : props.name.psychotherapy
-        ? '88px'
-        : props.name.satisfaction
-        ? '32px'
-        : '72px'};
+    margin-bottom: ${props => (props.name.psychotherapy ? '88px' : '72px')};
   }
 
   @media screen and (min-width: 1440px) {
     letter-spacing: -0.4px;
-    margin-bottom: ${props => (props.name.psychotherapy ? '88px' : '72px')};
   }
 `;

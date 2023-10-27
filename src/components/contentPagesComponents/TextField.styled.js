@@ -39,7 +39,16 @@ export const StyledTextField = styled.div`
         ? '40px'
         : '0'};
 
-    margin-bottom: ${props => props.name.education && '55px'};
+    margin-bottom: ${props =>
+      props.name.education
+        ? '55px'
+        : props.name.satisfaction
+        ? '40px'
+        : props.name.cards || props.name.speaker
+        ? '0'
+        : props.name.psychotherapy
+        ? '48px'
+        : '0'};
 
     .first-text {
       max-width: ${props => props.name.satisfaction && '544px'};

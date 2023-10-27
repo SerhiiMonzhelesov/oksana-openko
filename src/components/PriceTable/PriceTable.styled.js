@@ -74,10 +74,6 @@ export const StyledTable = styled.table`
       width: ${props => props.name.speaker && '112px'};
     }
 
-    .first-row > td {
-      padding-bottom: ${props => props.name.education && '22px'};
-    }
-
     .second-cell {
       padding-left: 32px;
       padding-right: ${props => props.name.psychotherapy && '24px'};
