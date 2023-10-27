@@ -9,7 +9,7 @@ import {
   StyledWrapperFeedback,
 } from './Feedback.styled';
 
-export default function Feedback({ onFeedbackClose }) {
+export default function Feedback({ onFeedbackClose, isError }) {
   return (
     <StyledWrapperFeedback>
       <StyledFeedback>
@@ -19,9 +19,15 @@ export default function Feedback({ onFeedbackClose }) {
           </svg>
         </StyledFeedbackHeader>
         <StyledFeedbackContent>
-          <StyledFeedbackTitle>Дякуємо!</StyledFeedbackTitle>
-          <StyledFeedbackText>Ваша заявка прийнята.</StyledFeedbackText>
-          <p>Очікуйте відповідь.</p>
+          <StyledFeedbackTitle>
+            {isError ? null : 'Дякуємо!'}
+          </StyledFeedbackTitle>
+          <StyledFeedbackText>
+            {isError
+              ? 'Помилка з’єднання з сервером!'
+              : 'Ваша заявка прийнята.'}
+          </StyledFeedbackText>
+          {isError ? null : <p>Очікуйте відповідь.</p>}
         </StyledFeedbackContent>
         <StyledButtonClose onClick={onFeedbackClose}>
           <svg width="40" height="40" viewBox="0 0 40 40">

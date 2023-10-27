@@ -19,6 +19,15 @@ export default function MediaThumb({ name }) {
     <StyledMediaThumb name={name}>
       {name.speaker ? (
         <SliderVideo />
+      ) : name.cards ? (
+        <video
+          width="342"
+          height="376"
+          src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698178332/cards_jheuuf.mp4"
+          poster="https://res.cloudinary.com/dlpvvcdpd/image/upload/v1698338990/cards_nisqpm.jpg"
+          controls
+          preload="none"
+        ></video>
       ) : (
         <img
           data-src={

@@ -13,17 +13,6 @@ import imgBottom from '../../assets/images/about_me_section/about-bottom.jpeg';
 
 import SliderSimple from 'components/Slider/SliderSimple';
 import { useMediaQuery } from 'react-responsive';
-import {
-  Player,
-  ControlBar,
-  ReplayControl,
-  ForwardControl,
-  CurrentTimeDisplay,
-  TimeDivider,
-  PlaybackRateMenuButton,
-  VolumeMenuButton,
-  PlayToggle,
-} from 'video-react';
 
 export default function AboutMeSection({ name }) {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -33,24 +22,14 @@ export default function AboutMeSection({ name }) {
         <Container>
           <section>
             <StyledWrapperVideo>
-              <Player
+              <video
                 width={isDesktop ? '448' : '324'}
                 height={isDesktop ? '905' : '494'}
                 src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698179011/about_me_wpuv57.mp4"
-              >
-                <ControlBar>
-                  <ReplayControl seconds={10} order={1.1} />
-                  <ForwardControl seconds={30} order={1.2} />
-                  <CurrentTimeDisplay order={4.1} />
-                  <TimeDivider order={4.2} />
-                  <PlaybackRateMenuButton
-                    rates={[5, 2, 1, 0.5, 0.1]}
-                    order={7.1}
-                  />
-                  <VolumeMenuButton disabled />
-                  <PlayToggle />
-                </ControlBar>
-              </Player>
+                controls
+                poster="https://res.cloudinary.com/dlpvvcdpd/image/upload/v1698340893/about_mwazdb.jpg"
+                preload="none"
+              ></video>
             </StyledWrapperVideo>
 
             <h2>Про мене</h2>

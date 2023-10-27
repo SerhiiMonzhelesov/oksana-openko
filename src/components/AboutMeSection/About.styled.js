@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import 'video-react/dist/video-react.css';
 
 export const StyledAboutMeSection = styled.section`
   padding-top: 112px;
@@ -14,6 +13,11 @@ export const StyledAboutMeSection = styled.section`
     font-size: 32px;
     line-height: 1.25;
     color: var(--primery-text);
+  }
+  video {
+    object-fit: cover;
+    width: 324px;
+    height: 494px;
   }
 
   //Tablet
@@ -58,6 +62,10 @@ export const StyledAboutMeSection = styled.section`
     h2 {
       margin-top: 40px;
       margin-bottom: 56px;
+    }
+    video {
+      width: 448px;
+      height: 905px;
     }
   }
 `;
