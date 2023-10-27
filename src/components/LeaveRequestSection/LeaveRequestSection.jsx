@@ -20,8 +20,8 @@ import Feedback from 'components/Feedback/Feedback';
 import { addContact } from '../../services/api-service.js';
 
 export default function LeaveRequestSection() {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isError, setIsError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -58,7 +58,6 @@ export default function LeaveRequestSection() {
   };
 
   const handleServiceChange = selectedOption => {
-    console.log(selectedOption.value);
     setFormData({
       ...formData,
       service: selectedOption,
@@ -66,7 +65,6 @@ export default function LeaveRequestSection() {
   };
 
   const handleFormatChange = selectedOption => {
-    console.log(selectedOption.value);
     setFormData({
       ...formData,
       format: selectedOption,
@@ -101,7 +99,7 @@ export default function LeaveRequestSection() {
     localStorage.setItem('USER_DATA', JSON.stringify(formData));
   }, [formData]);
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     const newErrors = {};
@@ -129,40 +127,46 @@ export default function LeaveRequestSection() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      setIsFormSubmitted(true);
-      setIsFeedbackVisible(true);
-      localStorage.removeItem('USER_DATA');
+    try {
+      if (Object.keys(newErrors).length === 0) {
+        setIsFormVisible(false);
 
-      const formDataForBackend = {
-        ...formData,
-        service: formData.service.value,
-        format: formData.format.value,
-      };
+        const formDataForBackend = {
+          ...formData,
+          service: formData.service.value,
+          format: formData.format.value,
+        };
 
-      addContact(formDataForBackend);
-      handleFormReset();
+        const data = await addContact(formDataForBackend);
+        if (data) {
+          localStorage.removeItem('USER_DATA');
+        }
+
+        handleFormReset();
+      }
+    } catch (error) {
+      console.warn('Помилка при надсиланні запиту:', error.message);
+      setIsError(true);
     }
   };
 
   const handleFeedbackClose = () => {
-    setIsFormSubmitted(false);
-    setIsFeedbackVisible(false);
+    setIsFormVisible(true);
+    setIsError(false);
   };
 
   return (
     <section id="contacts">
       <StyledSectionInner>
         <Container>
-          {isFormSubmitted ? (
-            <Feedback onFeedbackClose={handleFeedbackClose} />
-          ) : (
+          {isFormVisible ? (
             <>
               <StyledSectionTitle>Залишити заявку</StyledSectionTitle>
               <StyledForm onSubmit={handleSubmit}>
                 <StyledInputWrapper>
                   <StyledInput
                     type="text"
+                    aria-label="Ваше ім'я"
                     name="name"
                     placeholder="Ім’я*"
                     maxLength="50"
@@ -180,6 +184,7 @@ export default function LeaveRequestSection() {
 
                 <StyledInputWrapper>
                   <PhoneInput
+                    aria-label="Ваш номер телефону"
                     international
                     countryCallingCodeEditable={false}
                     defaultCountry="UA"
@@ -198,6 +203,7 @@ export default function LeaveRequestSection() {
 
                 <StyledInputWrapper>
                   <Select
+                    aria-label="Оберіть послугу"
                     styles={stylesSelect}
                     options={dataServices}
                     value={formData.service}
@@ -215,6 +221,7 @@ export default function LeaveRequestSection() {
 
                 <StyledInputWrapper>
                   <Select
+                    aria-label="Оберіть формат"
                     styles={stylesSelect}
                     options={dataFormat}
                     value={formData.format}
@@ -232,6 +239,7 @@ export default function LeaveRequestSection() {
 
                 <StyledTextarea
                   type="text"
+                  aria-label="Ваше питання (до 500 символiв)"
                   name="question"
                   maxLength="500"
                   placeholder="Ваше питання (до 500 символiв)"
@@ -246,6 +254,8 @@ export default function LeaveRequestSection() {
 
               <ButtonToTop />
             </>
+          ) : (
+            <Feedback onFeedbackClose={handleFeedbackClose} isError={isError} />
           )}
         </Container>
       </StyledSectionInner>

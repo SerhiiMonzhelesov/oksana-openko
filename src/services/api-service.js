@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3000/api';
+const BASE_URL = 'https://oksana-openko.onreder.com';
 
-export function addContact(formData) {
+export async function addContact(formData) {
   const options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     data: formData,
   };
 
-  return axios
-    .post(`${BASE_URL}/application`, formData, options)
-    .then(response => response.data)
-    .catch(error => {
-      console.warn('Ошибка при отправке запроса:', error.message);
-      throw error;
-    });
+  const data = await axios.post(
+    `${BASE_URL}/api/application`,
+    formData,
+    options
+  );
+
+  return data;
 }

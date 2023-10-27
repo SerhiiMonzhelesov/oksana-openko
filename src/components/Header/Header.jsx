@@ -18,7 +18,6 @@ import {
 } from './Header.styled';
 import SvgSprite from '../../assets/images/icons.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { HashLink as Link } from 'react-router-hash-link';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,11 +75,7 @@ export default function Header() {
       navigate(`/?scroll=${targetScroll}`);
     }
   };
-  // const scrollWithOffset = el => {
-  //   const yCoordinate = el.getBoundingClientRect().top + window.scrollY;
-  //   const yOffset = -79;
-  //   window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
-  // };
+
   return (
     <StyledHeader>
       <Container>
@@ -113,9 +108,6 @@ export default function Header() {
             >
               Про мене
             </StyledNavLink>
-            {/* <Link smooth to="/#services" scroll={el => scrollWithOffset(el)}>
-              TEST
-            </Link> */}
             <StyledNavLink
               data-scroll="services"
               onClick={handleScrollToElement}
