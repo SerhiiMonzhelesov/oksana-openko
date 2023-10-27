@@ -39,6 +39,7 @@ export const StyledAboutMeSection = styled.section`
 
     h2 {
       margin-top: 36px;
+      transform: translateY(-16px);
     }
   }
 
@@ -62,6 +63,7 @@ export const StyledAboutMeSection = styled.section`
     h2 {
       margin-top: 40px;
       margin-bottom: 56px;
+      transform: translateY(-31px);
     }
     video {
       width: 448px;
@@ -94,9 +96,14 @@ export const StyledWrapperVideo = styled.div`
     z-index: -1;
   }
 
+  // Mob
+
+  @media screen and (max-width: 767px) {
+    margin-top: 53px;
+  }
   //Tablet
   @media screen and (min-width: 768px) {
-    margin-top: 58px;
+    margin-top: 53px;
     margin-bottom: 56px;
   }
 
@@ -104,6 +111,7 @@ export const StyledWrapperVideo = styled.div`
   @media screen and (min-width: 1440px) {
     width: 448px;
     height: 905px;
+    margin-top: 60px;
 
     &::after {
       top: -61px;
@@ -124,6 +132,7 @@ export const StyledAboutImgList = styled.ul`
   li:nth-child(1) {
     order: 2;
     grid-area: first;
+    transform: translateX(-7px);
   }
 
   li:nth-child(2) {
@@ -137,19 +146,21 @@ export const StyledAboutImgList = styled.ul`
 
   //Tablet
   @media screen and (min-width: 768px) {
-    row-gap: 42px;
+    /* row-gap: 42px; */
     grid-template-areas:
       'first '
       'second ';
     margin-bottom: 0;
 
     li:nth-child(1) {
+      margin-bottom: 42px;
       padding-left: 10px;
+      transform: translate(0px, -14px);
     }
     li:nth-child(2) {
       grid-column-start: 2;
       align-items: start;
-      transform: translate(-20px, 32px);
+      transform: translate(-20px, 8px);
     }
   }
 
@@ -162,19 +173,21 @@ export const StyledAboutImgList = styled.ul`
     margin-bottom: 0;
 
     li:nth-child(1) {
-      padding-top: 11px;
+      padding-top: 0px;
+      transform: translate(0px, 9px);
     }
     li:nth-child(2) {
-      transform: translate(0, 105px);
+      transform: translate(0, 115px);
     }
   }
 `;
 
 export const StyledWrapperImg = styled.div`
   position: relative;
-  z-index: 1;
+  margin-top: 10px;
   width: 186px;
   height: 233px;
+  z-index: 1;
 
   img {
     width: 100%;
@@ -185,9 +198,9 @@ export const StyledWrapperImg = styled.div`
     content: ' ';
     display: block;
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: 12px;
+    top: -11px;
+    left: -11px;
+    right: 13px;
     width: 210px;
     height: 209px;
     background-color: var(--bg-brown);
@@ -195,9 +208,13 @@ export const StyledWrapperImg = styled.div`
     @media screen and (min-width: 1440px) {
       width: 192px;
       height: 191px;
+      top: -10px;
+      left: -10px;
+      right: 12px;
     }
   }
   @media screen and (min-width: 1440px) {
+    margin-top: 0px;
     width: 170px;
     height: 213px;
   }
@@ -213,14 +230,14 @@ export const StyledWrapperImgBottom = styled(StyledWrapperImg)`
 
   &::after {
     top: -32px;
-    left: 13px;
+    left: 8px;
     width: 153px;
     height: 157px;
     @media screen and (min-width: 1440px) {
       width: 192px;
       height: 196px;
       top: -40px;
-      left: 24px;
+      eft: 10px;
     }
   }
 `;
@@ -251,6 +268,9 @@ export const StyledAboutList = styled.ul`
     line-height: 1.11;
     color: var(--main-text);
   }
+  @media screen and (min-width: 1440px) {
+    transform: translateY(-34px);
+  }
 `;
 
 export const StyledAboutAccentText = styled.p`
@@ -268,6 +288,7 @@ export const StyledAboutAccentText = styled.p`
   @media screen and (min-width: 1440px) {
     margin-top: 16px;
     margin-bottom: 83px;
+    transform: translateY(-34px);
   }
 `;
 export const StyledWrapperGames = styled.ul`
