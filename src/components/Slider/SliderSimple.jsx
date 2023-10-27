@@ -79,7 +79,6 @@ export default function SliderSimple({ title, name }) {
                 key={index}
                 onClick={() => handlerSelectedImage(index)}
                 className={index === activeIndex ? 'active' : ''}
-                aria-label="show the corresponding image in the gallery"
               ></span>
             );
           })}
