@@ -13,13 +13,18 @@ export const StyledLeftWrapperContent = styled.div`
   margin-bottom: ${props =>
     props.name.consultation || props.name.satisfaction ? '88px' : '0'};
 
+  @media screen and (min-width: 768px) {
+    max-width: ${props =>
+      props.name.cards ? '341px' : props.name.speaker ? '342px' : '343px'};
+  }
+
   @media screen and (min-width: 1440px) {
     padding-top: 48px;
     max-width: ${props =>
       props.name.consultation
         ? '480px'
         : props.name.psychotherapy
-        ? '544px'
+        ? '540px'
         : props.name.education
         ? '553px'
         : props.name.cards || props.name.speaker

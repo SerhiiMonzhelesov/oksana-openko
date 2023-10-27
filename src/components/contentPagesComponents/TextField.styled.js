@@ -27,6 +27,7 @@ export const StyledTextField = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: ${props => (props.name.cards || props.name.speaker) && '0'};
+    gap: ${props => props.name.cards && '33px'};
   }
 
   @media screen and (min-width: 1440px) {

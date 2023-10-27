@@ -17,8 +17,8 @@ const Footer = () => {
     <StyledFooterWrapper>
       <StyledFooterTitle>Оксана Опенько</StyledFooterTitle>
       <StyledContactWrapper>
-        <StyledPhoneLink to="tel:+380976172636">
-          +38 097 617 26 36
+        <StyledPhoneLink to="tel:+380964923411">
+          +38 096 492 34 11
         </StyledPhoneLink>
         <StyledText>
           Консультації проводяться в <StyledTextBr /> м. Київ / м. Бровари
