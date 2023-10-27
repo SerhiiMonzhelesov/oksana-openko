@@ -26,7 +26,14 @@ export default function SliderVideo() {
     >
       {dataVideo.map((video, index) => (
         <SwiperSlide key={index}>
-          <video width="342" height="376" src={video.src} controls></video>
+          <video
+            width="342"
+            height="376"
+            src={video.src}
+            poster={video.poster}
+            controls
+            preload="none"
+          ></video>
         </SwiperSlide>
       ))}
     </StyledSwiperVideo>
@@ -37,7 +44,7 @@ export const StyledSwiperVideo = styled(Swiper)`
   display: flex;
   width: 100%;
   height: 100%;
-  padding-bottom: 32px !important;
+  padding-bottom: 16px !important;
 
   .swiper-slide {
     max-height: 376px;
@@ -48,21 +55,27 @@ export const StyledSwiperVideo = styled(Swiper)`
       object-fit: cover;
     }
   }
+  .swiper-wrapper {
+    height: 376px;
+    padding-bottom: 16px;
+  }
 
   //pagination
   .swiper-pagination-fraction,
   .swiper-pagination-custom,
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    /* align-items: center; */
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 74px;
-    height: 22px;
   }
   .swiper-pagination-bullet {
-    margin: 0 12px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border: 1px solid #777e90;
     background-color: #f2f1f3;
   }
@@ -70,17 +83,9 @@ export const StyledSwiperVideo = styled(Swiper)`
     background-color: var(--bg-primery);
   }
 
-  //Media Mob
-  @media screen and (max-width: 767px) {
-    .swiper-pagination {
-      border-radius: 20px;
-      background: rgba(242, 241, 243, 0.68);
-    }
-  }
-
   //Media Tablet
   @media screen and (min-width: 768px) {
-    padding-bottom: 32px;
+    padding-bottom: 32px !important;
 
     .swiper-wrapper {
       height: 500px;

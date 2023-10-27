@@ -27,8 +27,9 @@ export default function AboutMeSection({ name }) {
                 height={isDesktop ? '905' : '494'}
                 src="https://res.cloudinary.com/dlpvvcdpd/video/upload/v1698179011/about_me_wpuv57.mp4"
                 controls
-              >
-              </video>
+                poster="https://res.cloudinary.com/dlpvvcdpd/image/upload/v1698340893/about_mwazdb.jpg"
+                preload="none"
+              ></video>
             </StyledWrapperVideo>
 
             <h2>Про мене</h2>

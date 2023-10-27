@@ -11,6 +11,11 @@ export const StyledMediaThumb = styled.div`
     max-width: 343px;
   }
 
+  video {
+    width: 343px;
+    height: 376px;
+    object-fit: cover;
+  }
   .blur-up {
     -webkit-filter: blur(5px);
     filter: blur(5px);
@@ -39,6 +44,10 @@ export const StyledMediaThumb = styled.div`
     img {
       max-width: 342px;
     }
+    video {
+      width: 342px;
+      height: 500px;
+    }
   }
 
   @media screen and (min-width: 1440px) {
@@ -56,6 +65,10 @@ export const StyledMediaThumb = styled.div`
 
     img {
       max-width: 448px;
+    }
+    video {
+      width: 448px;
+      height: 656px;
     }
   }
 `;
