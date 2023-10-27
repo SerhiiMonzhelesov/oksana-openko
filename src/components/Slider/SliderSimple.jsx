@@ -63,7 +63,7 @@ export default function SliderSimple({ title, name }) {
               aria-label="go to view a larger image"
             >
               <picture>
-                <source srcset={img.webpSrc} type="image/webp" />
+                <source srcSet={img.webpSrc} type="image/webp" />
                 <img
                   data-src={img.src}
                   alt={img.alt}
