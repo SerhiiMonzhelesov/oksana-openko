@@ -10,6 +10,8 @@ import AboutText from './AboutText';
 import React from 'react';
 import imgTop from '../../assets/images/about_me_section/about-top.jpg';
 import imgBottom from '../../assets/images/about_me_section/about-bottom.jpeg';
+import imgTopWebp from '../../assets/images/about_me_section/about-top.webp';
+import imgBottomWebp from '../../assets/images/about_me_section/about-bottom.webp';
 
 import SliderSimple from 'components/Slider/SliderSimple';
 import { useMediaQuery } from 'react-responsive';
@@ -36,12 +38,18 @@ export default function AboutMeSection({ name }) {
             <StyledAboutImgList>
               <li>
                 <StyledWrapperImg>
-                  <img src={imgTop} alt="Portrait of Sexologist" />
+                  <picture>
+                    <source srcset={imgTopWebp} type="image/webp" />
+                    <img src={imgTop} alt="Portrait of Sexologist" />
+                  </picture>
                 </StyledWrapperImg>
               </li>
               <li>
                 <StyledWrapperImgBottom>
-                  <img src={imgBottom} alt="Portrait of Sexologist" />
+                  <picture>
+                    <source srcset={imgTopWebp} type="image/webp" />
+                    <img src={imgBottomWebp} alt="Portrait of Sexologist" />
+                  </picture>
                 </StyledWrapperImgBottom>
               </li>
             </StyledAboutImgList>

@@ -10,7 +10,7 @@ export default function ServiceCard({ service }) {
     maxWidth: 1439.9,
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-  const { name, img, alt_img, path_to_page } = service;
+  const { name, img, alt_img, path_to_page, webpSrc } = service;
 
   const pathToTop = `${path_to_page}#top`;
 
@@ -21,12 +21,15 @@ export default function ServiceCard({ service }) {
           to={pathToTop}
           aria-label={`Go to ${path_to_page} page`}
         >
-          <img
-            data-src={img}
-            alt={alt_img}
-            width={isTablet ? '221' : isDesktop ? '352' : '343'}
-            className="lazyload blur-up"
-          />
+          <picture>
+            <source srcset={webpSrc} type="image/webp" />
+            <img
+              data-src={img}
+              alt={alt_img}
+              width={isTablet ? '221' : isDesktop ? '352' : '343'}
+              className="lazyload blur-up"
+            />
+          </picture>
           <p>{name}</p>
         </StyledLinkCard>
       </StyledServiceCard>
