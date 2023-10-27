@@ -66,7 +66,6 @@ export const StyledSwiperVideo = styled(Swiper)`
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     display: flex;
-    /* align-items: center; */
     align-items: flex-end;
     justify-content: center;
     gap: 12px;
@@ -76,7 +75,7 @@ export const StyledSwiperVideo = styled(Swiper)`
   .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    border: 1px solid #777e90;
+    border: 1px solid #887b79;
     background-color: #f2f1f3;
   }
   .swiper-pagination-bullet-active {

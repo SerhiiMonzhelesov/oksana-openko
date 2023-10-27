@@ -7,6 +7,11 @@ export const StyledSliderAboutSubtitle = styled.h3`
   font-size: 18px;
   line-height: 1.11;
   color: var(--main-text);
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: -14px;
+    transform: translateY(-34px);
+  }
 `;
 
 export const StyledWrapperGallery = styled.div`
