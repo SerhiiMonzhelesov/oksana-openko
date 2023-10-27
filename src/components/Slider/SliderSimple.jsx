@@ -62,13 +62,16 @@ export default function SliderSimple({ title, name }) {
               onClick={() => handlerSelectedImage(index)}
               aria-label="go to view a larger image"
             >
-              <img
-                data-src={img.src}
-                alt={img.alt}
-                width={img.width}
-                height={img.height}
-                className="lazyload blur-up"
-              />
+              <picture>
+                <source srcset={img.webpSrc} type="image/webp" />
+                <img
+                  data-src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  className="lazyload blur-up"
+                />
+              </picture>
             </a>
           ))}
         </div>
