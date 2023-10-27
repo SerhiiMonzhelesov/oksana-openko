@@ -69,6 +69,14 @@ import violence from '../assets/images/slider/about_section/sexual-violence.jpg'
 import courses_with_coach from '../assets/images/slider/about_section/courses_with_international_coach.jpg';
 import mono_multi_trauma from '../assets/images/slider/about_section/mono_multi_trauma.jpg';
 import creative_thinking from '../assets/images/slider/about_section/creative-thinking.jpg';
+import main_diplomWebp from '../assets/images/slider/about_section/main_diplom.webp';
+import basicWebp from '../assets/images/slider/about_section/basic_ph.webp';
+import traumaWebp from '../assets/images/slider/about_section/trauma_treatment.webp';
+import body_and_emotionsWebp from '../assets/images/slider/about_section/body_and_emotions.webp';
+import violenceWebp from '../assets/images/slider/about_section/sexual-violence.webp';
+import courses_with_coachWebp from '../assets/images/slider/about_section/courses_with_international_coach.webp';
+import mono_multi_traumaWebp from '../assets/images/slider/about_section/mono_multi_trauma.webp';
+import creative_thinkingWebp from '../assets/images/slider/about_section/creative-thinking.webp';
 
 const dataAllFeedback = [
   {
@@ -304,48 +312,56 @@ const dataAllFeedback = [
     dataSlider: [
       {
         src: main_diplom,
+        webpSrc: main_diplomWebp,
         alt: 'Main Diplom of Education as a Sexologist',
         width: '344',
         height: '203',
       },
       {
         src: basic,
+        webpSrc: basicWebp,
         alt: 'Sertificate of Basics Psychological Counceling',
         width: '141',
         height: '204',
       },
       {
         src: trauma,
+        webpSrc: traumaWebp,
         alt: 'Sertificate of Psychology of Body in Trauma Treatment',
         width: '141',
         height: '204',
       },
       {
         src: body_and_emotions,
+        webpSrc: body_and_emotionsWebp,
         alt: 'Sertificate of Body and Emotions in Trauma Treatment',
         width: '141',
         height: '204',
       },
       {
         src: violence,
+        webpSrc: violenceWebp,
         alt: 'Sertificate of Combating Sexual Violence',
         width: '344',
         height: '203',
       },
       {
         src: courses_with_coach,
+        webpSrc: courses_with_coachWebp,
         alt: 'Sertificate of Passed Courses With International Coach',
         width: '324',
         height: '204',
       },
       {
         src: mono_multi_trauma,
+        webpSrc: mono_multi_traumaWebp,
         alt: 'Sertificate of Successfully Complited Seminar of Mono and Multi Trauma',
         width: '141',
         height: '204',
       },
       {
         src: creative_thinking,
+        webpSrc: creative_thinkingWebp,
         alt: 'Sertificate of Successfully Complited Seminar of Creative Thinking in Trauma Treatment',
         width: '141',
         height: '204',
