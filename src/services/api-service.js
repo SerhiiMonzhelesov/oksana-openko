@@ -5,7 +5,9 @@ const BASE_URL = 'https://oksana-openko.onreder.com';
 export async function addContact(formData) {
   const options = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
     data: formData,
   };
 
