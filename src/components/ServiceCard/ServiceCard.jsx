@@ -22,11 +22,12 @@ export default function ServiceCard({ service }) {
           aria-label={`Go to ${path_to_page} page`}
         >
           <picture>
-            <source srcset={webpSrc} type="image/webp" />
+            <source srcSet={webpSrc} type="image/webp" />
             <img
               data-src={img}
               alt={alt_img}
               width={isTablet ? '221' : isDesktop ? '352' : '343'}
+              height={isTablet ? '235' : isDesktop ? '376' : '366'}
               className="lazyload blur-up"
             />
           </picture>

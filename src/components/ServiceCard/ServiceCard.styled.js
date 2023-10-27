@@ -26,8 +26,8 @@ export const StyledServiceCard = styled.li`
   }
   img {
     width: 100%;
-    /* object-fit: cover;
-    aspect-ratio: 343 / 366; */
+    object-fit: cover;
+    /* aspect-ratio: 343 / 366;  */
   }
 
   @media screen and (min-width: 768px) {

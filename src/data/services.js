@@ -1,4 +1,4 @@
-import consultation from '../assets/images/services_section/consultation.jpg';
+import consultation from '../assets/images/services_section/consultation.webp';
 import sex_education from '../assets/images/services_section/sexeducation.jpg';
 import psychotherapy from '../assets/images/services_section/psychotherapy.jpg';
 import speaker from '../assets/images/services_section/speaker.jpg';
