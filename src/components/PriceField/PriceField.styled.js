@@ -64,6 +64,7 @@ export const StyledPriceField = styled.div`
       flex-wrap: ${props => props.name.education && 'wrap'};
       align-items: ${props => props.name.education && 'normal'};
       padding: ${props => props.name.psychotherapy && '24px 40px'};
+      padding: ${props => props.name.satisfaction && '41px 40px'};
     }
 
     p.first-additional-text {
