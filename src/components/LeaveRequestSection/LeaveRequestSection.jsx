@@ -138,6 +138,7 @@ export default function LeaveRequestSection() {
         };
 
         const data = await addContact(formDataForBackend);
+
         if (data) {
           localStorage.removeItem('USER_DATA');
         }
@@ -145,7 +146,7 @@ export default function LeaveRequestSection() {
         handleFormReset();
       }
     } catch (error) {
-      console.warn('Помилка при надсиланні запиту:', error.message);
+      console.log('Помилка при надсиланні запиту:', error);
       setIsError(true);
     }
   };
