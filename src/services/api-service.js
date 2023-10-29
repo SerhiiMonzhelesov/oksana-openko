@@ -7,7 +7,7 @@ export async function addContact(formData) {
   const options = {
     method: 'POST',
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://serhiimonzhelesov.github.io',
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
