@@ -12,8 +12,9 @@ export async function addContact(formData) {
       'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
     },
-    data: formData,
     withCredentials: true,
+    credentials: 'same-origin',
+    data: formData,
   };
 
   const { data } = await axios.post(
