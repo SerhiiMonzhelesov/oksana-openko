@@ -13,6 +13,7 @@ export async function addContact(formData) {
       'Content-Type': 'application/json',
     },
     data: formData,
+    withCredentials: true,
   };
 
   const { data } = await axios.post(
