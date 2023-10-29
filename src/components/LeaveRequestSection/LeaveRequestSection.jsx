@@ -146,7 +146,7 @@ export default function LeaveRequestSection() {
         handleFormReset();
       }
     } catch (error) {
-      console.log('Помилка при надсиланні запиту:', error);
+      console.log('Помилка при надсиланні запиту:', error.message);
       setIsError(true);
     }
   };
