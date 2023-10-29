@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/oksana-openko/static/css/main.b2e4b86c.css",
-    "main.js": "/oksana-openko/static/js/main.62f81d1d.js",
+    "main.js": "/oksana-openko/static/js/main.ed83a2b2.js",
     "static/css/906.1a444dff.chunk.css": "/oksana-openko/static/css/906.1a444dff.chunk.css",
     "static/js/906.5748cf76.chunk.js": "/oksana-openko/static/js/906.5748cf76.chunk.js",
     "static/js/565.f8c863d9.chunk.js": "/oksana-openko/static/js/565.f8c863d9.chunk.js",
@@ -16,7 +16,7 @@
     "static/js/600.fbd66dbf.chunk.js": "/oksana-openko/static/js/600.fbd66dbf.chunk.js",
     "static/css/27.dc56dcad.chunk.css": "/oksana-openko/static/css/27.dc56dcad.chunk.css",
     "static/js/845.5379593f.chunk.js": "/oksana-openko/static/js/845.5379593f.chunk.js",
-    "static/js/465.71450736.chunk.js": "/oksana-openko/static/js/465.71450736.chunk.js",
+    "static/js/465.726eadb7.chunk.js": "/oksana-openko/static/js/465.726eadb7.chunk.js",
     "static/js/90.08bc6aa4.chunk.js": "/oksana-openko/static/js/90.08bc6aa4.chunk.js",
     "static/media/hero-bg-desktop.png": "/oksana-openko/static/media/hero-bg-desktop.5b0d954808c773e891e5.png",
     "static/media/hero-bg-tablet.png": "/oksana-openko/static/media/hero-bg-tablet.8c388edf7f50a5f7152d.png",
@@ -144,7 +144,7 @@
     "static/media/consultation.webp": "/oksana-openko/static/media/consultation.6f5bcb3488a51198a417.webp",
     "index.html": "/oksana-openko/index.html",
     "main.b2e4b86c.css.map": "/oksana-openko/static/css/main.b2e4b86c.css.map",
-    "main.62f81d1d.js.map": "/oksana-openko/static/js/main.62f81d1d.js.map",
+    "main.ed83a2b2.js.map": "/oksana-openko/static/js/main.ed83a2b2.js.map",
     "906.1a444dff.chunk.css.map": "/oksana-openko/static/css/906.1a444dff.chunk.css.map",
     "906.5748cf76.chunk.js.map": "/oksana-openko/static/js/906.5748cf76.chunk.js.map",
     "565.f8c863d9.chunk.js.map": "/oksana-openko/static/js/565.f8c863d9.chunk.js.map",
@@ -159,11 +159,11 @@
     "600.fbd66dbf.chunk.js.map": "/oksana-openko/static/js/600.fbd66dbf.chunk.js.map",
     "27.dc56dcad.chunk.css.map": "/oksana-openko/static/css/27.dc56dcad.chunk.css.map",
     "845.5379593f.chunk.js.map": "/oksana-openko/static/js/845.5379593f.chunk.js.map",
-    "465.71450736.chunk.js.map": "/oksana-openko/static/js/465.71450736.chunk.js.map",
+    "465.726eadb7.chunk.js.map": "/oksana-openko/static/js/465.726eadb7.chunk.js.map",
     "90.08bc6aa4.chunk.js.map": "/oksana-openko/static/js/90.08bc6aa4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2e4b86c.css",
-    "static/js/main.62f81d1d.js"
+    "static/js/main.ed83a2b2.js"
   ]
 }
