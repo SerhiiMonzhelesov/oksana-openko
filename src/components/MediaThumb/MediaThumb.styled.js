@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledMediaThumb = styled.div`
   width: 100%;
   max-width: 343px;
+  height: 376px;
   margin-bottom: ${props =>
     props.name.education ? '55px' : props.name.speaker ? '54px' : '56px'};
 
@@ -29,6 +30,7 @@ export const StyledMediaThumb = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 342px;
+    height: 500px;
     margin-bottom: 0;
     margin-bottom: ${props =>
       props.name.psychotherapy
@@ -52,6 +54,7 @@ export const StyledMediaThumb = styled.div`
 
   @media screen and (min-width: 1440px) {
     max-width: 448px;
+    height: 656px;
     margin-bottom: ${props =>
       props.name.consultation
         ? '54px'
