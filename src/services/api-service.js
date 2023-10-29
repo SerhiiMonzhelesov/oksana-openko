@@ -12,8 +12,7 @@ export async function addContact(formData) {
       'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
     },
-    withCredentials: true,
-    credentials: 'same-origin',
+
     data: formData,
   };
 
