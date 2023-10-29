@@ -6,18 +6,16 @@ import {
   Scrollbar,
   A11y,
   Keyboard,
-  Zoom,
 } from 'swiper/modules';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/zoom';
 import { dataVideo } from '../../data/dataVideo';
 
 export default function SliderVideo() {
   return (
     <StyledSwiperVideo
-      modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard, Zoom]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
       pagination={{ clickable: true }}
       slidesPerView={1}
       keyboard={{ enabled: true }}

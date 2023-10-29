@@ -269,6 +269,7 @@ export const StyledAboutList = styled.ul`
     color: var(--main-text);
   }
   @media screen and (min-width: 1440px) {
+    max-width: 544px;
     transform: translateY(-34px);
   }
 `;
@@ -288,6 +289,7 @@ export const StyledAboutAccentText = styled.p`
   @media screen and (min-width: 1440px) {
     margin-top: 16px;
     margin-bottom: 83px;
+    max-width: 544px;
     transform: translateY(-34px);
   }
 `;
