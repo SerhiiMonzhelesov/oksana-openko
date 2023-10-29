@@ -36,7 +36,7 @@ export const StyledWrapperGallery = styled.div`
     width: 12px;
     height: 12px;
     border-radius: 8px;
-    border: 1px solid #777e90;
+    border: 1px solid var(--bg-brown);
     cursor: pointer;
   }
 
