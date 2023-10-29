@@ -9,7 +9,6 @@ export async function addContact(formData) {
     headers: {
       'Content-Type': 'application/json',
     },
-
     data: formData,
   };
 
@@ -45,13 +44,15 @@ export async function addContact(formData) {
 // function addApply(formData) {
 //   const myInit = {
 //     method: 'POST',
-// mode: 'cors',
-// credentials: 'include',
-// headers: {
+//     mode: 'cors',
+//     credentials: 'include',
+//     headers: {
 // 'Access-Control-Allow-Origin': '*',
-// 'Content-Type': 'application/json',
-// },
-//   body: JSON.stringify(formData),
+// 'Access-Control-Allow-Headers': '*',
+// 'Access-Control-Allow-Credentials': 'true',
+//     'Content-Type': 'application/json',
+//   },
+//   body: formData,
 // };
 
 //   const myRequest = new Request(testURL, myInit);
