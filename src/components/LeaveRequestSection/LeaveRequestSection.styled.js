@@ -5,10 +5,7 @@ import leaveRequestBgDesktop from '../../assets/images/leave-request-bg/leave-re
 import Select from 'react-select';
 
 export const StyledSectionInner = styled.div`
-  height: 813px;
   margin: 0 auto;
-  padding-top: 112px;
-  padding-bottom: 163px;
   background-image: url(${leaveRequestBgMobile});
   background-repeat: no-repeat;
   background-position: center;
@@ -16,16 +13,10 @@ export const StyledSectionInner = styled.div`
   position: relative;
 
   @media screen and (min-width: 768px) {
-    height: 1009px;
-    padding-top: 248px;
-    padding-bottom: 248px;
     background-image: url(${leaveRequestBgTablet});
   }
 
   @media screen and (min-width: 1440px) {
-    height: 801px;
-    padding-top: 136px;
-    padding-bottom: 152px;
     background-image: url(${leaveRequestBgDesktop});
   }
 `;
@@ -130,13 +121,13 @@ export const StyledInput = styled.input`
 
 export const StyledTextarea = styled.textarea`
   display: block;
-  height: 49px;
-  max-height: 90px;
+  height: 48px;
+  max-height: 220px;
   width: 100%;
   max-width: 344px;
   resize: vertical;
   margin-bottom: 32px;
-  padding: 15px 12px 13px 12px;
+  padding: 14px 12px 13px 12px;
   font-family: 'ProximaNova-400', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -185,7 +176,7 @@ export const stylesSelect = {
   control: (baseStyles, state) => ({
     ...baseStyles,
     marginBottom: '4px',
-    padding: '7px 5px',
+    padding: '7px 2px',
     backgroundColor: 'var(--bg-main)',
     border: 'none',
     borderRadius: '0',

@@ -3,25 +3,19 @@ import styled from 'styled-components';
 export const StyledWrapperFeedback = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 
   @media screen and (min-width: 768px) {
-    min-height: 555px;
-    margin-top: 0;
+    /* margin-top: 0; */
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 99px;
+    /* margin-top: 99px; */
   }
 `;
 
 export const StyledFeedback = styled.div`
-  max-width: 344px;
-  min-height: 436px;
-
   @media screen and (min-width: 768px) {
-    max-width: 354px;
   }
 `;
 
@@ -33,7 +27,8 @@ export const StyledFeedbackHeader = styled.div`
 `;
 
 export const StyledFeedbackContent = styled.div`
-  width: 100%;
+  width: 343px;
+  min-height: 290px;
   padding: 96px 65px;
   font-family: 'ProximaNova-500', sans-serif;
   font-size: 20px;
@@ -44,6 +39,10 @@ export const StyledFeedbackContent = styled.div`
   opacity: 0.9;
   background: rgba(242, 241, 243, 0.9);
   box-shadow: 0px 12px 36px 0px rgba(0, 0, 0, 0.25);
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+  }
 `;
 
 export const StyledFeedbackTitle = styled.p`
@@ -59,7 +58,7 @@ export const StyledButtonClose = styled.button`
   border: none;
   background: none;
   position: absolute;
-  top: 128px;
+  top: 48px;
   right: 16px;
   z-index: 2;
 
@@ -68,7 +67,6 @@ export const StyledButtonClose = styled.button`
   }
 
   @media screen and (min-width: 1440px) {
-    top: 133px;
     right: 162px;
   }
 `;
