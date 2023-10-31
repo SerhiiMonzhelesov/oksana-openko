@@ -20,12 +20,10 @@ export default function Feedback({ onFeedbackClose, isError }) {
         </StyledFeedbackHeader>
         <StyledFeedbackContent>
           <StyledFeedbackTitle>
-            {isError ? null : 'Дякуємо!'}
+            {isError ? 'Помилка з’єднання з сервером!' : 'Дякуємо!'}
           </StyledFeedbackTitle>
           <StyledFeedbackText>
-            {isError
-              ? 'Помилка з’єднання з сервером!'
-              : 'Ваша заявка прийнята.'}
+            {isError ? null : 'Ваша заявка прийнята.'}
           </StyledFeedbackText>
           {isError ? null : <p>Очікуйте відповідь.</p>}
         </StyledFeedbackContent>

@@ -156,9 +156,38 @@ export default function LeaveRequestSection() {
     setIsError(false);
   };
 
+  const mediaQuery768px = window.matchMedia('(min-width: 768px)');
+  const mediaQuery1440px = window.matchMedia('(min-width: 1440px)');
+
+  let paddingStyle = { paddingTop: '112px', paddingBottom: '195px' };
+
+  if (!isFormVisible) {
+    paddingStyle = { paddingTop: '112px', paddingBottom: '181px' };
+  }
+
+  if (mediaQuery768px.matches) {
+    if (isFormVisible) {
+      paddingStyle.paddingTop = '248px';
+      paddingStyle.paddingBottom = '248px';
+    } else {
+      paddingStyle.paddingTop = '176px';
+      paddingStyle.paddingBottom = '316px';
+    }
+  }
+
+  if (mediaQuery1440px.matches) {
+    if (isFormVisible) {
+      paddingStyle.paddingTop = '136px';
+      paddingStyle.paddingBottom = '152px';
+    } else {
+      paddingStyle.paddingTop = '152px';
+      paddingStyle.paddingBottom = '128px';
+    }
+  }
+
   return (
     <section id="contacts">
-      <StyledSectionInner>
+      <StyledSectionInner style={paddingStyle}>
         <Container>
           {isFormVisible ? (
             <>
@@ -166,6 +195,7 @@ export default function LeaveRequestSection() {
               <StyledForm onSubmit={handleSubmit}>
                 <StyledInputWrapper>
                   <StyledInput
+                    data-value
                     type="text"
                     aria-label="Ваше ім'я"
                     name="name"
