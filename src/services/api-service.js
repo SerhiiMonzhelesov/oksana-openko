@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://oksana-openko.onreder.com';
+const BASE_URL = 'https://oksana-openko.onrender.com/api/application';
 //  'http://localhost:3000/api/application';
 
 export async function addContact(formData) {
-  console.log('formData: ', formData);
   const options = {
     method: 'POST',
     headers: {
