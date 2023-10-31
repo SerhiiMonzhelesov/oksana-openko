@@ -1,26 +1,23 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://oksana-openko.onreder.com';
-// 'http://localhost:3000';
+//  'http://localhost:3000/api/application';
 
 export async function addContact(formData) {
+  console.log('formData: ', formData);
   const options = {
     method: 'POST',
     headers: {
-      'Access-Control-Allow-Origin': 'https://serhiimonzhelesov.github.io',
-      'Access-Control-Allow-Headers': '*',
-      'Access-Control-Allow-Credentials': 'true',
+      // 'Access-Control-Allow-Origin': 'http://localhost:3001',
+      // 'Access-Control-Allow-Headers': '*',
+      // 'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
     },
-
+    // withCredentials: true,
     data: formData,
   };
 
-  const { data } = await axios.post(
-    `${BASE_URL}/api/application`,
-    formData,
-    options
-  );
+  const { data } = await axios.post(`${BASE_URL}`, formData, options);
 
   return data;
 }
@@ -43,7 +40,15 @@ export async function addContact(formData) {
 //   console.log('data: ', data);
 // }
 
-// const testURL = 'https://oksana-openko.onreder.com/api/application';
+// addUser({
+//   name: 'serh',
+//   email: 'serh@goit-node-js-backend.com',
+//   password: '123456',
+// });
+
+// ======================= FETCH REQUEST ===============
+
+// const testURL = 'http://localhost:3000/api/application';
 
 // function addApply(formData) {
 //   const myInit = {
@@ -51,13 +56,13 @@ export async function addContact(formData) {
 //     mode: 'cors',
 //     credentials: 'include',
 //     headers: {
-// 'Access-Control-Allow-Origin': '*',
-// 'Access-Control-Allow-Headers': '*',
-// 'Access-Control-Allow-Credentials': 'true',
-//     'Content-Type': 'application/json',
-//   },
-//   body: formData,
-// };
+//       'Access-Control-Allow-Origin': 'http://localhost:3001',
+//       'Access-Control-Allow-Headers': '*',
+//       'Access-Control-Allow-Credentials': 'true',
+//       'Content-Type': 'application/json',
+//     },
+//     body: formData,
+//   };
 
 //   const myRequest = new Request(testURL, myInit);
 //   fetch(myRequest)
@@ -77,5 +82,5 @@ export async function addContact(formData) {
 //   phone: '+380668572712',
 //   service: 'Психотерапія',
 //   format: 'Онлайн',
-//   question: 'new test postman to web',
+//   question: 'FETCH req local to local',
 // });
