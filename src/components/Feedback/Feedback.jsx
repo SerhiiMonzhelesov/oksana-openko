@@ -1,3 +1,4 @@
+import Loader from 'components/Loader/Loader';
 import SpriteSvg from '../../assets/images/icons.svg';
 import {
   StyledButtonClose,
@@ -9,7 +10,7 @@ import {
   StyledWrapperFeedback,
 } from './Feedback.styled';
 
-export default function Feedback({ onFeedbackClose, isError }) {
+export default function Feedback({ onFeedbackClose, isError, isLoading }) {
   return (
     <StyledWrapperFeedback>
       <StyledFeedback>
@@ -18,14 +19,21 @@ export default function Feedback({ onFeedbackClose, isError }) {
             <use href={SpriteSvg + '#done'} />
           </svg>
         </StyledFeedbackHeader>
+
         <StyledFeedbackContent>
-          <StyledFeedbackTitle>
-            {isError ? 'Помилка з’єднання з сервером!' : 'Дякуємо!'}
-          </StyledFeedbackTitle>
-          <StyledFeedbackText>
-            {isError ? null : 'Ваша заявка прийнята.'}
-          </StyledFeedbackText>
-          {isError ? null : <p>Очікуйте відповідь.</p>}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              <StyledFeedbackTitle>
+                {isError ? 'Помилка з’єднання з сервером!' : 'Дякуємо!'}
+              </StyledFeedbackTitle>
+              <StyledFeedbackText>
+                {isError ? null : 'Ваша заявка прийнята.'}
+              </StyledFeedbackText>
+              {isError ? null : <p>Очікуйте відповідь.</p>}
+            </>
+          )}
         </StyledFeedbackContent>
         <StyledButtonClose onClick={onFeedbackClose}>
           <svg width="40" height="40" viewBox="0 0 40 40">

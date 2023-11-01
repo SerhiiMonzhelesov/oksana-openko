@@ -18,9 +18,12 @@ import { dataFormat, dataServices } from 'data/data-request';
 import ButtonToTop from '../ButtonToTop/ButtonToTop';
 import Feedback from 'components/Feedback/Feedback';
 import { addContact } from '../../services/api-service.js';
+import { formValidation } from 'helpers/formValidation';
+import { LeaveRequestMediaQueries } from 'helpers/LeaveRequestMediaQueries';
 
 export default function LeaveRequestSection() {
   const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -103,33 +106,12 @@ export default function LeaveRequestSection() {
     event.preventDefault();
 
     const newErrors = {};
-    if (formData.name.length === 0) {
-      newErrors.name = 'Введіть ім’я';
-    } else if (formData.name.length <= 1 || formData.name.length > 50) {
-      newErrors.name = "Ім'я має містити від 2 до 50 символів";
-    } else if (formData.name.includes('  ')) {
-      newErrors.name = 'Введіть правильне ім’я';
-    }
-
-    if (!formData.phone) {
-      newErrors.phone = 'Вкажіть номер телефону';
-    } else if (formData.phone.length < 10 || formData.phone.length > 50) {
-      newErrors.phone = 'Некоректно введений номер';
-    }
-
-    if (!formData.service) {
-      newErrors.service = 'Виберіть послугу';
-    }
-
-    if (!formData.format) {
-      newErrors.format = 'Виберіть формат';
-    }
-
-    setErrors(newErrors);
+    setErrors(formValidation(formData, newErrors));
 
     try {
       if (Object.keys(newErrors).length === 0) {
         setIsFormVisible(false);
+        setIsLoading(true);
 
         const formDataForBackend = {
           ...formData,
@@ -144,10 +126,12 @@ export default function LeaveRequestSection() {
         }
 
         handleFormReset();
+        setIsLoading(false);
       }
     } catch (error) {
       console.log('Помилка при надсиланні запиту:', error.message);
       setIsError(true);
+      setIsLoading(false);
     }
   };
 
@@ -156,34 +140,9 @@ export default function LeaveRequestSection() {
     setIsError(false);
   };
 
-  const mediaQuery768px = window.matchMedia('(min-width: 768px)');
-  const mediaQuery1440px = window.matchMedia('(min-width: 1440px)');
+  const { getPaddingStyle } = LeaveRequestMediaQueries();
 
-  let paddingStyle = { paddingTop: '112px', paddingBottom: '192px' };
-
-  if (!isFormVisible) {
-    paddingStyle = { paddingTop: '112px', paddingBottom: '180px' };
-  }
-
-  if (mediaQuery768px.matches) {
-    if (isFormVisible) {
-      paddingStyle.paddingTop = '248px';
-      paddingStyle.paddingBottom = '248px';
-    } else {
-      paddingStyle.paddingTop = '176px';
-      paddingStyle.paddingBottom = '316px';
-    }
-  }
-
-  if (mediaQuery1440px.matches) {
-    if (isFormVisible) {
-      paddingStyle.paddingTop = '136px';
-      paddingStyle.paddingBottom = '152px';
-    } else {
-      paddingStyle.paddingTop = '152px';
-      paddingStyle.paddingBottom = '128px';
-    }
-  }
+  let paddingStyle = getPaddingStyle(isFormVisible);
 
   return (
     <section id="contacts">
@@ -286,7 +245,11 @@ export default function LeaveRequestSection() {
               <ButtonToTop />
             </>
           ) : (
-            <Feedback onFeedbackClose={handleFeedbackClose} isError={isError} />
+            <Feedback
+              onFeedbackClose={handleFeedbackClose}
+              isError={isError}
+              isLoading={isLoading}
+            />
           )}
         </Container>
       </StyledSectionInner>
