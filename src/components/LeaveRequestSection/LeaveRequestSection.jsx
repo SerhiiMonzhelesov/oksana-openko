@@ -159,10 +159,10 @@ export default function LeaveRequestSection() {
   const mediaQuery768px = window.matchMedia('(min-width: 768px)');
   const mediaQuery1440px = window.matchMedia('(min-width: 1440px)');
 
-  let paddingStyle = { paddingTop: '112px', paddingBottom: '195px' };
+  let paddingStyle = { paddingTop: '112px', paddingBottom: '192px' };
 
   if (!isFormVisible) {
-    paddingStyle = { paddingTop: '112px', paddingBottom: '181px' };
+    paddingStyle = { paddingTop: '112px', paddingBottom: '180px' };
   }
 
   if (mediaQuery768px.matches) {
