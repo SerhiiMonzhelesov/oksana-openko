@@ -1,7 +1,5 @@
-import { confirmNamePage } from 'helpers/confirmNamePage';
 import React from 'react';
 import { RotatingLines } from 'react-loader-spinner';
-import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Loader = ({ section }) => {
