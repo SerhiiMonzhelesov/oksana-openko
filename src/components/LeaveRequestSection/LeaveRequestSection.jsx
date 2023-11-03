@@ -1,6 +1,12 @@
-import Container from 'components/Container/Container';
-import Select from 'react-select';
 import { useState, useEffect } from 'react';
+import Select from 'react-select';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+
+import Container from 'components/Container/Container';
+import Feedback from 'components/Feedback/Feedback';
+import ButtonToTop from 'components/ButtonToTop/ButtonToTop';
+
 import {
   StyledButtonRequest,
   StyledForm,
@@ -12,14 +18,9 @@ import {
   StyledTextarea,
   stylesSelect,
 } from './LeaveRequestSection.styled';
-import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
-import { dataFormat, dataServices } from 'data/data-request';
-import ButtonToTop from '../ButtonToTop/ButtonToTop';
-import Feedback from 'components/Feedback/Feedback';
 import { addContact } from '../../services/api-service.js';
 import { formValidation } from 'helpers/formValidation';
-import { LeaveRequestMediaQueries } from 'helpers/LeaveRequestMediaQueries';
+import { dataFormat, dataServices } from 'data/data-request';
 
 export default function LeaveRequestSection() {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -105,34 +106,32 @@ export default function LeaveRequestSection() {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    const newErrors = {};
-    setErrors(formValidation(formData, newErrors));
+    const objErrors = formValidation(formData);
+    setErrors(objErrors);
 
-    try {
-      if (Object.keys(newErrors).length === 0) {
-        setIsFormVisible(false);
-        setIsLoading(true);
-
+    if (Object.keys(objErrors).length === 0 && formData)
+      try {
         const formDataForBackend = {
           ...formData,
           service: formData.service.value,
           format: formData.format.value,
         };
 
+        setIsLoading(true);
+        setIsFormVisible(false);
         const data = await addContact(formDataForBackend);
 
         if (data) {
+          setIsLoading(false);
+          handleFormReset();
           localStorage.removeItem('USER_DATA');
         }
-
-        handleFormReset();
+      } catch (error) {
         setIsLoading(false);
+        setIsError(true);
+        console.log('Помилка при надсиланні запиту:', error.message);
       }
-    } catch (error) {
-      console.log('Помилка при надсиланні запиту:', error.message);
-      setIsError(true);
-      setIsLoading(false);
-    }
+    return;
   };
 
   const handleFeedbackClose = () => {
@@ -140,13 +139,9 @@ export default function LeaveRequestSection() {
     setIsError(false);
   };
 
-  const { getPaddingStyle } = LeaveRequestMediaQueries();
-
-  let paddingStyle = getPaddingStyle(isFormVisible);
-
   return (
     <section id="contacts">
-      <StyledSectionInner style={paddingStyle}>
+      <StyledSectionInner $visibleForm={isFormVisible}>
         <Container>
           {isFormVisible ? (
             <>

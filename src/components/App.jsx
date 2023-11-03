@@ -2,14 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import Layout from './Layout/Layout';
-// import HomePage from '../pages/Homepage';
-// import ConsultationPage from '../pages/ConsultationPage';
-// import PsychotherapyPage from 'pages/PsychotherapyPage';
-// import SexEducationPage from 'pages/SexEducationPage';
-// import PlayingWithCardsPage from 'pages/PlayingWithCardsPage';
-// import SelfSatisfactionWorkPage from 'pages/SelfSatisfactionWorkPage';
-// import InvitedSpeakerPage from 'pages/InvitedSpeakerPage';
 import NotFound from 'pages/NotFound';
+import Loader from './Loader/Loader';
 
 const HomePage = lazy(() => import('../pages/Homepage'));
 const ConsultationPage = lazy(() => import('../pages/ConsultationPage'));
@@ -25,7 +19,7 @@ const InvitedSpeakerPage = lazy(() => import('../pages/InvitedSpeakerPage'));
 
 export const App = () => {
   return (
-    <Suspense>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />}></Route>

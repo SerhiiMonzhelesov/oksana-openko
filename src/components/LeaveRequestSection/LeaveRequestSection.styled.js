@@ -11,13 +11,19 @@ export const StyledSectionInner = styled.div`
   background-position: center;
   background-size: cover;
   position: relative;
+  padding: ${props =>
+    props.$visibleForm ? '112px 0 192px 0' : '112px 0 180px 0'};
 
   @media screen and (min-width: 768px) {
     background-image: url(${leaveRequestBgTablet});
+    padding: ${props =>
+      props.$visibleForm ? '248px 0 248px 0' : '176px 0 316px 0'};
   }
 
   @media screen and (min-width: 1440px) {
     background-image: url(${leaveRequestBgDesktop});
+    padding: ${props =>
+      props.$visibleForm ? '136px 0 152px 0' : '152px 0 128px 0'};
   }
 `;
 

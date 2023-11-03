@@ -1,10 +1,12 @@
+import { confirmNamePage } from 'helpers/confirmNamePage';
 import React from 'react';
 import { RotatingLines } from 'react-loader-spinner';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Loader = () => {
+const Loader = ({ section }) => {
   return (
-    <StyledLoaderWrapper>
+    <StyledLoaderWrapper section={section}>
       <RotatingLines
         strokeColor="#7B6BDA"
         strokeWidth="3"
@@ -16,11 +18,11 @@ const Loader = () => {
   );
 };
 
-export default Loader;
-
-export const StyledLoaderWrapper = styled.div`
+const StyledLoaderWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90px;
+  height: ${props => (props.section === 'request' ? '90px' : '100vh')};
 `;
+
+export default Loader;

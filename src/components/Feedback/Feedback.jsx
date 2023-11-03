@@ -22,7 +22,7 @@ export default function Feedback({ onFeedbackClose, isError, isLoading }) {
 
         <StyledFeedbackContent>
           {isLoading ? (
-            <Loader />
+            <Loader section={'request'} />
           ) : (
             <>
               <StyledFeedbackTitle>

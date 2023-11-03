@@ -25,7 +25,10 @@ export default function HeroSection() {
     <>
       <section id="hero">
         <StyledWrapper>
-          <StyledInner>
+          <StyledInner
+            data-script="assets/js/bootstrap.min.js"
+            className="lazyload"
+          >
             <Container>
               <StyledContent>
                 <StyledPositionLeft>

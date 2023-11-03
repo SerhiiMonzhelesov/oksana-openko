@@ -8,15 +8,18 @@ export async function addContact(formData) {
     headers: {
       'Content-Type': 'application/json',
     },
-
     data: formData,
   };
 
-  const data = await axios.post(
+  const { data } = await axios.post(
     `${BASE_URL}/api/application`,
     formData,
     options
   );
 
   return data;
+}
+
+export async function getWakeUpServer() {
+  await axios.get(`${BASE_URL}/api/application`);
 }

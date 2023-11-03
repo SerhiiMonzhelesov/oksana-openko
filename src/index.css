@@ -49,14 +49,10 @@ img {
   display: block;
 }
 
-.sl-wrapper .sl-close {
-  color: var(--bg-primery) !important;
-}
-
-.sl-wrapper .sl-counter,
+.sl-wrapper .sl-counter, .sl-wrapper .sl-close,
 .sl-wrapper .sl-navigation button.sl-prev,
 .sl-wrapper .sl-navigation button.sl-next {
-  color: #575150 !important;
+color: var(--bg-primery) !important;
 }
 
 .sl-overlay {
