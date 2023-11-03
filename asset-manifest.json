@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/oksana-openko/static/css/main.bc4d7970.css",
-    "main.js": "/oksana-openko/static/js/main.627991e7.js",
-    "static/css/935.f64e1a4a.chunk.css": "/oksana-openko/static/css/935.f64e1a4a.chunk.css",
-    "static/js/935.e51ec2a1.chunk.js": "/oksana-openko/static/js/935.e51ec2a1.chunk.js",
+    "main.css": "/oksana-openko/static/css/main.a1b3f8ce.css",
+    "main.js": "/oksana-openko/static/js/main.d6ccf5be.js",
+    "static/css/957.3c2edce8.chunk.css": "/oksana-openko/static/css/957.3c2edce8.chunk.css",
+    "static/js/957.743a3deb.chunk.js": "/oksana-openko/static/js/957.743a3deb.chunk.js",
     "static/js/565.f8c863d9.chunk.js": "/oksana-openko/static/js/565.f8c863d9.chunk.js",
     "static/css/946.c9e1cc57.chunk.css": "/oksana-openko/static/css/946.c9e1cc57.chunk.css",
     "static/js/946.74cdaf5e.chunk.js": "/oksana-openko/static/js/946.74cdaf5e.chunk.js",
@@ -15,7 +15,7 @@
     "static/js/367.99a53b11.chunk.js": "/oksana-openko/static/js/367.99a53b11.chunk.js",
     "static/js/600.fbd66dbf.chunk.js": "/oksana-openko/static/js/600.fbd66dbf.chunk.js",
     "static/css/27.dc56dcad.chunk.css": "/oksana-openko/static/css/27.dc56dcad.chunk.css",
-    "static/js/676.65e49073.chunk.js": "/oksana-openko/static/js/676.65e49073.chunk.js",
+    "static/js/710.ec1f73cd.chunk.js": "/oksana-openko/static/js/710.ec1f73cd.chunk.js",
     "static/js/465.726eadb7.chunk.js": "/oksana-openko/static/js/465.726eadb7.chunk.js",
     "static/js/90.7b8c633f.chunk.js": "/oksana-openko/static/js/90.7b8c633f.chunk.js",
     "static/media/hero-bg-desktop.png": "/oksana-openko/static/media/hero-bg-desktop.5b0d954808c773e891e5.png",
@@ -143,10 +143,10 @@
     "static/media/icons.svg": "/oksana-openko/static/media/icons.00ffb6e10501886c9ad62565b28b24d9.svg",
     "static/media/consultation.webp": "/oksana-openko/static/media/consultation.6f5bcb3488a51198a417.webp",
     "index.html": "/oksana-openko/index.html",
-    "main.bc4d7970.css.map": "/oksana-openko/static/css/main.bc4d7970.css.map",
-    "main.627991e7.js.map": "/oksana-openko/static/js/main.627991e7.js.map",
-    "935.f64e1a4a.chunk.css.map": "/oksana-openko/static/css/935.f64e1a4a.chunk.css.map",
-    "935.e51ec2a1.chunk.js.map": "/oksana-openko/static/js/935.e51ec2a1.chunk.js.map",
+    "main.a1b3f8ce.css.map": "/oksana-openko/static/css/main.a1b3f8ce.css.map",
+    "main.d6ccf5be.js.map": "/oksana-openko/static/js/main.d6ccf5be.js.map",
+    "957.3c2edce8.chunk.css.map": "/oksana-openko/static/css/957.3c2edce8.chunk.css.map",
+    "957.743a3deb.chunk.js.map": "/oksana-openko/static/js/957.743a3deb.chunk.js.map",
     "565.f8c863d9.chunk.js.map": "/oksana-openko/static/js/565.f8c863d9.chunk.js.map",
     "946.c9e1cc57.chunk.css.map": "/oksana-openko/static/css/946.c9e1cc57.chunk.css.map",
     "946.74cdaf5e.chunk.js.map": "/oksana-openko/static/js/946.74cdaf5e.chunk.js.map",
@@ -158,12 +158,12 @@
     "367.99a53b11.chunk.js.map": "/oksana-openko/static/js/367.99a53b11.chunk.js.map",
     "600.fbd66dbf.chunk.js.map": "/oksana-openko/static/js/600.fbd66dbf.chunk.js.map",
     "27.dc56dcad.chunk.css.map": "/oksana-openko/static/css/27.dc56dcad.chunk.css.map",
-    "676.65e49073.chunk.js.map": "/oksana-openko/static/js/676.65e49073.chunk.js.map",
+    "710.ec1f73cd.chunk.js.map": "/oksana-openko/static/js/710.ec1f73cd.chunk.js.map",
     "465.726eadb7.chunk.js.map": "/oksana-openko/static/js/465.726eadb7.chunk.js.map",
     "90.7b8c633f.chunk.js.map": "/oksana-openko/static/js/90.7b8c633f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc4d7970.css",
-    "static/js/main.627991e7.js"
+    "static/css/main.a1b3f8ce.css",
+    "static/js/main.d6ccf5be.js"
   ]
 }
