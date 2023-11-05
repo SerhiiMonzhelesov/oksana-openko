@@ -1,10 +1,10 @@
 @import '~@csstools/normalize.css';
-
+@import 'modern-normalize';
 @import './stylesheet/fonts.css';
 @import './stylesheet/vars.css';
 
 body {
-  font-family: 'ProximaNova-400', sans-serif;
+  font-family: 'ProximaNova-400',  sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
