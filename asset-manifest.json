@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/oksana-openko/static/css/main.a1b3f8ce.css",
+    "main.css": "/oksana-openko/static/css/main.1b617292.css",
     "main.js": "/oksana-openko/static/js/main.d6ccf5be.js",
     "static/css/957.3c2edce8.chunk.css": "/oksana-openko/static/css/957.3c2edce8.chunk.css",
     "static/js/957.743a3deb.chunk.js": "/oksana-openko/static/js/957.743a3deb.chunk.js",
@@ -143,7 +143,7 @@
     "static/media/icons.svg": "/oksana-openko/static/media/icons.00ffb6e10501886c9ad62565b28b24d9.svg",
     "static/media/consultation.webp": "/oksana-openko/static/media/consultation.6f5bcb3488a51198a417.webp",
     "index.html": "/oksana-openko/index.html",
-    "main.a1b3f8ce.css.map": "/oksana-openko/static/css/main.a1b3f8ce.css.map",
+    "main.1b617292.css.map": "/oksana-openko/static/css/main.1b617292.css.map",
     "main.d6ccf5be.js.map": "/oksana-openko/static/js/main.d6ccf5be.js.map",
     "957.3c2edce8.chunk.css.map": "/oksana-openko/static/css/957.3c2edce8.chunk.css.map",
     "957.743a3deb.chunk.js.map": "/oksana-openko/static/js/957.743a3deb.chunk.js.map",
@@ -163,7 +163,7 @@
     "90.7b8c633f.chunk.js.map": "/oksana-openko/static/js/90.7b8c633f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1b3f8ce.css",
+    "static/css/main.1b617292.css",
     "static/js/main.d6ccf5be.js"
   ]
 }
