@@ -41,7 +41,7 @@ export default function SliderVideo() {
 export const StyledSwiperVideo = styled(Swiper)`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 404px;
   padding-bottom: 16px !important;
 
   .swiper-slide {
@@ -82,6 +82,7 @@ export const StyledSwiperVideo = styled(Swiper)`
 
   //Media Tablet
   @media screen and (min-width: 768px) {
+    height: 544px;
     padding-bottom: 32px !important;
 
     .swiper-wrapper {
@@ -105,6 +106,7 @@ export const StyledSwiperVideo = styled(Swiper)`
 
   //Media Desctop
   @media screen and (min-width: 1440px) {
+    height: 700px;
     .swiper-wrapper {
       height: 656px;
     }
